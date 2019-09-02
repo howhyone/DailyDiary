@@ -1,0 +1,34 @@
+//
+//  DailyDiary_PrefixHeader.pch
+//  DailyDiary
+//
+//  Created by mob on 2019/8/17.
+//  Copyright © 2019 howhyone. All rights reserved.
+//
+
+#ifndef DailyDiary_PrefixHeader_pch
+#define DailyDiary_PrefixHeader_pch
+
+//masonry使用宏
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+
+#define kScreen_Width [UIScreen mainScreen].bounds.size.width
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kScale_Width  kScreen_Width / 375
+#define kScale_Height kScreen_Height / 667 
+#define kNavigationBarHeigth self.navigationController.navigationBar.frame.size.height
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+#define kStateNavigationHeight kNavigationBarHeigth+kStatusBarHeight
+#define kLoginKey @"loginKey"
+#define kActivekey @"activeKey"
+
+
+#import <Masonry/Masonry.h>
+#import "UIColor+Comomn.h"
+#import "UILabel+Common.h"
+#import "UIButton+Common.h"
+#import "UITextField+Common.h"
+#import "UIImageView+Common.h"
+
+#endif /* DailyDiary_PrefixHeader_pch */
