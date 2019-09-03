@@ -10,12 +10,16 @@
 #import <ShareSDK/ShareSDK.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
 @protocol ThirdLoginDelegate <NSObject>
 @required
 -(void)getVerCodeWithPhone:(NSString *)phoneStr;
 -(void)thirdLoginWithPlatfromType:(SSDKPlatformType)platformType;
 -(void)phoneLoginWithVerCode:(NSString *)codeStr;
 @end
+
+
+
 @interface OtherLoginView : UIView
 @property(nonatomic, weak)id<ThirdLoginDelegate> delegate;
 @property(nonatomic, strong)UITextField *phoneTextField;

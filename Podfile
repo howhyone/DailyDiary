@@ -6,6 +6,9 @@ target 'DailyDiary' do
 
       pod 'Masonry'
       pod 'IQKeyboardManager'
+      pod 'MJRefresh'
+      
+      
       
       pod 'mob_sharesdk','~> 4.2.8'
       pod 'mob_sharesdk/ShareSDKUI'
@@ -15,6 +18,7 @@ target 'DailyDiary' do
       pod 'mob_sharesdk/ShareSDKExtension'
       
       pod 'mob_smssdk'
+      
 #  target 'DailyDiaryTests' do
 ##    inherit! :search_paths
 #  end

@@ -26,7 +26,7 @@
                   moduleName = "DailyDiary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/LoginControllers/LoginViewController.m"
-                  timestampString = "589115941.074034"
+                  timestampString = "589205820.029536"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
@@ -41,7 +41,7 @@
                   moduleName = "DailyDiary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/LoginControllers/LoginViewController.m"
-                  timestampString = "589115941.078294"
+                  timestampString = "589205820.0328701"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -91,22 +91,6 @@
             endingLineNumber = "98"
             landmarkName = "@implementation HomePageTableViewCell"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Views/DiaryViews/HomeTableViewCell.m"
-            timestampString = "589106434.72914"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "-initWithStyle:reuseIdentifier:"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

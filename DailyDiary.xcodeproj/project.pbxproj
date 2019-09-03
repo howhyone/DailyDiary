@@ -14,6 +14,27 @@
 		C90631D023113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */; };
 		C90631D123113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */; };
 		C90631D223113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */; };
+		C90674D9231E82F400AEEB6F /* IDJChineseCalendar.mm in Sources */ = {isa = PBXBuildFile; fileRef = C90674C9231E82F400AEEB6F /* IDJChineseCalendar.mm */; };
+		C90674DA231E82F400AEEB6F /* IDJChineseCalendar.mm in Sources */ = {isa = PBXBuildFile; fileRef = C90674C9231E82F400AEEB6F /* IDJChineseCalendar.mm */; };
+		C90674DB231E82F400AEEB6F /* IDJChineseCalendar.mm in Sources */ = {isa = PBXBuildFile; fileRef = C90674C9231E82F400AEEB6F /* IDJChineseCalendar.mm */; };
+		C90674DC231E82F400AEEB6F /* ChineseCalendarDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90674CC231E82F400AEEB6F /* ChineseCalendarDB.cpp */; };
+		C90674DD231E82F400AEEB6F /* ChineseCalendarDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90674CC231E82F400AEEB6F /* ChineseCalendarDB.cpp */; };
+		C90674DE231E82F400AEEB6F /* ChineseCalendarDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90674CC231E82F400AEEB6F /* ChineseCalendarDB.cpp */; };
+		C90674DF231E82F400AEEB6F /* SolarDate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90674CE231E82F400AEEB6F /* SolarDate.cpp */; };
+		C90674E0231E82F400AEEB6F /* SolarDate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90674CE231E82F400AEEB6F /* SolarDate.cpp */; };
+		C90674E1231E82F400AEEB6F /* SolarDate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90674CE231E82F400AEEB6F /* SolarDate.cpp */; };
+		C90674E2231E82F400AEEB6F /* ChineseDate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90674D1231E82F400AEEB6F /* ChineseDate.cpp */; };
+		C90674E3231E82F400AEEB6F /* ChineseDate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90674D1231E82F400AEEB6F /* ChineseDate.cpp */; };
+		C90674E4231E82F400AEEB6F /* ChineseDate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90674D1231E82F400AEEB6F /* ChineseDate.cpp */; };
+		C90674E5231E82F400AEEB6F /* IDJCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = C90674D4231E82F400AEEB6F /* IDJCalendar.m */; };
+		C90674E6231E82F400AEEB6F /* IDJCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = C90674D4231E82F400AEEB6F /* IDJCalendar.m */; };
+		C90674E7231E82F400AEEB6F /* IDJCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = C90674D4231E82F400AEEB6F /* IDJCalendar.m */; };
+		C90674E8231E82F400AEEB6F /* GYZCustomCalendarPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90674D5231E82F400AEEB6F /* GYZCustomCalendarPickerView.m */; };
+		C90674E9231E82F400AEEB6F /* GYZCustomCalendarPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90674D5231E82F400AEEB6F /* GYZCustomCalendarPickerView.m */; };
+		C90674EA231E82F400AEEB6F /* GYZCustomCalendarPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90674D5231E82F400AEEB6F /* GYZCustomCalendarPickerView.m */; };
+		C90674EB231E82F400AEEB6F /* IDJCalendarUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = C90674D6231E82F400AEEB6F /* IDJCalendarUtil.mm */; };
+		C90674EC231E82F400AEEB6F /* IDJCalendarUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = C90674D6231E82F400AEEB6F /* IDJCalendarUtil.mm */; };
+		C90674ED231E82F400AEEB6F /* IDJCalendarUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = C90674D6231E82F400AEEB6F /* IDJCalendarUtil.mm */; };
 		C9379DF123165C750045D7C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DF023165C750045D7C5 /* HomeViewController.m */; };
 		C9379DF223165C750045D7C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DF023165C750045D7C5 /* HomeViewController.m */; };
 		C9379DF323165C750045D7C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DF023165C750045D7C5 /* HomeViewController.m */; };
@@ -113,6 +134,12 @@
 		C9CF2FAB230EC18F007165BD /* OtherLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CF2FAA230EC18F007165BD /* OtherLoginView.m */; };
 		C9CF2FAC230EC18F007165BD /* OtherLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CF2FAA230EC18F007165BD /* OtherLoginView.m */; };
 		C9CF2FAD230EC18F007165BD /* OtherLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CF2FAA230EC18F007165BD /* OtherLoginView.m */; };
+		C9DB73E6231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73E5231E3E2700DDB1CB /* MakeDiaryViewController.m */; };
+		C9DB73E7231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73E5231E3E2700DDB1CB /* MakeDiaryViewController.m */; };
+		C9DB73E8231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73E5231E3E2700DDB1CB /* MakeDiaryViewController.m */; };
+		C9DB73EB231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
+		C9DB73EC231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
+		C9DB73ED231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +170,21 @@
 		C90631CA2311345A0073BAA1 /* ThirdLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdLoginView.m; sourceTree = "<group>"; };
 		C90631CE23113C3C0073BAA1 /* ThirdLoginFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdLoginFunction.h; sourceTree = "<group>"; };
 		C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdLoginFunction.m; sourceTree = "<group>"; };
+		C90674C9231E82F400AEEB6F /* IDJChineseCalendar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IDJChineseCalendar.mm; sourceTree = "<group>"; };
+		C90674CA231E82F400AEEB6F /* IDJCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDJCalendar.h; sourceTree = "<group>"; };
+		C90674CC231E82F400AEEB6F /* ChineseCalendarDB.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ChineseCalendarDB.cpp; sourceTree = "<group>"; };
+		C90674CD231E82F400AEEB6F /* SolarDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolarDate.h; sourceTree = "<group>"; };
+		C90674CE231E82F400AEEB6F /* SolarDate.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = SolarDate.cpp; sourceTree = "<group>"; };
+		C90674CF231E82F400AEEB6F /* ChineseDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseDate.h; sourceTree = "<group>"; };
+		C90674D0231E82F400AEEB6F /* ChineseCalendarDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseCalendarDB.h; sourceTree = "<group>"; };
+		C90674D1231E82F400AEEB6F /* ChineseDate.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ChineseDate.cpp; sourceTree = "<group>"; };
+		C90674D2231E82F400AEEB6F /* GYZCustomCalendarPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZCustomCalendarPickerView.h; sourceTree = "<group>"; };
+		C90674D3231E82F400AEEB6F /* IDJChineseCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDJChineseCalendar.h; sourceTree = "<group>"; };
+		C90674D4231E82F400AEEB6F /* IDJCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDJCalendar.m; sourceTree = "<group>"; };
+		C90674D5231E82F400AEEB6F /* GYZCustomCalendarPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZCustomCalendarPickerView.m; sourceTree = "<group>"; };
+		C90674D6231E82F400AEEB6F /* IDJCalendarUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IDJCalendarUtil.mm; sourceTree = "<group>"; };
+		C90674D7231E82F400AEEB6F /* GYZCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZCommon.h; sourceTree = "<group>"; };
+		C90674D8231E82F400AEEB6F /* IDJCalendarUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDJCalendarUtil.h; sourceTree = "<group>"; };
 		C9379DEF23165C750045D7C5 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C9379DF023165C750045D7C5 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		C9379DF5231660F20045D7C5 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
@@ -227,6 +269,10 @@
 		C9CF2FA5230EC10E007165BD /* OtherLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherLoginViewController.m; sourceTree = "<group>"; };
 		C9CF2FA9230EC18F007165BD /* OtherLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherLoginView.h; sourceTree = "<group>"; };
 		C9CF2FAA230EC18F007165BD /* OtherLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherLoginView.m; sourceTree = "<group>"; };
+		C9DB73E4231E3E2700DDB1CB /* MakeDiaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeDiaryViewController.h; sourceTree = "<group>"; };
+		C9DB73E5231E3E2700DDB1CB /* MakeDiaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeDiaryViewController.m; sourceTree = "<group>"; };
+		C9DB73E9231E3F5600DDB1CB /* MakeDiaryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeDiaryView.h; sourceTree = "<group>"; };
+		C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeDiaryView.m; sourceTree = "<group>"; };
 		F525EFF46B0267034DA5789A /* Pods-DailyDiaryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDiaryTests.debug.xcconfig"; path = "Target Support Files/Pods-DailyDiaryTests/Pods-DailyDiaryTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -311,11 +357,43 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
+		C90674C8231E82F400AEEB6F /* CustomCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				C90674C9231E82F400AEEB6F /* IDJChineseCalendar.mm */,
+				C90674CA231E82F400AEEB6F /* IDJCalendar.h */,
+				C90674CB231E82F400AEEB6F /* solar_chinese_calendar */,
+				C90674D2231E82F400AEEB6F /* GYZCustomCalendarPickerView.h */,
+				C90674D3231E82F400AEEB6F /* IDJChineseCalendar.h */,
+				C90674D4231E82F400AEEB6F /* IDJCalendar.m */,
+				C90674D5231E82F400AEEB6F /* GYZCustomCalendarPickerView.m */,
+				C90674D6231E82F400AEEB6F /* IDJCalendarUtil.mm */,
+				C90674D7231E82F400AEEB6F /* GYZCommon.h */,
+				C90674D8231E82F400AEEB6F /* IDJCalendarUtil.h */,
+			);
+			path = CustomCalendar;
+			sourceTree = "<group>";
+		};
+		C90674CB231E82F400AEEB6F /* solar_chinese_calendar */ = {
+			isa = PBXGroup;
+			children = (
+				C90674CC231E82F400AEEB6F /* ChineseCalendarDB.cpp */,
+				C90674CD231E82F400AEEB6F /* SolarDate.h */,
+				C90674CE231E82F400AEEB6F /* SolarDate.cpp */,
+				C90674CF231E82F400AEEB6F /* ChineseDate.h */,
+				C90674D0231E82F400AEEB6F /* ChineseCalendarDB.h */,
+				C90674D1231E82F400AEEB6F /* ChineseDate.cpp */,
+			);
+			path = solar_chinese_calendar;
+			sourceTree = "<group>";
+		};
 		C9379DEE23165C150045D7C5 /* DiaryControllers */ = {
 			isa = PBXGroup;
 			children = (
 				C9379DEF23165C750045D7C5 /* HomeViewController.h */,
 				C9379DF023165C750045D7C5 /* HomeViewController.m */,
+				C9DB73E4231E3E2700DDB1CB /* MakeDiaryViewController.h */,
+				C9DB73E5231E3E2700DDB1CB /* MakeDiaryViewController.m */,
 			);
 			path = DiaryControllers;
 			sourceTree = "<group>";
@@ -327,6 +405,8 @@
 				C9379DF6231660F20045D7C5 /* HomeTableViewCell.m */,
 				C9379DFA231686880045D7C5 /* HomePageTableViewCell.h */,
 				C9379DFB231686880045D7C5 /* HomePageTableViewCell.m */,
+				C9DB73E9231E3F5600DDB1CB /* MakeDiaryView.h */,
+				C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */,
 			);
 			path = DiaryViews;
 			sourceTree = "<group>";
@@ -472,6 +552,7 @@
 		C981F4112307E05D00CA91A5 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C90674C8231E82F400AEEB6F /* CustomCalendar */,
 				C9ABDFA1230BD8660055D5B0 /* SecVerifySDK */,
 				C981F4122307E07100CA91A5 /* MobADSDK */,
 			);
@@ -850,22 +931,31 @@
 				C9ABDFEB230C15CF0055D5B0 /* PersonalInfoView.m in Sources */,
 				C9379DFC231686880045D7C5 /* HomePageTableViewCell.m in Sources */,
 				C9379DF123165C750045D7C5 /* HomeViewController.m in Sources */,
+				C90674DF231E82F400AEEB6F /* SolarDate.cpp in Sources */,
+				C90674E5231E82F400AEEB6F /* IDJCalendar.m in Sources */,
 				C9ABDFF0230C17D90055D5B0 /* UIButton+Common.m in Sources */,
 				C981F3D62307BCA600CA91A5 /* DailyDiary.xcdatamodeld in Sources */,
 				C981F40E2307DECB00CA91A5 /* DD_RootViewController.m in Sources */,
 				C981F4022307DBE300CA91A5 /* DDNavigationController.m in Sources */,
 				C95E5587230D31490076E914 /* UITextField+Common.m in Sources */,
 				C9ABDFCA230BDE910055D5B0 /* LoginViewController.m in Sources */,
+				C9DB73E6231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
+				C90674EB231E82F400AEEB6F /* IDJCalendarUtil.mm in Sources */,
+				C90674E2231E82F400AEEB6F /* ChineseDate.cpp in Sources */,
 				C981F3DE2307BCA800CA91A5 /* main.m in Sources */,
 				C9379DF7231660F20045D7C5 /* HomeTableViewCell.m in Sources */,
 				C95E558D230D48660076E914 /* UITextFieldInherit.m in Sources */,
+				C90674DC231E82F400AEEB6F /* ChineseCalendarDB.cpp in Sources */,
+				C90674D9231E82F400AEEB6F /* IDJChineseCalendar.mm in Sources */,
 				C981F44F2307E65D00CA91A5 /* UILabel+Common.m in Sources */,
 				C981F4542307E7A500CA91A5 /* UIColor+Comomn.m in Sources */,
 				C9ABDFE6230BFBC00055D5B0 /* PersonalInfoViewController.m in Sources */,
 				C9CF2FAB230EC18F007165BD /* OtherLoginView.m in Sources */,
 				C981F3CD2307BCA600CA91A5 /* AppDelegate.m in Sources */,
+				C9DB73EB231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
 				C90631CB2311345A0073BAA1 /* ThirdLoginView.m in Sources */,
 				C9CF2FA6230EC10E007165BD /* OtherLoginViewController.m in Sources */,
+				C90674E8231E82F400AEEB6F /* GYZCustomCalendarPickerView.m in Sources */,
 				C90631D023113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,13 +967,22 @@
 				C9ABDFEC230C15CF0055D5B0 /* PersonalInfoView.m in Sources */,
 				C90631CC2311345A0073BAA1 /* ThirdLoginView.m in Sources */,
 				C981F3E82307BCA900CA91A5 /* DailyDiaryTests.m in Sources */,
+				C90674E6231E82F400AEEB6F /* IDJCalendar.m in Sources */,
 				C981F4032307DBE300CA91A5 /* DDNavigationController.m in Sources */,
 				C9CF2FAC230EC18F007165BD /* OtherLoginView.m in Sources */,
+				C90674E0231E82F400AEEB6F /* SolarDate.cpp in Sources */,
+				C90674E9231E82F400AEEB6F /* GYZCustomCalendarPickerView.m in Sources */,
+				C90674DA231E82F400AEEB6F /* IDJChineseCalendar.mm in Sources */,
+				C9DB73EC231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
 				C981F40F2307DECB00CA91A5 /* DD_RootViewController.m in Sources */,
 				C981F4502307E65D00CA91A5 /* UILabel+Common.m in Sources */,
 				C9ABDFF1230C17D90055D5B0 /* UIButton+Common.m in Sources */,
+				C90674EC231E82F400AEEB6F /* IDJCalendarUtil.mm in Sources */,
+				C90674E3231E82F400AEEB6F /* ChineseDate.cpp in Sources */,
 				C9379DF223165C750045D7C5 /* HomeViewController.m in Sources */,
 				C95E558E230D48660076E914 /* UITextFieldInherit.m in Sources */,
+				C9DB73E7231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
+				C90674DD231E82F400AEEB6F /* ChineseCalendarDB.cpp in Sources */,
 				C90631D123113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */,
 				C9CF2FA2230E6F70007165BD /* UIImageView+Common.m in Sources */,
 				C95E5588230D31490076E914 /* UITextField+Common.m in Sources */,
@@ -903,13 +1002,22 @@
 				C9ABDFED230C15CF0055D5B0 /* PersonalInfoView.m in Sources */,
 				C90631CD2311345A0073BAA1 /* ThirdLoginView.m in Sources */,
 				C981F3F32307BCA900CA91A5 /* DailyDiaryUITests.m in Sources */,
+				C90674E7231E82F400AEEB6F /* IDJCalendar.m in Sources */,
 				C981F4042307DBE300CA91A5 /* DDNavigationController.m in Sources */,
 				C9CF2FAD230EC18F007165BD /* OtherLoginView.m in Sources */,
+				C90674E1231E82F400AEEB6F /* SolarDate.cpp in Sources */,
+				C90674EA231E82F400AEEB6F /* GYZCustomCalendarPickerView.m in Sources */,
+				C90674DB231E82F400AEEB6F /* IDJChineseCalendar.mm in Sources */,
+				C9DB73ED231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
 				C981F4102307DECB00CA91A5 /* DD_RootViewController.m in Sources */,
 				C981F4512307E65D00CA91A5 /* UILabel+Common.m in Sources */,
 				C9ABDFF2230C17D90055D5B0 /* UIButton+Common.m in Sources */,
+				C90674ED231E82F400AEEB6F /* IDJCalendarUtil.mm in Sources */,
+				C90674E4231E82F400AEEB6F /* ChineseDate.cpp in Sources */,
 				C9379DF323165C750045D7C5 /* HomeViewController.m in Sources */,
 				C95E558F230D48660076E914 /* UITextFieldInherit.m in Sources */,
+				C9DB73E8231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
+				C90674DE231E82F400AEEB6F /* ChineseCalendarDB.cpp in Sources */,
 				C90631D223113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */,
 				C9CF2FA3230E6F70007165BD /* UIImageView+Common.m in Sources */,
 				C95E5589230D31490076E914 /* UITextField+Common.m in Sources */,
