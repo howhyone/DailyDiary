@@ -7,6 +7,7 @@
 //
 
 #import "MakeDiaryView.h"
+#import "PackageView.h"
 
 @implementation MakeDiaryView
 
@@ -20,15 +21,28 @@
 
 -(void)setupViewInfo
 {
-    _diaryTextField = [UITextField textFieldWithFont:15 withTextColor:0x151718 withBackgroundColor:0xF5F6F8];
-    [self addSubview:_diaryTextField];
+    [self setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
+    _diaryTextView = [[UITextView alloc] initWithFrame:self.bounds];
+    [self addSubview:_diaryTextView];
+    KeyboardToolBarView *keyboardToolBarView = [[KeyboardToolBarView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 42 * kScale_Height)];
+    _diaryTextView.inputAccessoryView = keyboardToolBarView;
+    
+    
+    UIImage *image1 = [UIImage imageNamed:@"微博"];
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.image = image1;
+    
 }
+
+
+
+
 
 
 @end
 
 
-@implementation titleDateView
+@implementation TitleDateView
 
 -(id)initWithFrame:(CGRect)frame
 {
@@ -40,12 +54,49 @@
 
 -(void)setupViewInfo
 {
-    UIButton *dateBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    dateBtn.contentMode = UIViewContentModeLeft;
-    [dateBtn setTitle:@"22" forState:UIControlStateNormal];
-    [dateBtn setImage:[UIImage imageNamed:@"下拉"] forState:UIControlStateNormal];
+    __weak typeof(self) weakSelf = self;
+    _dateBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_dateBtn addTarget:self action:@selector(clickDateSelector) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_dateBtn];
+    [_dateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.top).offset(0);
+        make.left.equalTo(self.left).offset(0);
+        make.right.equalTo(self.right).offset(0);
+        make.bottom.equalTo(self.bottom).offset(0);
+    }];
+    UIImageView *titleImageView = [UIImageView imageViewWithImageName:@"下拉"];
+    [_dateBtn addSubview:titleImageView];
+    [titleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(weakSelf.dateBtn.right).offset(0);
+        make.width.equalTo(10 * kScale_Width);
+        make.height.equalTo(6 * kScale_Height);
+        make.centerY.equalTo(weakSelf.dateBtn.centerY).offset(0);
+    }];
+
+    UILabel *titleLabel = [UILabel labelWithFont:15.0 WithText:@"2019年 7月6日" WithColor:0x151718];
+    titleLabel.textAlignment = NSTextAlignmentRight;
+    self.titleLabel = titleLabel;
+    [_dateBtn addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(titleImageView.left).offset(-10);
+        make.centerY.equalTo(titleImageView.centerY).offset(0);
+        make.height.equalTo(21);
+        make.left.equalTo(weakSelf.left).offset(0);
+    }];
     
-    [self addSubview:dateBtn];
+    UITapGestureRecognizer *titleTapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickDateSelector:)];
+    self.userInteractionEnabled = YES;
+    [self addGestureRecognizer:titleTapGes];
+}
+
+
+#pragma mark ----------- 按钮点击事件
+
+-(void)clickDateSelector
+{
+    if ([self.dateDelegate respondsToSelector:@selector(showCalendar)]) {
+        [self.dateDelegate showCalendar];
+    }
 }
 
 @end

@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 +(UIButton *)buttonWithTitle:(NSString *)title withTitleColor:(UInt32)titleColor withImage:(NSString *)imageName;
 
 +(UIButton *)buttonWithTitle:(NSString *)title withTitleColor:(UInt32)titleColor withBackgroundColor:(UInt32)backgroundColor;
+
+//改变按钮htitle和image位置， title左image右
++(UIButton *)buttonWithLeftTitle:(NSString *)leftTitleText FontSize:(CGFloat)fontSize ColorName:(UInt32)colorName RightImageName:(NSString *)rightImageName;
+
 @end
 
 NS_ASSUME_NONNULL_END

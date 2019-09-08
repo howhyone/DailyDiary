@@ -12,14 +12,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MakeDiaryView : UIView
 
-@property(nonatomic, strong)UITextField *diaryTextField;
+@property(nonatomic, strong)UITextView *diaryTextView;
 
 @end
 
 //导航控制器title：日历选择器
-@interface titleDateView : UIView
 
+@protocol clickDateSelectorProtocol <NSObject>
 
+-(void)showCalendar;
+-(void)hideCalendar;
+@end
+@interface TitleDateView : UIView
+
+@property(nonatomic, weak) id<clickDateSelectorProtocol> dateDelegate;
+
+@property(nonatomic, strong)UIButton *dateBtn;
+@property(nonatomic, strong)UILabel *titleLabel;
 @end
 
 NS_ASSUME_NONNULL_END

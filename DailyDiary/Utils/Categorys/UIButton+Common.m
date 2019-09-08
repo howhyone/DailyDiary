@@ -39,6 +39,25 @@
     return buttonCommon;
 }
 
-
++(UIButton *)buttonWithLeftTitle:(NSString *)leftTitleText FontSize:(CGFloat)fontSize ColorName:(UInt32)colorName RightImageName:(NSString *)rightImageName
+{
+    CGFloat intervalF = 10.0;
+    UIButton *tempButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [tempButton setTitle:leftTitleText forState:UIControlStateNormal];
+    [tempButton setTitleColor:[UIColor colorWithRGBHex:colorName] forState:UIControlStateNormal];
+    [tempButton setImage:[UIImage imageNamed:rightImageName] forState:UIControlStateNormal];
+    CGFloat titleRight = tempButton.imageView.frame.size.width + intervalF;  // title需要左移的偏移量
+    CGFloat imageLeft = 0.0;  //图片需要右移的偏移量
+    //    使用frame获取titleLabel的width、height为nil，要使用intrinsicContentSize属性
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0) {
+        imageLeft = tempButton.titleLabel.intrinsicContentSize.width;
+    }else{
+        imageLeft = tempButton.titleLabel.frame.size.width + intervalF;
+    }
+    [tempButton setImageEdgeInsets:UIEdgeInsetsMake(0, imageLeft, 0, -imageLeft)];
+    [tempButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -titleRight, 0, titleRight)];
+    [tempButton setNeedsLayout];
+    return tempButton;
+}
 
 @end

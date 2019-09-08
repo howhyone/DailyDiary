@@ -26,12 +26,12 @@
                   moduleName = "DailyDiary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/LoginControllers/LoginViewController.m"
-                  timestampString = "589205820.029536"
+                  timestampString = "589623557.6418951"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
                   endingLineNumber = "32"
-                  offsetFromSymbolStart = "37">
+                  offsetFromSymbolStart = "52">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "DailyDiary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/LoginControllers/LoginViewController.m"
-                  timestampString = "589205820.0328701"
+                  timestampString = "589623557.643734"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
-                  offsetFromSymbolStart = "75">
+                  offsetFromSymbolStart = "84">
                </Location>
             </Locations>
          </BreakpointContent>
