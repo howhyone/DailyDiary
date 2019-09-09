@@ -7,7 +7,6 @@
 //
 
 #import "MakeDiaryView.h"
-#import "PackageView.h"
 
 @implementation MakeDiaryView
 
@@ -24,8 +23,8 @@
     [self setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
     _diaryTextView = [[UITextView alloc] initWithFrame:self.bounds];
     [self addSubview:_diaryTextView];
-    KeyboardToolBarView *keyboardToolBarView = [[KeyboardToolBarView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 42 * kScale_Height)];
-    _diaryTextView.inputAccessoryView = keyboardToolBarView;
+    _keyboardToolBarView = [[KeyboardToolBarView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 42 * kScale_Height)];
+    _diaryTextView.inputAccessoryView = _keyboardToolBarView;
     
     
     UIImage *image1 = [UIImage imageNamed:@"微博"];

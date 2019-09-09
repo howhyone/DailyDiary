@@ -10,11 +10,15 @@
 #import "MakeDiaryView.h"
 #import "HomeViewController.h"
 #import "LXCalender.h"
+#import "JKImagePickerController.h"
+#import "PackageView.h"
 
-@interface MakeDiaryViewController ()<clickDateSelectorProtocol>
+@interface MakeDiaryViewController ()<clickDateSelectorProtocol,JKImagePickerControllerDelegate,clickKeyboardToolBarItemDelegate>
 @property(nonatomic, strong)TitleDateView *titleDateView;
 @property(nonatomic, strong)LXCalendarView *calendarView;
 @property(nonatomic, strong)MakeDiaryView *makeDiaryView;
+@property(nonatomic,strong) NSMutableArray *selectionPhotoArray;
+
 @end
 
 @implementation MakeDiaryViewController
@@ -40,6 +44,7 @@
      _titleDateView.dateDelegate = self;
     
     _makeDiaryView = [[MakeDiaryView alloc] initWithFrame:CGRectMake(0, kStateNavigationHeight, kScreen_Width, kScreen_Height)];
+    _makeDiaryView.keyboardToolBarView.delegate = self;
     [self.view addSubview:_makeDiaryView];
 }
 
@@ -127,4 +132,30 @@
     return true;
 }
 
+
+-(void)clickKeyboardToolBarAlbumItem
+{
+    JKImagePickerController *imagePickerController = [[JKImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.showsCancelButton = YES;//是否显示取消按钮
+    imagePickerController.allowsMultipleSelection = YES;
+    imagePickerController.minimumNumberOfSelection = 1;//最少选取几张
+    imagePickerController.maximumNumberOfSelection = 10000;//最多选取几张照骗
+    imagePickerController.selectedAssetArray = self.selectionPhotoArray;//已经选取的照片 如果不需要注释即可
+//    UINavigationController*navigationController = [[UINavigationController alloc] initWithRootViewController:imagePickerController];//给页面套一个导航 这个导航可以是你自定义的 在此修改
+//    [self presentViewController:navigationController animated:YES completion:NULL];
+    [self.navigationController pushViewController:imagePickerController animated:NO];
+}
+
+- (void)imagePickerController:(JKImagePickerController *)imagePicker didSelectAssets:(NSArray *)assets isSource:(BOOL)source
+{
+    NSLog(@"ahahahhaha");
+}
+
+- (void)imagePickerControllerDidCancel:(JKImagePickerController *)imagePicker
+{
+    [imagePicker dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 @end

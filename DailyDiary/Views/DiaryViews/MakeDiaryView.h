@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PackageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+
 
 @interface MakeDiaryView : UIView
 
 @property(nonatomic, strong)UITextView *diaryTextView;
+@property(nonatomic, strong) KeyboardToolBarView *keyboardToolBarView;
+
 
 @end
 

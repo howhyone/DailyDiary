@@ -149,11 +149,11 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     NSLog(@"我在下拉刷新");
     __weak typeof(self) weakSelf = self;
     //利用延时函数模拟网络加载
-    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
-    dispatch_after(time, dispatch_get_main_queue(), ^{
-        [weakSelf.homeTableView.mj_header endRefreshing];
-        [weakSelf.homeTableView reloadData];
-    });
+//    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
+//    dispatch_after(time, dispatch_get_main_queue(), ^{
+//        [weakSelf.homeTableView.mj_header endRefreshing];
+//        [weakSelf.homeTableView reloadData];
+//    });
 }
 //上拉加载更多
 - (void)upFreshLoadMoreData
