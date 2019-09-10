@@ -52,7 +52,7 @@
         make.right.equalTo(keyboardToolBar.right).offset(-15 * kScale_Width);
         make.top.equalTo(keyboardToolBar.top).offset(11 * kScale_Height);
         make.bottom.equalTo(keyboardToolBar.bottom).offset(-11 * kScale_Height);
-        make.width.equalTo(30 * kScale_Width);
+        make.width.equalTo(50 * kScale_Width);
     }];
 }
 

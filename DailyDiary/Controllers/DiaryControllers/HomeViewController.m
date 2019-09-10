@@ -10,6 +10,10 @@
 #import "HomeTableViewCell.h"
 #import "MJRefresh.h"
 #import "MakeDiaryViewController.h"
+#import "SettingViewController.h"
+#import "SearchDiaryViewController.h"
+
+
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *homeTableView;
 @end
@@ -28,6 +32,7 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
         [_homeTableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:@"HomeTableViewCell"];
         [_homeTableView registerClass:[ImageTextTableViewCell class] forCellReuseIdentifier:@"ImageTextTableViewCell"];
         _homeTableView.showsVerticalScrollIndicator = NO;
+        _homeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _homeTableView;
 }
@@ -39,18 +44,18 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 
 -(void)setupViewInfo
 {
-    [self.view setBackgroundColor:[UIColor colorWithRed:245 green:246 blue:248 alpha:1.0]];
+    [self.view setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
     UILabel *titleLabel = [UILabel labelWithFont:15.0 WithText:@"DAYDAY日记" WithColor:0x151718];
     self.navigationItem.titleView = titleLabel;
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"设置"] style:UIBarButtonItemStylePlain target:self action:@selector(clickSetting)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     [self.view addSubview:self.homeTableView];
     
-    _homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downFreshloadData)];
-    [_homeTableView.mj_header beginRefreshing];
-    
-    _homeTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(upFreshLoadMoreData)];
-    [_homeTableView.mj_footer beginRefreshing];
+//    _homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downFreshloadData)];
+//    [_homeTableView.mj_header beginRefreshing];
+//
+//    _homeTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(upFreshLoadMoreData)];
+//    [_homeTableView.mj_footer beginRefreshing];
     
     UIView *bottomView = [[UIView alloc] init];
     [bottomView setBackgroundColor:[UIColor colorWithRGBHex:0x151718]];
@@ -100,13 +105,13 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80 * kScale_Height;
+    return 117 * kScale_Height;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 37 * kScale_Height;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return 37 * kScale_Height;
+//}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -128,7 +133,8 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 #pragma mark -----------按钮点击事件
 -(void)clickSetting
 {
-   
+    SettingViewController *settingVC = [[SettingViewController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:NO];
 }
 
 -(void)clickMakeDiary
@@ -139,7 +145,8 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 
 -(void)clickSearchDiary
 {
-    
+    SearchDiaryViewController * searchDiaryVC = [[SearchDiaryViewController alloc] init];
+    [self.navigationController pushViewController:searchDiaryVC animated:YES];
 }
 //下拉刷新
 - (void)downFreshloadData

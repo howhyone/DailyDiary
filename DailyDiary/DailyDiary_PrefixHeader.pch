@@ -44,8 +44,8 @@
 #define Device_Height [[UIScreen mainScreen] bounds].size.height
 #import "LxButton.h"
 #import "UIColor+Expanded.h"
+
 #import "UILabel+LXLabel.h"
-#import "UIView+LX_Frame.h"
 #import "UIView+FTCornerdious.h"
 
 #endif /* DailyDiary_PrefixHeader_pch */

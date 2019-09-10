@@ -7,6 +7,8 @@
 //
 
 #import "LXCalenderCell.h"
+#import "UIView+LX_Frame.h"
+
 @interface LXCalenderCell()
 @property (weak, nonatomic) IBOutlet UILabel *label;
 

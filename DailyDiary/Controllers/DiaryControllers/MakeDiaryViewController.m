@@ -10,10 +10,10 @@
 #import "MakeDiaryView.h"
 #import "HomeViewController.h"
 #import "LXCalender.h"
-#import "JKImagePickerController.h"
 #import "PackageView.h"
+#import <TZImagePickerController.h>
 
-@interface MakeDiaryViewController ()<clickDateSelectorProtocol,JKImagePickerControllerDelegate,clickKeyboardToolBarItemDelegate>
+@interface MakeDiaryViewController ()<clickDateSelectorProtocol,clickKeyboardToolBarItemDelegate,TZImagePickerControllerDelegate>
 @property(nonatomic, strong)TitleDateView *titleDateView;
 @property(nonatomic, strong)LXCalendarView *calendarView;
 @property(nonatomic, strong)MakeDiaryView *makeDiaryView;
@@ -24,6 +24,14 @@
 @implementation MakeDiaryViewController
 {
     UITapGestureRecognizer *tapGestureR;
+}
+
+-(NSMutableArray *)selectionPhotoArray
+{
+    if (!_selectionPhotoArray) {
+        _selectionPhotoArray = [NSMutableArray arrayWithCapacity:1];
+    }
+    return _selectionPhotoArray;
 }
 
 - (void)viewDidLoad {
@@ -48,7 +56,22 @@
     [self.view addSubview:_makeDiaryView];
 }
 
-
+-(NSMutableAttributedString *)setAttributedString
+{
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.image = _selectionPhotoArray[0];
+    attachment.bounds = CGRectMake(0, 0, 40, 40);
+    NSAttributedString *textAttachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
+    NSMutableAttributedString *mutableAttributed = [[NSMutableAttributedString alloc] initWithAttributedString:_makeDiaryView.diaryTextView.attributedText];
+    [mutableAttributed insertAttributedString:textAttachmentString atIndex:_makeDiaryView.diaryTextView.selectedRange.location];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:5.0];
+    [paragraphStyle setParagraphSpacing:20.0];
+    [paragraphStyle setAlignment:NSTextAlignmentLeft];
+    [mutableAttributed addAttribute:NSParagraphStyleAttributeName  value:paragraphStyle range:NSMakeRange(0, _makeDiaryView.diaryTextView.text.length)];
+    return mutableAttributed;
+    
+}
 
      
      
@@ -105,13 +128,13 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowzx:) name:UIKeyboardDidShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowzx:) name:UIKeyboardDidShowNotification object:nil];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHidden) name:UIKeyboardDidHideNotification object:nil];
     [super viewWillAppear:animated];
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
 }
 
 -(void)keyboardDidShowzx:(NSNotification *)notification
@@ -132,30 +155,26 @@
     return true;
 }
 
-
+//添加相册图片
 -(void)clickKeyboardToolBarAlbumItem
 {
-    JKImagePickerController *imagePickerController = [[JKImagePickerController alloc] init];
-    imagePickerController.delegate = self;
-    imagePickerController.showsCancelButton = YES;//是否显示取消按钮
-    imagePickerController.allowsMultipleSelection = YES;
-    imagePickerController.minimumNumberOfSelection = 1;//最少选取几张
-    imagePickerController.maximumNumberOfSelection = 10000;//最多选取几张照骗
-    imagePickerController.selectedAssetArray = self.selectionPhotoArray;//已经选取的照片 如果不需要注释即可
-//    UINavigationController*navigationController = [[UINavigationController alloc] initWithRootViewController:imagePickerController];//给页面套一个导航 这个导航可以是你自定义的 在此修改
-//    [self presentViewController:navigationController animated:YES completion:NULL];
-    [self.navigationController pushViewController:imagePickerController animated:NO];
-}
-
-- (void)imagePickerController:(JKImagePickerController *)imagePicker didSelectAssets:(NSArray *)assets isSource:(BOOL)source
-{
-    NSLog(@"ahahahhaha");
-}
-
-- (void)imagePickerControllerDidCancel:(JKImagePickerController *)imagePicker
-{
-    [imagePicker dismissViewControllerAnimated:YES completion:^{
+    __weak typeof(self) weakSelf= self;
+    NSInteger Count =  9;//剩余可选图片数量
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:Count delegate:self];
+    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photo, NSArray * assets, BOOL isSelectOriginalPhoto) {
+        for (NSInteger i = 0; i<photo.count; i++) {
+            UIImage *img = photo[i];//压缩图片
+            [weakSelf.selectionPhotoArray addObject:img];
+        }
+        weakSelf.makeDiaryView.diaryTextView.attributedText = [self setAttributedString];
         
     }];
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
 }
+
+-(void)clickKeyboardToolBarDoneItem
+{
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
 @end

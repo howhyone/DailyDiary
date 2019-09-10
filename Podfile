@@ -7,7 +7,8 @@ target 'DailyDiary' do
       pod 'Masonry'
       pod 'IQKeyboardManager'
       pod 'MJRefresh'
-      
+      pod 'TZImagePickerController' #选择相册图片
+
       
       
       pod 'mob_sharesdk','~> 4.2.8'

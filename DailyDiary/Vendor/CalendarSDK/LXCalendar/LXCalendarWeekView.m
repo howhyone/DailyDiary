@@ -7,6 +7,7 @@
 //
 
 #import "LXCalendarWeekView.h"
+#import "UIView+LX_Frame.h"
 
 @implementation LXCalendarWeekView
 

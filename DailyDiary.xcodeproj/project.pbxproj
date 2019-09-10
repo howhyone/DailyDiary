@@ -14,6 +14,8 @@
 		C90631D023113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */; };
 		C90631D123113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */; };
 		C90631D223113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */; };
+		C916EE5F2327D227005BDF4C /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C916EE5E2327D227005BDF4C /* pic.jpg */; };
+		C916EE612327D241005BDF4C /* jjy2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C916EE602327D241005BDF4C /* jjy2.jpg */; };
 		C9379DF123165C750045D7C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DF023165C750045D7C5 /* HomeViewController.m */; };
 		C9379DF223165C750045D7C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DF023165C750045D7C5 /* HomeViewController.m */; };
 		C9379DF323165C750045D7C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DF023165C750045D7C5 /* HomeViewController.m */; };
@@ -29,6 +31,12 @@
 		C95E558D230D48660076E914 /* UITextFieldInherit.m in Sources */ = {isa = PBXBuildFile; fileRef = C95E558C230D48660076E914 /* UITextFieldInherit.m */; };
 		C95E558E230D48660076E914 /* UITextFieldInherit.m in Sources */ = {isa = PBXBuildFile; fileRef = C95E558C230D48660076E914 /* UITextFieldInherit.m */; };
 		C95E558F230D48660076E914 /* UITextFieldInherit.m in Sources */ = {isa = PBXBuildFile; fileRef = C95E558C230D48660076E914 /* UITextFieldInherit.m */; };
+		C97244DE232641D00000F916 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97244DD232641D00000F916 /* SettingViewController.m */; };
+		C97244DF232641D00000F916 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97244DD232641D00000F916 /* SettingViewController.m */; };
+		C97244E0232641D00000F916 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97244DD232641D00000F916 /* SettingViewController.m */; };
+		C97244E42326424E0000F916 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C97244E32326424E0000F916 /* SettingTableViewCell.m */; };
+		C97244E52326424E0000F916 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C97244E32326424E0000F916 /* SettingTableViewCell.m */; };
+		C97244E62326424E0000F916 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C97244E32326424E0000F916 /* SettingTableViewCell.m */; };
 		C981F3CD2307BCA600CA91A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C981F3CC2307BCA600CA91A5 /* AppDelegate.m */; };
 		C981F3D02307BCA600CA91A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C981F3CF2307BCA600CA91A5 /* ViewController.m */; };
 		C981F3D62307BCA600CA91A5 /* DailyDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C981F3D42307BCA600CA91A5 /* DailyDiary.xcdatamodeld */; };
@@ -125,51 +133,6 @@
 		C9DB73EB231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
 		C9DB73EC231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
 		C9DB73ED231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
-		C9EB7E0C23260302003D1DB2 /* JKPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DED23260302003D1DB2 /* JKPhotoBrowser.m */; };
-		C9EB7E0D23260302003D1DB2 /* JKPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DED23260302003D1DB2 /* JKPhotoBrowser.m */; };
-		C9EB7E0E23260302003D1DB2 /* JKPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DED23260302003D1DB2 /* JKPhotoBrowser.m */; };
-		C9EB7E0F23260302003D1DB2 /* JKAssetsThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DEE23260302003D1DB2 /* JKAssetsThumbnailView.m */; };
-		C9EB7E1023260302003D1DB2 /* JKAssetsThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DEE23260302003D1DB2 /* JKAssetsThumbnailView.m */; };
-		C9EB7E1123260302003D1DB2 /* JKAssetsThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DEE23260302003D1DB2 /* JKAssetsThumbnailView.m */; };
-		C9EB7E1223260302003D1DB2 /* JKAssetsCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF123260302003D1DB2 /* JKAssetsCollectionFooterView.m */; };
-		C9EB7E1323260302003D1DB2 /* JKAssetsCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF123260302003D1DB2 /* JKAssetsCollectionFooterView.m */; };
-		C9EB7E1423260302003D1DB2 /* JKAssetsCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF123260302003D1DB2 /* JKAssetsCollectionFooterView.m */; };
-		C9EB7E1523260302003D1DB2 /* JKImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF223260302003D1DB2 /* JKImagePickerController.m */; };
-		C9EB7E1623260302003D1DB2 /* JKImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF223260302003D1DB2 /* JKImagePickerController.m */; };
-		C9EB7E1723260302003D1DB2 /* JKImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF223260302003D1DB2 /* JKImagePickerController.m */; };
-		C9EB7E1823260302003D1DB2 /* UIView+JKPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF323260302003D1DB2 /* UIView+JKPicker.m */; };
-		C9EB7E1923260302003D1DB2 /* UIView+JKPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF323260302003D1DB2 /* UIView+JKPicker.m */; };
-		C9EB7E1A23260302003D1DB2 /* UIView+JKPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF323260302003D1DB2 /* UIView+JKPicker.m */; };
-		C9EB7E1B23260302003D1DB2 /* JKUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF723260302003D1DB2 /* JKUtil.m */; };
-		C9EB7E1C23260302003D1DB2 /* JKUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF723260302003D1DB2 /* JKUtil.m */; };
-		C9EB7E1D23260302003D1DB2 /* JKUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF723260302003D1DB2 /* JKUtil.m */; };
-		C9EB7E1E23260302003D1DB2 /* JKAssetsGroupsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF923260302003D1DB2 /* JKAssetsGroupsView.m */; };
-		C9EB7E1F23260302003D1DB2 /* JKAssetsGroupsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF923260302003D1DB2 /* JKAssetsGroupsView.m */; };
-		C9EB7E2023260302003D1DB2 /* JKAssetsGroupsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DF923260302003D1DB2 /* JKAssetsGroupsView.m */; };
-		C9EB7E2123260302003D1DB2 /* JKPhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DFA23260302003D1DB2 /* JKPhotoBrowserCell.m */; };
-		C9EB7E2223260302003D1DB2 /* JKPhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DFA23260302003D1DB2 /* JKPhotoBrowserCell.m */; };
-		C9EB7E2323260302003D1DB2 /* JKPhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DFA23260302003D1DB2 /* JKPhotoBrowserCell.m */; };
-		C9EB7E2423260302003D1DB2 /* JKAssetsGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DFC23260302003D1DB2 /* JKAssetsGroupCell.m */; };
-		C9EB7E2523260302003D1DB2 /* JKAssetsGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DFC23260302003D1DB2 /* JKAssetsGroupCell.m */; };
-		C9EB7E2623260302003D1DB2 /* JKAssetsGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DFC23260302003D1DB2 /* JKAssetsGroupCell.m */; };
-		C9EB7E2723260302003D1DB2 /* JKPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DFF23260302003D1DB2 /* JKPromptView.m */; };
-		C9EB7E2823260302003D1DB2 /* JKPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DFF23260302003D1DB2 /* JKPromptView.m */; };
-		C9EB7E2923260302003D1DB2 /* JKPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7DFF23260302003D1DB2 /* JKPromptView.m */; };
-		C9EB7E2A23260302003D1DB2 /* JKAssetsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7E0023260302003D1DB2 /* JKAssetsViewCell.m */; };
-		C9EB7E2B23260302003D1DB2 /* JKAssetsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7E0023260302003D1DB2 /* JKAssetsViewCell.m */; };
-		C9EB7E2C23260302003D1DB2 /* JKAssetsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7E0023260302003D1DB2 /* JKAssetsViewCell.m */; };
-		C9EB7E2D23260302003D1DB2 /* PhotoAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7E0323260302003D1DB2 /* PhotoAlbumManager.m */; };
-		C9EB7E2E23260302003D1DB2 /* PhotoAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7E0323260302003D1DB2 /* PhotoAlbumManager.m */; };
-		C9EB7E2F23260302003D1DB2 /* PhotoAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7E0323260302003D1DB2 /* PhotoAlbumManager.m */; };
-		C9EB7E3023260302003D1DB2 /* JKAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7E0423260302003D1DB2 /* JKAssets.m */; };
-		C9EB7E3123260302003D1DB2 /* JKAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7E0423260302003D1DB2 /* JKAssets.m */; };
-		C9EB7E3223260302003D1DB2 /* JKAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7E0423260302003D1DB2 /* JKAssets.m */; };
-		C9EB7E3323260302003D1DB2 /* JKImagePickerController.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9EB7E0823260302003D1DB2 /* JKImagePickerController.strings */; };
-		C9EB7E3423260302003D1DB2 /* JKImagePickerController.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9EB7E0823260302003D1DB2 /* JKImagePickerController.strings */; };
-		C9EB7E3523260302003D1DB2 /* JKImagePickerController.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9EB7E0823260302003D1DB2 /* JKImagePickerController.strings */; };
-		C9EB7E3623260302003D1DB2 /* ImagesPicker.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9EB7E0B23260302003D1DB2 /* ImagesPicker.xcassets */; };
-		C9EB7E3723260302003D1DB2 /* ImagesPicker.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9EB7E0B23260302003D1DB2 /* ImagesPicker.xcassets */; };
-		C9EB7E3823260302003D1DB2 /* ImagesPicker.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9EB7E0B23260302003D1DB2 /* ImagesPicker.xcassets */; };
 		C9FBAC592320F6E400ABA649 /* LXCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FBAC492320F6E400ABA649 /* LXCalendarWeekView.m */; };
 		C9FBAC5A2320F6E400ABA649 /* LXCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FBAC492320F6E400ABA649 /* LXCalendarWeekView.m */; };
 		C9FBAC5B2320F6E400ABA649 /* LXCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FBAC492320F6E400ABA649 /* LXCalendarWeekView.m */; };
@@ -242,6 +205,8 @@
 		C90631CA2311345A0073BAA1 /* ThirdLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdLoginView.m; sourceTree = "<group>"; };
 		C90631CE23113C3C0073BAA1 /* ThirdLoginFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdLoginFunction.h; sourceTree = "<group>"; };
 		C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdLoginFunction.m; sourceTree = "<group>"; };
+		C916EE5E2327D227005BDF4C /* pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic.jpg; sourceTree = "<group>"; };
+		C916EE602327D241005BDF4C /* jjy2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jjy2.jpg; sourceTree = "<group>"; };
 		C9379DEF23165C750045D7C5 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C9379DF023165C750045D7C5 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		C9379DF5231660F20045D7C5 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
@@ -252,6 +217,10 @@
 		C95E5586230D31490076E914 /* UITextField+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Common.m"; sourceTree = "<group>"; };
 		C95E558B230D48660076E914 /* UITextFieldInherit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITextFieldInherit.h; sourceTree = "<group>"; };
 		C95E558C230D48660076E914 /* UITextFieldInherit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITextFieldInherit.m; sourceTree = "<group>"; };
+		C97244DC232641D00000F916 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		C97244DD232641D00000F916 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		C97244E22326424E0000F916 /* SettingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
+		C97244E32326424E0000F916 /* SettingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
 		C981F3C82307BCA600CA91A5 /* DailyDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C981F3CB2307BCA600CA91A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C981F3CC2307BCA600CA91A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -334,35 +303,6 @@
 		C9DB73E5231E3E2700DDB1CB /* MakeDiaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeDiaryViewController.m; sourceTree = "<group>"; };
 		C9DB73E9231E3F5600DDB1CB /* MakeDiaryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeDiaryView.h; sourceTree = "<group>"; };
 		C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeDiaryView.m; sourceTree = "<group>"; };
-		C9EB7DED23260302003D1DB2 /* JKPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPhotoBrowser.m; sourceTree = "<group>"; };
-		C9EB7DEE23260302003D1DB2 /* JKAssetsThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAssetsThumbnailView.m; sourceTree = "<group>"; };
-		C9EB7DEF23260302003D1DB2 /* JKAssetsGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAssetsGroupCell.h; sourceTree = "<group>"; };
-		C9EB7DF023260302003D1DB2 /* JKPhotoBrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPhotoBrowserCell.h; sourceTree = "<group>"; };
-		C9EB7DF123260302003D1DB2 /* JKAssetsCollectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAssetsCollectionFooterView.m; sourceTree = "<group>"; };
-		C9EB7DF223260302003D1DB2 /* JKImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKImagePickerController.m; sourceTree = "<group>"; };
-		C9EB7DF323260302003D1DB2 /* UIView+JKPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKPicker.m"; sourceTree = "<group>"; };
-		C9EB7DF423260302003D1DB2 /* PhotoAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumManager.h; sourceTree = "<group>"; };
-		C9EB7DF523260302003D1DB2 /* JKAssetsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAssetsViewCell.h; sourceTree = "<group>"; };
-		C9EB7DF623260302003D1DB2 /* JKPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPromptView.h; sourceTree = "<group>"; };
-		C9EB7DF723260302003D1DB2 /* JKUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKUtil.m; sourceTree = "<group>"; };
-		C9EB7DF823260302003D1DB2 /* JKAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAssets.h; sourceTree = "<group>"; };
-		C9EB7DF923260302003D1DB2 /* JKAssetsGroupsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAssetsGroupsView.m; sourceTree = "<group>"; };
-		C9EB7DFA23260302003D1DB2 /* JKPhotoBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPhotoBrowserCell.m; sourceTree = "<group>"; };
-		C9EB7DFB23260302003D1DB2 /* JKAssetsCollectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAssetsCollectionFooterView.h; sourceTree = "<group>"; };
-		C9EB7DFC23260302003D1DB2 /* JKAssetsGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAssetsGroupCell.m; sourceTree = "<group>"; };
-		C9EB7DFD23260302003D1DB2 /* JKAssetsThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAssetsThumbnailView.h; sourceTree = "<group>"; };
-		C9EB7DFE23260302003D1DB2 /* JKPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPhotoBrowser.h; sourceTree = "<group>"; };
-		C9EB7DFF23260302003D1DB2 /* JKPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPromptView.m; sourceTree = "<group>"; };
-		C9EB7E0023260302003D1DB2 /* JKAssetsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAssetsViewCell.m; sourceTree = "<group>"; };
-		C9EB7E0123260302003D1DB2 /* UIView+JKPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKPicker.h"; sourceTree = "<group>"; };
-		C9EB7E0223260302003D1DB2 /* JKImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKImagePickerController.h; sourceTree = "<group>"; };
-		C9EB7E0323260302003D1DB2 /* PhotoAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumManager.m; sourceTree = "<group>"; };
-		C9EB7E0423260302003D1DB2 /* JKAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAssets.m; sourceTree = "<group>"; };
-		C9EB7E0523260302003D1DB2 /* JKUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKUtil.h; sourceTree = "<group>"; };
-		C9EB7E0623260302003D1DB2 /* JKAssetsGroupsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAssetsGroupsView.h; sourceTree = "<group>"; };
-		C9EB7E0923260302003D1DB2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/JKImagePickerController.strings"; sourceTree = "<group>"; };
-		C9EB7E0A23260302003D1DB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/JKImagePickerController.strings; sourceTree = "<group>"; };
-		C9EB7E0B23260302003D1DB2 /* ImagesPicker.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImagesPicker.xcassets; sourceTree = "<group>"; };
 		C9FBAC482320F6E400ABA649 /* NSDate+GFCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GFCalendar.h"; sourceTree = "<group>"; };
 		C9FBAC492320F6E400ABA649 /* LXCalendarWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCalendarWeekView.m; sourceTree = "<group>"; };
 		C9FBAC4A2320F6E400ABA649 /* LXCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCalendarView.h; sourceTree = "<group>"; };
@@ -511,6 +451,24 @@
 			path = Inherit;
 			sourceTree = "<group>";
 		};
+		C97244DA2326418B0000F916 /* SettingConotrollers */ = {
+			isa = PBXGroup;
+			children = (
+				C97244DC232641D00000F916 /* SettingViewController.h */,
+				C97244DD232641D00000F916 /* SettingViewController.m */,
+			);
+			path = SettingConotrollers;
+			sourceTree = "<group>";
+		};
+		C97244E12326423F0000F916 /* SettingViews */ = {
+			isa = PBXGroup;
+			children = (
+				C97244E22326424E0000F916 /* SettingTableViewCell.h */,
+				C97244E32326424E0000F916 /* SettingTableViewCell.m */,
+			);
+			path = SettingViews;
+			sourceTree = "<group>";
+		};
 		C981F3BF2307BCA600CA91A5 = {
 			isa = PBXGroup;
 			children = (
@@ -577,6 +535,7 @@
 		C981F4052307DCD300CA91A5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C97244DA2326418B0000F916 /* SettingConotrollers */,
 				C9379DEE23165C150045D7C5 /* DiaryControllers */,
 				C9ABDF9B230BD6A00055D5B0 /* LoginControllers */,
 				C981F4472307E42E00CA91A5 /* OtherControllers */,
@@ -588,6 +547,7 @@
 		C981F4062307DCE200CA91A5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C97244E12326423F0000F916 /* SettingViews */,
 				C9379DF4231660C40045D7C5 /* DiaryViews */,
 				C9ABDFE9230C15CF0055D5B0 /* PersonalInfoView.h */,
 				C9ABDFEA230C15CF0055D5B0 /* PersonalInfoView.m */,
@@ -625,6 +585,8 @@
 		C981F40A2307DD3600CA91A5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C916EE5E2327D227005BDF4C /* pic.jpg */,
+				C916EE602327D241005BDF4C /* jjy2.jpg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -643,7 +605,6 @@
 		C981F4112307E05D00CA91A5 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				C9EB7DEB23260302003D1DB2 /* ImagePicker */,
 				C9FBAC462320F6CE00ABA649 /* CalendarSDK */,
 				C9ABDFA1230BD8660055D5B0 /* SecVerifySDK */,
 				C981F4122307E07100CA91A5 /* MobADSDK */,
@@ -833,57 +794,6 @@
 			path = Required;
 			sourceTree = "<group>";
 		};
-		C9EB7DEB23260302003D1DB2 /* ImagePicker */ = {
-			isa = PBXGroup;
-			children = (
-				C9EB7DEC23260302003D1DB2 /* Classes */,
-				C9EB7E0723260302003D1DB2 /* Assets */,
-			);
-			path = ImagePicker;
-			sourceTree = "<group>";
-		};
-		C9EB7DEC23260302003D1DB2 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				C9EB7DED23260302003D1DB2 /* JKPhotoBrowser.m */,
-				C9EB7DEE23260302003D1DB2 /* JKAssetsThumbnailView.m */,
-				C9EB7DEF23260302003D1DB2 /* JKAssetsGroupCell.h */,
-				C9EB7DF023260302003D1DB2 /* JKPhotoBrowserCell.h */,
-				C9EB7DF123260302003D1DB2 /* JKAssetsCollectionFooterView.m */,
-				C9EB7DF223260302003D1DB2 /* JKImagePickerController.m */,
-				C9EB7DF323260302003D1DB2 /* UIView+JKPicker.m */,
-				C9EB7DF423260302003D1DB2 /* PhotoAlbumManager.h */,
-				C9EB7DF523260302003D1DB2 /* JKAssetsViewCell.h */,
-				C9EB7DF623260302003D1DB2 /* JKPromptView.h */,
-				C9EB7DF723260302003D1DB2 /* JKUtil.m */,
-				C9EB7DF823260302003D1DB2 /* JKAssets.h */,
-				C9EB7DF923260302003D1DB2 /* JKAssetsGroupsView.m */,
-				C9EB7DFA23260302003D1DB2 /* JKPhotoBrowserCell.m */,
-				C9EB7DFB23260302003D1DB2 /* JKAssetsCollectionFooterView.h */,
-				C9EB7DFC23260302003D1DB2 /* JKAssetsGroupCell.m */,
-				C9EB7DFD23260302003D1DB2 /* JKAssetsThumbnailView.h */,
-				C9EB7DFE23260302003D1DB2 /* JKPhotoBrowser.h */,
-				C9EB7DFF23260302003D1DB2 /* JKPromptView.m */,
-				C9EB7E0023260302003D1DB2 /* JKAssetsViewCell.m */,
-				C9EB7E0123260302003D1DB2 /* UIView+JKPicker.h */,
-				C9EB7E0223260302003D1DB2 /* JKImagePickerController.h */,
-				C9EB7E0323260302003D1DB2 /* PhotoAlbumManager.m */,
-				C9EB7E0423260302003D1DB2 /* JKAssets.m */,
-				C9EB7E0523260302003D1DB2 /* JKUtil.h */,
-				C9EB7E0623260302003D1DB2 /* JKAssetsGroupsView.h */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		C9EB7E0723260302003D1DB2 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				C9EB7E0823260302003D1DB2 /* JKImagePickerController.strings */,
-				C9EB7E0B23260302003D1DB2 /* ImagesPicker.xcassets */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		C9FBAC462320F6CE00ABA649 /* CalendarSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -1044,12 +954,12 @@
 				C9ABDFB6230BD8660055D5B0 /* TYRZResource.bundle in Resources */,
 				C9FBAC5C2320F6E400ABA649 /* LXCalendarHearder.xib in Resources */,
 				C981F3DB2307BCA800CA91A5 /* LaunchScreen.storyboard in Resources */,
+				C916EE5F2327D227005BDF4C /* pic.jpg in Resources */,
 				C981F4352307E07100CA91A5 /* BUAdSDK.bundle in Resources */,
+				C916EE612327D241005BDF4C /* jjy2.jpg in Resources */,
 				C9FBAC622320F6E400ABA649 /* LXCalenderCell.xib in Resources */,
 				C9ABDFC2230BD8660055D5B0 /* SecVerify.bundle in Resources */,
 				C981F3D82307BCA800CA91A5 /* Assets.xcassets in Resources */,
-				C9EB7E3323260302003D1DB2 /* JKImagePickerController.strings in Resources */,
-				C9EB7E3623260302003D1DB2 /* ImagesPicker.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1060,9 +970,7 @@
 				C9ABDFC3230BD8660055D5B0 /* SecVerify.bundle in Resources */,
 				C9FBAC5D2320F6E400ABA649 /* LXCalendarHearder.xib in Resources */,
 				C9ABDFBD230BD8660055D5B0 /* sdk_oauth.bundle in Resources */,
-				C9EB7E3423260302003D1DB2 /* JKImagePickerController.strings in Resources */,
 				C9ABDFB7230BD8660055D5B0 /* TYRZResource.bundle in Resources */,
-				C9EB7E3723260302003D1DB2 /* ImagesPicker.xcassets in Resources */,
 				C981F4362307E07100CA91A5 /* BUAdSDK.bundle in Resources */,
 				C9FBAC632320F6E400ABA649 /* LXCalenderCell.xib in Resources */,
 			);
@@ -1075,9 +983,7 @@
 				C9ABDFC4230BD8660055D5B0 /* SecVerify.bundle in Resources */,
 				C9FBAC5E2320F6E400ABA649 /* LXCalendarHearder.xib in Resources */,
 				C9ABDFBE230BD8660055D5B0 /* sdk_oauth.bundle in Resources */,
-				C9EB7E3523260302003D1DB2 /* JKImagePickerController.strings in Resources */,
 				C9ABDFB8230BD8660055D5B0 /* TYRZResource.bundle in Resources */,
-				C9EB7E3823260302003D1DB2 /* ImagesPicker.xcassets in Resources */,
 				C981F4372307E07100CA91A5 /* BUAdSDK.bundle in Resources */,
 				C9FBAC642320F6E400ABA649 /* LXCalenderCell.xib in Resources */,
 			);
@@ -1135,39 +1041,28 @@
 				C9FBAC822320F6EA00ABA649 /* UIView+LX_Frame.m in Sources */,
 				C981F3D02307BCA600CA91A5 /* ViewController.m in Sources */,
 				C9CF2FA1230E6F70007165BD /* UIImageView+Common.m in Sources */,
-				C9EB7E2A23260302003D1DB2 /* JKAssetsViewCell.m in Sources */,
 				C9ABDFEB230C15CF0055D5B0 /* PersonalInfoView.m in Sources */,
 				C9379DFC231686880045D7C5 /* HomePageTableViewCell.m in Sources */,
 				C9379DF123165C750045D7C5 /* HomeViewController.m in Sources */,
-				C9EB7E1523260302003D1DB2 /* JKImagePickerController.m in Sources */,
 				C9FBAC882320F6EA00ABA649 /* LxButton.m in Sources */,
 				C9ABDFF0230C17D90055D5B0 /* UIButton+Common.m in Sources */,
-				C9EB7E1E23260302003D1DB2 /* JKAssetsGroupsView.m in Sources */,
 				C981F3D62307BCA600CA91A5 /* DailyDiary.xcdatamodeld in Sources */,
-				C9EB7E2723260302003D1DB2 /* JKPromptView.m in Sources */,
 				C9BA86582324DBE600D46E3C /* PackageView.m in Sources */,
 				C981F40E2307DECB00CA91A5 /* DD_RootViewController.m in Sources */,
+				C97244DE232641D00000F916 /* SettingViewController.m in Sources */,
 				C981F4022307DBE300CA91A5 /* DDNavigationController.m in Sources */,
-				C9EB7E0C23260302003D1DB2 /* JKPhotoBrowser.m in Sources */,
 				C95E5587230D31490076E914 /* UITextField+Common.m in Sources */,
 				C9ABDFCA230BDE910055D5B0 /* LoginViewController.m in Sources */,
 				C9FBAC592320F6E400ABA649 /* LXCalendarWeekView.m in Sources */,
-				C9EB7E2D23260302003D1DB2 /* PhotoAlbumManager.m in Sources */,
 				C9DB73E6231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
-				C9EB7E1B23260302003D1DB2 /* JKUtil.m in Sources */,
-				C9EB7E1223260302003D1DB2 /* JKAssetsCollectionFooterView.m in Sources */,
-				C9EB7E0F23260302003D1DB2 /* JKAssetsThumbnailView.m in Sources */,
+				C97244E42326424E0000F916 /* SettingTableViewCell.m in Sources */,
 				C9FBAC712320F6E400ABA649 /* LXCalenderCell.m in Sources */,
-				C9EB7E1823260302003D1DB2 /* UIView+JKPicker.m in Sources */,
 				C981F3DE2307BCA800CA91A5 /* main.m in Sources */,
-				C9EB7E2423260302003D1DB2 /* JKAssetsGroupCell.m in Sources */,
 				C9FBAC6E2320F6E400ABA649 /* LXCalendarMonthModel.m in Sources */,
 				C9FBAC8B2320F6EA00ABA649 /* UIColor+Expanded.m in Sources */,
 				C9FBAC6B2320F6E400ABA649 /* NSDate+GFCalendar.m in Sources */,
 				C9379DF7231660F20045D7C5 /* HomeTableViewCell.m in Sources */,
-				C9EB7E3023260302003D1DB2 /* JKAssets.m in Sources */,
 				C95E558D230D48660076E914 /* UITextFieldInherit.m in Sources */,
-				C9EB7E2123260302003D1DB2 /* JKPhotoBrowserCell.m in Sources */,
 				C9FBAC682320F6E400ABA649 /* LXCalendarView.m in Sources */,
 				C981F44F2307E65D00CA91A5 /* UILabel+Common.m in Sources */,
 				C981F4542307E7A500CA91A5 /* UIColor+Comomn.m in Sources */,
@@ -1190,6 +1085,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97244E52326424E0000F916 /* SettingTableViewCell.m in Sources */,
 				C9ABDFEC230C15CF0055D5B0 /* PersonalInfoView.m in Sources */,
 				C90631CC2311345A0073BAA1 /* ThirdLoginView.m in Sources */,
 				C981F3E82307BCA900CA91A5 /* DailyDiaryTests.m in Sources */,
@@ -1200,42 +1096,30 @@
 				C9DB73EC231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
 				C9FBAC832320F6EA00ABA649 /* UIView+LX_Frame.m in Sources */,
 				C9FBAC5A2320F6E400ABA649 /* LXCalendarWeekView.m in Sources */,
-				C9EB7E2B23260302003D1DB2 /* JKAssetsViewCell.m in Sources */,
+				C97244DF232641D00000F916 /* SettingViewController.m in Sources */,
 				C981F40F2307DECB00CA91A5 /* DD_RootViewController.m in Sources */,
 				C9FBAC802320F6EA00ABA649 /* UIView+FTCornerdious.m in Sources */,
-				C9EB7E1F23260302003D1DB2 /* JKAssetsGroupsView.m in Sources */,
 				C981F4502307E65D00CA91A5 /* UILabel+Common.m in Sources */,
 				C9FBAC6C2320F6E400ABA649 /* NSDate+GFCalendar.m in Sources */,
 				C9ABDFF1230C17D90055D5B0 /* UIButton+Common.m in Sources */,
-				C9EB7E1623260302003D1DB2 /* JKImagePickerController.m in Sources */,
-				C9EB7E2823260302003D1DB2 /* JKPromptView.m in Sources */,
 				C9BA86592324DBE600D46E3C /* PackageView.m in Sources */,
 				C9379DF223165C750045D7C5 /* HomeViewController.m in Sources */,
-				C9EB7E2523260302003D1DB2 /* JKAssetsGroupCell.m in Sources */,
 				C95E558E230D48660076E914 /* UITextFieldInherit.m in Sources */,
 				C9FBAC722320F6E400ABA649 /* LXCalenderCell.m in Sources */,
 				C9FBAC862320F6EA00ABA649 /* UILabel+LXLabel.m in Sources */,
 				C9DB73E7231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
 				C9FBAC6F2320F6E400ABA649 /* LXCalendarMonthModel.m in Sources */,
-				C9EB7E2E23260302003D1DB2 /* PhotoAlbumManager.m in Sources */,
 				C90631D123113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */,
-				C9EB7E1323260302003D1DB2 /* JKAssetsCollectionFooterView.m in Sources */,
 				C9CF2FA2230E6F70007165BD /* UIImageView+Common.m in Sources */,
 				C95E5588230D31490076E914 /* UITextField+Common.m in Sources */,
 				C9CF2FA7230EC10E007165BD /* OtherLoginViewController.m in Sources */,
 				C9379DFD231686880045D7C5 /* HomePageTableViewCell.m in Sources */,
 				C9379DF8231660F20045D7C5 /* HomeTableViewCell.m in Sources */,
-				C9EB7E1023260302003D1DB2 /* JKAssetsThumbnailView.m in Sources */,
-				C9EB7E2223260302003D1DB2 /* JKPhotoBrowserCell.m in Sources */,
 				C9ABDFE7230BFBC00055D5B0 /* PersonalInfoViewController.m in Sources */,
 				C9FBAC662320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
-				C9EB7E0D23260302003D1DB2 /* JKPhotoBrowser.m in Sources */,
 				C9ABDFCB230BDE910055D5B0 /* LoginViewController.m in Sources */,
-				C9EB7E1923260302003D1DB2 /* UIView+JKPicker.m in Sources */,
-				C9EB7E1C23260302003D1DB2 /* JKUtil.m in Sources */,
 				C981F4552307E7A500CA91A5 /* UIColor+Comomn.m in Sources */,
 				C9FBAC692320F6E400ABA649 /* LXCalendarView.m in Sources */,
-				C9EB7E3123260302003D1DB2 /* JKAssets.m in Sources */,
 				C9B1528A23223A350034285F /* SearchDiaryViewController.m in Sources */,
 				C9FBAC602320F6E400ABA649 /* LXCalendarHearder.m in Sources */,
 			);
@@ -1245,6 +1129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97244E62326424E0000F916 /* SettingTableViewCell.m in Sources */,
 				C9ABDFED230C15CF0055D5B0 /* PersonalInfoView.m in Sources */,
 				C90631CD2311345A0073BAA1 /* ThirdLoginView.m in Sources */,
 				C981F3F32307BCA900CA91A5 /* DailyDiaryUITests.m in Sources */,
@@ -1255,42 +1140,30 @@
 				C9DB73ED231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
 				C9FBAC842320F6EA00ABA649 /* UIView+LX_Frame.m in Sources */,
 				C9FBAC5B2320F6E400ABA649 /* LXCalendarWeekView.m in Sources */,
-				C9EB7E2C23260302003D1DB2 /* JKAssetsViewCell.m in Sources */,
+				C97244E0232641D00000F916 /* SettingViewController.m in Sources */,
 				C981F4102307DECB00CA91A5 /* DD_RootViewController.m in Sources */,
 				C9FBAC812320F6EA00ABA649 /* UIView+FTCornerdious.m in Sources */,
-				C9EB7E2023260302003D1DB2 /* JKAssetsGroupsView.m in Sources */,
 				C981F4512307E65D00CA91A5 /* UILabel+Common.m in Sources */,
 				C9FBAC6D2320F6E400ABA649 /* NSDate+GFCalendar.m in Sources */,
 				C9ABDFF2230C17D90055D5B0 /* UIButton+Common.m in Sources */,
-				C9EB7E1723260302003D1DB2 /* JKImagePickerController.m in Sources */,
-				C9EB7E2923260302003D1DB2 /* JKPromptView.m in Sources */,
 				C9BA865A2324DBE600D46E3C /* PackageView.m in Sources */,
 				C9379DF323165C750045D7C5 /* HomeViewController.m in Sources */,
-				C9EB7E2623260302003D1DB2 /* JKAssetsGroupCell.m in Sources */,
 				C95E558F230D48660076E914 /* UITextFieldInherit.m in Sources */,
 				C9FBAC732320F6E400ABA649 /* LXCalenderCell.m in Sources */,
 				C9FBAC872320F6EA00ABA649 /* UILabel+LXLabel.m in Sources */,
 				C9DB73E8231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
 				C9FBAC702320F6E400ABA649 /* LXCalendarMonthModel.m in Sources */,
-				C9EB7E2F23260302003D1DB2 /* PhotoAlbumManager.m in Sources */,
 				C90631D223113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */,
-				C9EB7E1423260302003D1DB2 /* JKAssetsCollectionFooterView.m in Sources */,
 				C9CF2FA3230E6F70007165BD /* UIImageView+Common.m in Sources */,
 				C95E5589230D31490076E914 /* UITextField+Common.m in Sources */,
 				C9CF2FA8230EC10E007165BD /* OtherLoginViewController.m in Sources */,
 				C9379DFE231686880045D7C5 /* HomePageTableViewCell.m in Sources */,
 				C9379DF9231660F20045D7C5 /* HomeTableViewCell.m in Sources */,
-				C9EB7E1123260302003D1DB2 /* JKAssetsThumbnailView.m in Sources */,
-				C9EB7E2323260302003D1DB2 /* JKPhotoBrowserCell.m in Sources */,
 				C9ABDFE8230BFBC00055D5B0 /* PersonalInfoViewController.m in Sources */,
 				C9FBAC672320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
-				C9EB7E0E23260302003D1DB2 /* JKPhotoBrowser.m in Sources */,
 				C9ABDFCC230BDE910055D5B0 /* LoginViewController.m in Sources */,
-				C9EB7E1A23260302003D1DB2 /* UIView+JKPicker.m in Sources */,
-				C9EB7E1D23260302003D1DB2 /* JKUtil.m in Sources */,
 				C981F4562307E7A500CA91A5 /* UIColor+Comomn.m in Sources */,
 				C9FBAC6A2320F6E400ABA649 /* LXCalendarView.m in Sources */,
-				C9EB7E3223260302003D1DB2 /* JKAssets.m in Sources */,
 				C9B1528B23223A350034285F /* SearchDiaryViewController.m in Sources */,
 				C9FBAC612320F6E400ABA649 /* LXCalendarHearder.m in Sources */,
 			);
@@ -1318,15 +1191,6 @@
 				C981F3DA2307BCA800CA91A5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		C9EB7E0823260302003D1DB2 /* JKImagePickerController.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C9EB7E0923260302003D1DB2 /* zh-Hans */,
-				C9EB7E0A23260302003D1DB2 /* en */,
-			);
-			name = JKImagePickerController.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
