@@ -14,7 +14,8 @@
 #import <ShareSDK/ShareSDK.h>
 #import "OtherLoginViewController.h"
 #import "HomeViewController.h"
-
+#import <MobPush/MobPush.h>
+#import "DD_RootViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -25,15 +26,28 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[DDNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
-    [self.window makeKeyAndVisible];
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kActivekey];
+    BOOL loginBool = [[NSUserDefaults standardUserDefaults] boolForKey:kLoginKey];
+    if (loginBool) {
+        self.window.rootViewController = [[DDNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
+
+    }else{
+         self.window.rootViewController = [[DDNavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
+    }
+//        BOOL activeBool = [[NSUserDefaults standardUserDefaults] boolForKey:kActivekey];
+//    if (!activeBool) {
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kActivekey];
+//         self.window.rootViewController = [[DDNavigationController alloc] initWithRootViewController:[[DD_RootViewController alloc] init]];
+//    }else{
+//            self.window.rootViewController = [[DDNavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
+//    }
     
+    [self.window makeKeyAndVisible];
     [self setupKeyboard];
     [self registerShareSDK];
-    
+    [self setupMobPush];
     return YES;
 }
+
 -(void)setupKeyboard
 {
     IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager];
@@ -58,9 +72,86 @@
     }];
 }
 
+-(void)setupMobPush
+{
+#ifdef DEBUG
+    [MobPush setAPNsForProduction:NO];
+#else
+    [MobPush setAPNsForProduction:YES];
+#endif
+    //    配置信息
+    MPushNotificationConfiguration *configuration = [[MPushNotificationConfiguration alloc] init];
+    configuration.types = MPushAuthorizationOptionsSound | MPushAuthorizationOptionsAlert | MPushAuthorizationOptionsBadge;
+    [MobPush setupNotification:configuration];
+    NSLog(@"----isStop =======%d",MobPush.isPushStopped);
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMessage:) name:MobPushDidReceiveMessageNotification object:nil];
+    //    定向推送必须添加注册ID的方法
+    [MobPush getRegistrationID:^(NSString *registrationID, NSError *error) {
+        if (!error) {
+            NSLog(@"registrationID ========= %@",registrationID);
+        }
+        else
+        {
+            NSLog(@"error ========= %@",error);
+        }
+        
+    }];
+    //    添加别名
+    [MobPush setAlias:@"zhangxu" result:^(NSError *error) {
+        NSLog(@"setAlias ------- ");
+    }];
+    //    添加标签
+    [MobPush addTags:@[@"tag1",@"tag2"] result:^(NSError *error) {
+        NSLog(@"addTags ---------");
+    }];
+}
+
+-(void)didReceiveMessage:(NSNotification *)notification
+{
+    MPushMessage *message = notification.object;
+    
+    switch (message.messageType) {
+        case MPushMessageTypeUDPNotify:
+            NSLog(@"hahhaah ------  UDP 通知");
+        break;
+        case MPushMessageTypeCustom:
+            NSLog(@"lalalalal ------ 自定义通知");
+        break;
+        case MPushMessageTypeAPNs:
+            NSLog(@"APNs 通知 apndDict is ----------- %@",message.msgInfo);
+            if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+                
+            }
+        break;
+        case MPushMessageTypeLocal:
+            {
+                NSLog(@"MPushMessageTypeLocal  apndDict is ----------- %@",message.msgInfo);
+                
+                NSString *body = message.notification.body;
+                NSString *title = message.notification.title;
+                NSString *subtitle = message.notification.subTitle;
+                NSString *sound = message.notification.sound;
+                NSInteger badge = message.notification.badge;
+                NSString *urlStr = message.msgInfo[@"url"];
+                NSURL *url = [NSURL URLWithString:urlStr];
+                NSLog(@"收到本地通知:{\nbody:%@，\ntitle:%@,\nsubtitle:%@,\nbadge：%ld，\nsound：%@，\nurl: %@}",body, title, subtitle, badge, sound,url);
+            }
+        break;
+        case MPushMessageTypeClicked:
+            {
+                NSLog(@"click the message!!!!!!!!!!!!");
+            }
+        break;
+        default:
+            break;
+    }
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kActivekey];
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -72,12 +163,14 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    NSLog(@"------- applicationWillEnterForeground -----");
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kActivekey];
+//    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kActivekey];
+    NSLog(@"------- applicationDidBecomeActive -----");
 }
 
 

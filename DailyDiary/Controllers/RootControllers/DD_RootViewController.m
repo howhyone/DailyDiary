@@ -11,6 +11,8 @@
 #import "ViewController.h"
 #import <SecVerify/SecVerify.h>
 #import "PersonalInfoViewController.h"
+#import "HomeViewController.h"
+#import "LoginViewController.h"
 
 @interface DD_RootViewController ()
 
@@ -21,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view setBackgroundColor:[UIColor greenColor]];
+    [self showOpenScreenAD];
 }
 
 
@@ -32,7 +36,6 @@
     UILabel *bottomLabel = [UILabel labelWithFont:12.0 WithText:@"时光怎分好与坏，只有那点点滴滴" WithColor:0x191970];
     bottomLabel.frame = CGRectMake(0, 0,kScreen_Width, bottomView.frame.size.height);
     bottomLabel.textAlignment = NSTextAlignmentCenter;
-    
     bottomLabel.font = [UIFont fontWithName:@"PingFang TC" size:15.0];
     [bottomView addSubview:bottomLabel];
     [[MGADConnector defaultConnector] showSplashAdInWindow:UIApplication.sharedApplication.keyWindow backgroundColor:UIColor.whiteColor backgroundImage:nil fetchDelay:10 bottomView:bottomView skipView:nil skipViewCenter:CGPointZero adLifeTime:^(NSUInteger time) {
@@ -50,17 +53,18 @@
     }
     switch (state) {
         case MGADStateDidClosed:
-//            [self.navigationController pushViewController:[[ViewController alloc] init] animated:NO];
-            [self secVerify];
+//            [self loginPushViewController];
             break;
         case MGADStateDidDismiss:
-//            [self.navigationController pushViewController:[[ViewController alloc] init] animated:NO];
-            [self secVerify];
+            [self loginPushViewController];
+
             break;
         case MGADStateDidClick:
             NSLog(@"--点击下载");
             break;
         case MGADStateAppWillEnterBackground:
+            [self loginPushViewController];
+
             NSLog(@"--MGADStateAppWillEnterBackground");
             break;
         default:
@@ -68,41 +72,51 @@
     }
 }
 
--(void)secVerify
+-(void)loginPushViewController
 {
-    [SecVerify preLogin:^(NSDictionary * _Nullable resultDic, NSError * _Nullable error) {
-        if (!error)
-        {
-            NSLog(@"预取号成功");
-            // 自定义配置Model，currentViewController必传.
-            SecVerifyCustomModel *model = [[SecVerifyCustomModel alloc] init];
-            model.currentViewController = self;
-            model.switchAccHidden = NO;
-            [SecVerify loginWithModel:model completion:^(NSDictionary *resultDic, NSError *error) {
-                if (!error)
-                {
-                    NSLog(@"跳转个人信息也");
-                }
-                else
-                {
-                    switch (error.code) {
-                        case 170301:
-                            NSLog(@"切换登录方式");
-                            [self.navigationController pushViewController:[[PersonalInfoViewController alloc] init] animated:NO];
-                            break;
-                            
-                        default:
-                            break;
-                    }
-                }
-            }];
-        }
-        else
-        {
-            NSLog(@"预取号失败%@", error);
-        }
-    }];
+    BOOL loginBool = [[NSUserDefaults standardUserDefaults] boolForKey:kLoginKey];
+    if (loginBool) {
+        [self.navigationController pushViewController:[[HomeViewController alloc] init] animated:YES];
+    }else{
+        [self.navigationController pushViewController:[[LoginViewController alloc] init] animated:YES];
+    }
 }
+
+//-(void)secVerify
+//{
+//    [SecVerify preLogin:^(NSDictionary * _Nullable resultDic, NSError * _Nullable error) {
+//        if (!error)
+//        {
+//            NSLog(@"预取号成功");
+//            // 自定义配置Model，currentViewController必传.
+//            SecVerifyCustomModel *model = [[SecVerifyCustomModel alloc] init];
+//            model.currentViewController = self;
+//            model.switchAccHidden = NO;
+//            [SecVerify loginWithModel:model completion:^(NSDictionary *resultDic, NSError *error) {
+//                if (!error)
+//                {
+//                    NSLog(@"跳转个人信息也");
+//                }
+//                else
+//                {
+//                    switch (error.code) {
+//                        case 170301:
+//                            NSLog(@"切换登录方式");
+//                            [self.navigationController pushViewController:[[PersonalInfoViewController alloc] init] animated:NO];
+//                            break;
+//
+//                        default:
+//                            break;
+//                    }
+//                }
+//            }];
+//        }
+//        else
+//        {
+//            NSLog(@"预取号失败%@", error);
+//        }
+//    }];
+//}
 /*
 #pragma mark - Navigation
 

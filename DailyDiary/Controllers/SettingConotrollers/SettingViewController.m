@@ -8,6 +8,11 @@
 
 #import "SettingViewController.h"
 #import "SettingTableViewCell.h"
+#import "PhotoWallViewController.h"
+#import "LoginViewController.h"
+#import "PersonalInfoViewController.h"
+#import "FontViewController.h"
+
 @interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource,clickLogoutDelegate>
 @property(nonatomic, strong)SettingTableViewCell *settingCell;
 @property(nonatomic, strong)UITableView *settingTableView;
@@ -42,6 +47,7 @@
 
 -(void)setupViewInfo
 {
+    __weak typeof(self) weakSelf = self;
     [self.view setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
     _settingHeaderView = [[SettingHeaderView alloc] initWithFrame:CGRectMake(0, kStateNavigationHeight, kScreen_Width, 219 * kScale_Height)];
     [_settingHeaderView setBackgroundColor:[UIColor colorWithRGBHex:0xf4f4f4]];
@@ -50,9 +56,9 @@
     
     [self.view addSubview:self.settingTableView];
     [_settingTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_settingHeaderView.bottom).offset(10 * kScale_Height);
-        make.left.equalTo(_settingHeaderView.left).offset(0);
-        make.right.equalTo(_settingHeaderView.right).offset(0);
+        make.top.equalTo(weakSelf.settingHeaderView.bottom).offset(10 * kScale_Height);
+        make.left.equalTo(weakSelf.settingHeaderView.left).offset(0);
+        make.right.equalTo(weakSelf.settingHeaderView.right).offset(0);
         make.height.equalTo(397 * kScale_Height);
     }];
     
@@ -92,6 +98,27 @@
     return settingCell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0:
+            [self.navigationController pushViewController:[[PhotoWallViewController alloc] init] animated:YES];
+        break;
+        case 1:
+            [self.navigationController pushViewController:[[FontViewController alloc] init] animated:YES];
+        break;
+        default:
+            break;
+    }
+}
+
+#pragma mark ---------点击事件代理
+
+-(void)clickchangeIntroduce
+{
+    [self.navigationController pushViewController:[[PersonalInfoViewController alloc] init] animated:NO];
+}
+
 -(void)clickLogout
 {
     
@@ -103,12 +130,16 @@
                                                           handler:^(UIAlertAction * action) {
                                                               //响应事件
                                                               NSLog(@"action = %@", action);
+                                                              [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kLoginKey];
+                                                              [self.navigationController pushViewController:[[LoginViewController alloc] init] animated:NO];
                                                           }];
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * action) {
                                                              //响应事件
                                                              NSLog(@"action = %@", action);
                                                          }];
+    
+    
     
     [alert addAction:defaultAction];
     [alert addAction:cancelAction];

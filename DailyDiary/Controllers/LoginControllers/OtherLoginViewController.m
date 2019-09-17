@@ -10,6 +10,8 @@
 #import "OtherLoginView.h"
 #import "ThirdLoginFunction.h"
 #import <SMS_SDK/SMSSDK.h>
+#import "HomeViewController.h"
+
 @interface OtherLoginViewController ()<ThirdLoginDelegate>
 
 @property(nonatomic, strong)NSString *phoneStr;
@@ -57,10 +59,13 @@
 {
     NSLog(@"phoneLogin----");
     [SMSSDK commitVerificationCode:codeStr phoneNumber:_phoneStr zone:@"86" result:^(NSError *error) {
-        if (error) {
-            NSLog(@"error is ===+++++%@",error);
+        if (!error) {
+            NSLog(@"success is ===+++++");
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kLoginKey];
+            HomeViewController *homeVC = [[HomeViewController alloc] init];
+            [self.navigationController pushViewController:homeVC animated:NO];
         }else{
-            NSLog(@"success----");
+            NSLog(@"error is ===+++++%@",error);
         }
     }];
 }

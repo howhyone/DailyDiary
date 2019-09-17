@@ -7,6 +7,7 @@
 //
 
 #import "SettingTableViewCell.h"
+#import <MobPush/MobPush.h>
 
 
 @implementation SettingTableViewCell
@@ -181,8 +182,9 @@
     switchWarnBtn.tintColor = [UIColor colorWithRGBHex:0xf4f5f8];
     switchWarnBtn.thumbTintColor = [UIColor colorWithRGBHex:0xFFFFFF];
     [switchWarnBtn addTarget:self action:@selector(switchhWarn:) forControlEvents:UIControlEventValueChanged];
+    BOOL switchButtonState = [[NSUserDefaults standardUserDefaults] boolForKey:@"switchButtonState"];
+    [switchWarnBtn setOn:switchButtonState];
     [self addSubview:switchWarnBtn];
-
     [switchWarnBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.right).offset(-15 * kScale_Width);
         make.top.equalTo(self.top).offset(11 * kScale_Height);
@@ -191,13 +193,21 @@
     }];
 }
 
--(void)switchhWarn:(UISwitch *)switchO
+-(void)switchhWarn:(id)sender
 {
-    if (switchO.isOn) {
+    UISwitch *switchBtn = (UISwitch *)sender;
+    if (switchBtn.isOn) {
         NSLog(@"开启通知");
+        [MobPush restartPush];
+       [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"switchButtonState"];
     }else{
         NSLog(@"关闭推送");
+        [MobPush stopPush];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"switchButtonState"];
+
     }
+    NSLog(@"----isStop =======%d",MobPush.isPushStopped);
+
 }
 
 @end
@@ -268,7 +278,9 @@
 //按钮点击事件
 -(void)changeIntroduce
 {
-    
+    if ([self.delegate respondsToSelector:@selector(clickchangeIntroduce)]) {
+        [self.delegate clickchangeIntroduce];
+    }
 }
 -(void)clickLogout
 {

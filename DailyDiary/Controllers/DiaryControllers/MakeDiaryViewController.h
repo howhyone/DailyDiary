@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MakeDiaryView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MakeDiaryViewController : UIViewController
+
+@property(nonatomic, strong)MakeDiaryView *makeDiaryView;
 
 @end
 

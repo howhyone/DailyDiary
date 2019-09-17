@@ -70,6 +70,10 @@
 	<string>是否允许App访问相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>写日记添加图片</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -90,8 +94,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>mobappkey</key>
-	<string>25b4348da4d79</string>
+	<string>2c574691c6986</string>
 	<key>mobappsecret</key>
-	<string>24e18f8588e7e0b01468fdea8cdb8f01</string>
+	<string>4b5cd595eb07b5cf17bb269f7a51391d</string>
 </dict>
 </plist>

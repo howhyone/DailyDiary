@@ -17,10 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface PlaintextTableViewCell : HomeTableViewCell
-
-@end
-
 @interface ImageTextTableViewCell : HomeTableViewCell
 @property(nonatomic, strong)UIImageView *diaryImageView;
 

@@ -7,7 +7,6 @@
 //
 
 #import "MakeDiaryViewController.h"
-#import "MakeDiaryView.h"
 #import "HomeViewController.h"
 #import "LXCalender.h"
 #import "PackageView.h"
@@ -16,7 +15,6 @@
 @interface MakeDiaryViewController ()<clickDateSelectorProtocol,clickKeyboardToolBarItemDelegate,TZImagePickerControllerDelegate>
 @property(nonatomic, strong)TitleDateView *titleDateView;
 @property(nonatomic, strong)LXCalendarView *calendarView;
-@property(nonatomic, strong)MakeDiaryView *makeDiaryView;
 @property(nonatomic,strong) NSMutableArray *selectionPhotoArray;
 
 @end

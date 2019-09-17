@@ -4,70 +4,6 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/LoginControllers/LoginViewController.m"
-            timestampString = "588083543.7755001"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-secVerify"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[LoginViewController secVerify]"
-                  moduleName = "DailyDiary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/LoginControllers/LoginViewController.m"
-                  timestampString = "589813255.559165"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[LoginViewController secVerify]_block_invoke"
-                  moduleName = "DailyDiary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/LoginControllers/LoginViewController.m"
-                  timestampString = "589813255.561846"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/LoginControllers/LoginViewController.m"
-            timestampString = "588083543.776152"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
@@ -170,13 +106,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Views/DiaryViews/HomeTableViewCell.m"
-            timestampString = "589813255.441955"
+            filePath = "DailyDiary/Controllers/RootControllers/DD_RootViewController.m"
+            timestampString = "590417409.398203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "-setupImageViewInfo"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-_processGDTState:error:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,13 +122,93 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Views/DiaryViews/HomeTableViewCell.m"
-            timestampString = "589813255.4427249"
+            filePath = "DailyDiary/Controllers/LoginControllers/OtherLoginViewController.m"
+            timestampString = "590417409.398312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-getVerCodeWithPhone:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[OtherLoginViewController getVerCodeWithPhone:]"
+                  moduleName = "DailyDiary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/LoginControllers/OtherLoginViewController.m"
+                  timestampString = "590417409.5731781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[OtherLoginViewController getVerCodeWithPhone:]_block_invoke"
+                  moduleName = "DailyDiary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/LoginControllers/OtherLoginViewController.m"
+                  timestampString = "590417409.575786"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DailyDiary/Controllers/SettingConotrollers/FontViewController.m"
+            timestampString = "590417409.39842"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-downloadFont:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DailyDiary/Controllers/SettingConotrollers/FontViewController.m"
+            timestampString = "590417409.398528"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-downloadFont:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DailyDiary/Utils/Categorys/UILabel+Common.m"
+            timestampString = "590417409.398615"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-changeFont"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

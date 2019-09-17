@@ -51,11 +51,11 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     [self.view addSubview:self.homeTableView];
     
-//    _homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downFreshloadData)];
-//    [_homeTableView.mj_header beginRefreshing];
-//
-//    _homeTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(upFreshLoadMoreData)];
-//    [_homeTableView.mj_footer beginRefreshing];
+    _homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downFreshloadData)];
+    [_homeTableView.mj_header beginRefreshing];
+
+    _homeTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(upFreshLoadMoreData)];
+    [_homeTableView.mj_footer beginRefreshing];
     
     UIView *bottomView = [[UIView alloc] init];
     [bottomView setBackgroundColor:[UIColor colorWithRGBHex:0x151718]];
@@ -108,15 +108,10 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     return 117 * kScale_Height;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    return 37 * kScale_Height;
-//}
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    if (true) {
+    if (indexPath.row % 2 == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }else{
@@ -129,6 +124,7 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [self.navigationController pushViewController:[[MakeDiaryViewController alloc] init] animated:YES];
 }
 #pragma mark -----------按钮点击事件
 -(void)clickSetting

@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 -(void)clickLogout;
-
+-(void)clickchangeIntroduce;
 @end
 
 @interface SettingHeaderView : UIView

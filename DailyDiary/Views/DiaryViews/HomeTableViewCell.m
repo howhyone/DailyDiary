@@ -92,45 +92,30 @@
 
 @end
 
-@implementation PlaintextTableViewCell
-
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    if (self == [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupViewInfo];
-    }
-    return self;
-}
-
--(void)setupViewInfo
-{
-    
-}
 
 
-@end
 
 @implementation ImageTextTableViewCell
 
--(id)initWithFrame:(CGRect)frame
-{
-    if (self == [super initWithFrame:frame]) {
-        [self setupImageViewInfo];
-    }
-    return self;
-}
+//-(id)initWithFrame:(CGRect)frame
+//{
+//    if (self == [super initWithFrame:frame]) {
+//        [self setupImageViewInfo];
+//    }
+//    return self;
+//}
 
--(void)setupImageViewInfo
+-(void)setupViewInfo
 {
-    
-//    self.diaryTextLabel.frame = CGRectMake(self.diaryTextLabel.frame.origin.x, self.diaryTextLabel.frame.origin.y, self.diaryTextLabel.frame.size.width - 100 * kScale_Width, self.diaryTextLabel.frame.size.height);
-    _diaryImageView = [UIImageView imageViewWithImageName:@"pic.jpg"];
+    [super setupViewInfo];
+    _diaryImageView = [UIImageView imageViewWithImageName:@"jjy2.jpg"];
     [self addSubview:_diaryImageView];
+    [_diaryImageView sizeToFit];
     [_diaryImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.diaryTextLabel.top).offset(0);
-        make.left.equalTo(self.diaryTextLabel.right).offset(10 * kScale_Width);
-        make.bottom.equalTo(self.diaryTextLabel.bottom).offset(0);
-        make.right.equalTo(self.right).offset(10 * kScale_Width);
+        make.top.equalTo(self.top).offset(47 * kScale_Height);
+        make.width.equalTo(60 * kScale_Width);
+        make.bottom.equalTo(self.bottom).offset(-10 * kScale_Height);
+        make.right.equalTo(self.right).offset(-10 * kScale_Width);
     }];
     
 }

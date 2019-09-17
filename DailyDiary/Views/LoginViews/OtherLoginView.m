@@ -38,7 +38,7 @@
     }];
     UITextField *phoneTextField = ({
         UITextField *phoneTextField = [UITextFieldInherit textFieldWithFont:14.0f withTextColor:0xb4b5b6 withBackgroundColor:0xf5f5f5];
-     
+        phoneTextField.inputAccessoryView = [[UIView alloc] init];
         UIImageView *phoneImageView = [UIImageView imageViewWithImageName:@"手机"];
         phoneImageView.frame = CGRectMake(0, 0, 12 * kScale_Width, 18 * kScale_Height);
         phoneTextField.leftView = phoneImageView;
@@ -65,6 +65,7 @@
     }];
     
     UITextField *smsTextField = [UITextField textFieldWithFont:14.0 withTextColor:0xb4b5b6 withBackgroundColor:0xf5f5f5 withLeftImageName:@"验证码" withLeftViewFrame:CGRectMake(0, 0, 12 * kScale_Width, 15 * kScale_Height) withPlaceholder:@"请输入短信验证码" withPlaceholderColor:0xb4b5b6 withCornerRadius:23.0];
+    [smsTextField setInputAccessoryView:[[UIView alloc] init]];
     self.verCodeTextField = smsTextField;
     [self addSubview:smsTextField];
     [smsTextField mas_makeConstraints:^(MASConstraintMaker *make) {

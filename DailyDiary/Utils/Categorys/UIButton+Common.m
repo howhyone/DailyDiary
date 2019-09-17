@@ -10,11 +10,18 @@
 
 @implementation UIButton (Common)
 
-+(UIButton *)buttonWithTitle:(NSString *)title withTitleColor:(UInt32)titleColor
++(UIButton *)buttonWithTitle:(NSString *)title  withTitleColor:(UInt32)titleColor
 {
     UIButton *buttonCommon = [UIButton buttonWithType:UIButtonTypeSystem];
     [buttonCommon setTitle:title forState:UIControlStateNormal];
     [buttonCommon setTitleColor:[UIColor colorWithRGBHex:titleColor] forState:UIControlStateNormal];
+    return buttonCommon;
+}
+
++(UIButton *)buttonWithTitle:(NSString *)title withTitleColor:(UInt32)titleColor withFontSize:(CGFloat)fontSize
+{
+    UIButton *buttonCommon = [self buttonWithTitle:title withTitleColor:titleColor];
+    [buttonCommon.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
     return buttonCommon;
 }
 

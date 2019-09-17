@@ -19,7 +19,7 @@ target 'DailyDiary' do
       pod 'mob_sharesdk/ShareSDKExtension'
       
       pod 'mob_smssdk'
-      
+      pod 'mob_pushsdk'
 #  target 'DailyDiaryTests' do
 ##    inherit! :search_paths
 #  end

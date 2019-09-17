@@ -6,11 +6,11 @@
 //  Copyright © 2019 howhyone. All rights reserved.
 //
 
-#import "DD_RootViewController.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginViewController : DD_RootViewController
+@interface LoginViewController : UIViewController
 
 @end
 

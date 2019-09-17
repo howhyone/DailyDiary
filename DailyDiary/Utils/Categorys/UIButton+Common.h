@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIButton (Common)
 +(UIButton *)buttonWithTitle:(NSString *)title  withTitleColor:(UInt32)titleColor;
 
++(UIButton *)buttonWithTitle:(NSString *)title withTitleColor:(UInt32)titleColor withFontSize:(CGFloat)fontSize;
+
 +(UIButton *)buttonWithImage:(NSString *)imageNameStr;
 
 +(UIButton *)buttonWithTitle:(NSString *)title withTitleColor:(UInt32)titleColor withImage:(NSString *)imageName;

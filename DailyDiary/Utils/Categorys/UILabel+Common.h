@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(UILabel *)labelWithFont:(CGFloat)fontSize WithText:(NSString *)textStr WithColor:(UInt32)colorValue;
 
++(UILabel *)labelWithFont:(CGFloat)fontSize WithText:(NSString *)textStr WithColor:(UInt32)colorValue WithTextAlignment:(NSTextAlignment)textAlignment;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,9 +14,6 @@
 -(id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        
-        
-        
         [self setupView];
     }
     return self;
@@ -116,15 +113,15 @@
         make.width.equalTo(260 * kScale_Width);
         make.height.equalTo(46 * kScale_Height);
     }];
-    
-    UIView *thirdLoginV = [[ThirdLoginView alloc] init];
-    [self addSubview:thirdLoginV];
-    [thirdLoginV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(commmitBtn.bottom).offset(90 * kScale_Height);
-        make.left.equalTo(commmitBtn.left).offset(0);
-        make.right.equalTo(commmitBtn.right).offset(0);
-        make.bottom.equalTo(self.bottom).offset(-33 * kScale_Height);
-    }];
+//    第三方登录 去掉
+//    UIView *thirdLoginV = [[ThirdLoginView alloc] init];
+//    [self addSubview:thirdLoginV];
+//    [thirdLoginV mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(commmitBtn.bottom).offset(90 * kScale_Height);
+//        make.left.equalTo(commmitBtn.left).offset(0);
+//        make.right.equalTo(commmitBtn.right).offset(0);
+//        make.bottom.equalTo(self.bottom).offset(-33 * kScale_Height);
+//    }];
    
 }
 
