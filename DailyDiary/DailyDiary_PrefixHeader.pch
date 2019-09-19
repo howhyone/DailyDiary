@@ -22,7 +22,10 @@
 #define kStateNavigationHeight kNavigationBarHeigth+kStatusBarHeight
 #define kLoginKey @"loginKey"
 #define kActivekey @"activeKey"
-
+#define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+#define kMobAppkey @"2c574691c6986"
+#define kMobAppSecret @"4b5cd595eb07b5cf17bb269f7a51391d"
+#define WeakSelf __weak typeof(self) weakSelf = self;
 
 #import <Masonry/Masonry.h>
 #import "UIColor+Comomn.h"
@@ -30,7 +33,11 @@
 #import "UIButton+Common.h"
 #import "UITextField+Common.h"
 #import "UIImageView+Common.h"
+#import "NSObject+Common.h"
+
 #import <IQKeyboardManager/IQKeyboardManager.h>
+#import "HYOCoding_NetAPIManager.h"
+#import "HYOJson.h"
 
 
 

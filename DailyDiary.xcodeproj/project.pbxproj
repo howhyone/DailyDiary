@@ -82,6 +82,21 @@
 		C981F4542307E7A500CA91A5 /* UIColor+Comomn.m in Sources */ = {isa = PBXBuildFile; fileRef = C981F4532307E7A500CA91A5 /* UIColor+Comomn.m */; };
 		C981F4552307E7A500CA91A5 /* UIColor+Comomn.m in Sources */ = {isa = PBXBuildFile; fileRef = C981F4532307E7A500CA91A5 /* UIColor+Comomn.m */; };
 		C981F4562307E7A500CA91A5 /* UIColor+Comomn.m in Sources */ = {isa = PBXBuildFile; fileRef = C981F4532307E7A500CA91A5 /* UIColor+Comomn.m */; };
+		C9A5F2A92332460100D70084 /* HYOCoding_NetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F2A72332460100D70084 /* HYOCoding_NetAPIClient.m */; };
+		C9A5F2AA2332460100D70084 /* HYOCoding_NetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F2A72332460100D70084 /* HYOCoding_NetAPIClient.m */; };
+		C9A5F2AB2332460100D70084 /* HYOCoding_NetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F2A72332460100D70084 /* HYOCoding_NetAPIClient.m */; };
+		C9A5F2AC2332460100D70084 /* HYOCoding_NetAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F2A82332460100D70084 /* HYOCoding_NetAPIManager.m */; };
+		C9A5F2AD2332460100D70084 /* HYOCoding_NetAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F2A82332460100D70084 /* HYOCoding_NetAPIManager.m */; };
+		C9A5F2AE2332460100D70084 /* HYOCoding_NetAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F2A82332460100D70084 /* HYOCoding_NetAPIManager.m */; };
+		C9A5F2B123324E1C00D70084 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F2B023324E1C00D70084 /* NSObject+Common.m */; };
+		C9A5F2B223324E1C00D70084 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F2B023324E1C00D70084 /* NSObject+Common.m */; };
+		C9A5F2B323324E1C00D70084 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F2B023324E1C00D70084 /* NSObject+Common.m */; };
+		C9A768532333A66D00EE7A93 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A768522333A66D00EE7A93 /* LoginModel.m */; };
+		C9A768542333A66D00EE7A93 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A768522333A66D00EE7A93 /* LoginModel.m */; };
+		C9A768552333A66D00EE7A93 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A768522333A66D00EE7A93 /* LoginModel.m */; };
+		C9A768592333A73000EE7A93 /* HYOJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A768582333A73000EE7A93 /* HYOJson.m */; };
+		C9A7685A2333A73000EE7A93 /* HYOJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A768582333A73000EE7A93 /* HYOJson.m */; };
+		C9A7685B2333A73000EE7A93 /* HYOJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A768582333A73000EE7A93 /* HYOJson.m */; };
 		C9ABDFB0230BD8660055D5B0 /* SecVerify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA3230BD8660055D5B0 /* SecVerify.framework */; };
 		C9ABDFB1230BD8660055D5B0 /* SecVerify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA3230BD8660055D5B0 /* SecVerify.framework */; };
 		C9ABDFB2230BD8660055D5B0 /* SecVerify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA3230BD8660055D5B0 /* SecVerify.framework */; };
@@ -290,6 +305,16 @@
 		C981F4522307E7A500CA91A5 /* UIColor+Comomn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Comomn.h"; sourceTree = "<group>"; };
 		C981F4532307E7A500CA91A5 /* UIColor+Comomn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Comomn.m"; sourceTree = "<group>"; };
 		C981F4582307EE6000CA91A5 /* DailyDiary_PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyDiary_PrefixHeader.pch; sourceTree = "<group>"; };
+		C9A5F2A52332460000D70084 /* HYOCoding_NetAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYOCoding_NetAPIManager.h; sourceTree = "<group>"; };
+		C9A5F2A62332460000D70084 /* HYOCoding_NetAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYOCoding_NetAPIClient.h; sourceTree = "<group>"; };
+		C9A5F2A72332460100D70084 /* HYOCoding_NetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYOCoding_NetAPIClient.m; sourceTree = "<group>"; };
+		C9A5F2A82332460100D70084 /* HYOCoding_NetAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYOCoding_NetAPIManager.m; sourceTree = "<group>"; };
+		C9A5F2AF23324E1C00D70084 /* NSObject+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
+		C9A5F2B023324E1C00D70084 /* NSObject+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Common.m"; sourceTree = "<group>"; };
+		C9A768512333A66D00EE7A93 /* LoginModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		C9A768522333A66D00EE7A93 /* LoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		C9A768572333A73000EE7A93 /* HYOJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYOJson.h; sourceTree = "<group>"; };
+		C9A768582333A73000EE7A93 /* HYOJson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYOJson.m; sourceTree = "<group>"; };
 		C9ABDFA3230BD8660055D5B0 /* SecVerify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecVerify.framework; sourceTree = "<group>"; };
 		C9ABDFA6230BD8660055D5B0 /* EAccountApiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EAccountApiSDK.framework; sourceTree = "<group>"; };
 		C9ABDFA8230BD8660055D5B0 /* TYRZResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TYRZResource.bundle; sourceTree = "<group>"; };
@@ -588,6 +613,7 @@
 		C981F4072307DCFC00CA91A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C9A768502333A65800EE7A93 /* LoginModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -595,6 +621,8 @@
 		C981F4082307DD0700CA91A5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C9A768562333A71500EE7A93 /* Json */,
+				C9A5F2A4233245DA00D70084 /* Manager */,
 				C90631C8231134130073BAA1 /* Packages */,
 				C95E558A230D481C0076E914 /* Inherit */,
 				C981F4592307EF9A00CA91A5 /* Categorys */,
@@ -742,8 +770,39 @@
 				C95E5586230D31490076E914 /* UITextField+Common.m */,
 				C9CF2F9F230E6F70007165BD /* UIImageView+Common.h */,
 				C9CF2FA0230E6F70007165BD /* UIImageView+Common.m */,
+				C9A5F2AF23324E1C00D70084 /* NSObject+Common.h */,
+				C9A5F2B023324E1C00D70084 /* NSObject+Common.m */,
 			);
 			path = Categorys;
+			sourceTree = "<group>";
+		};
+		C9A5F2A4233245DA00D70084 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C9A5F2A62332460000D70084 /* HYOCoding_NetAPIClient.h */,
+				C9A5F2A72332460100D70084 /* HYOCoding_NetAPIClient.m */,
+				C9A5F2A52332460000D70084 /* HYOCoding_NetAPIManager.h */,
+				C9A5F2A82332460100D70084 /* HYOCoding_NetAPIManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C9A768502333A65800EE7A93 /* LoginModels */ = {
+			isa = PBXGroup;
+			children = (
+				C9A768512333A66D00EE7A93 /* LoginModel.h */,
+				C9A768522333A66D00EE7A93 /* LoginModel.m */,
+			);
+			path = LoginModels;
+			sourceTree = "<group>";
+		};
+		C9A768562333A71500EE7A93 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				C9A768572333A73000EE7A93 /* HYOJson.h */,
+				C9A768582333A73000EE7A93 /* HYOJson.m */,
+			);
+			path = Json;
 			sourceTree = "<group>";
 		};
 		C9ABDF9B230BD6A00055D5B0 /* LoginControllers */ = {
@@ -1112,7 +1171,9 @@
 				C95E5587230D31490076E914 /* UITextField+Common.m in Sources */,
 				C9ABDFCA230BDE910055D5B0 /* LoginViewController.m in Sources */,
 				C9FBAC592320F6E400ABA649 /* LXCalendarWeekView.m in Sources */,
+				C9A768532333A66D00EE7A93 /* LoginModel.m in Sources */,
 				C9DB73E6231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
+				C9A768592333A73000EE7A93 /* HYOJson.m in Sources */,
 				C97244E42326424E0000F916 /* SettingTableViewCell.m in Sources */,
 				C9FBAC712320F6E400ABA649 /* LXCalenderCell.m in Sources */,
 				C981F3DE2307BCA800CA91A5 /* main.m in Sources */,
@@ -1129,9 +1190,12 @@
 				C9EB18C023308F9500DBA76E /* FontViewController.m in Sources */,
 				C981F3CD2307BCA600CA91A5 /* AppDelegate.m in Sources */,
 				C9B1528923223A350034285F /* SearchDiaryViewController.m in Sources */,
+				C9A5F2B123324E1C00D70084 /* NSObject+Common.m in Sources */,
 				C9FBAC5F2320F6E400ABA649 /* LXCalendarHearder.m in Sources */,
 				C9FBAC852320F6EA00ABA649 /* UILabel+LXLabel.m in Sources */,
 				C9DB73EB231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
+				C9A5F2AC2332460100D70084 /* HYOCoding_NetAPIManager.m in Sources */,
+				C9A5F2A92332460100D70084 /* HYOCoding_NetAPIClient.m in Sources */,
 				C9FBAC652320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
 				C9FBAC7F2320F6EA00ABA649 /* UIView+FTCornerdious.m in Sources */,
 				C91C8B802328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m in Sources */,
@@ -1150,6 +1214,7 @@
 				C9ABDFEC230C15CF0055D5B0 /* PersonalInfoView.m in Sources */,
 				C90631CC2311345A0073BAA1 /* ThirdLoginView.m in Sources */,
 				C981F3E82307BCA900CA91A5 /* DailyDiaryTests.m in Sources */,
+				C9A5F2AA2332460100D70084 /* HYOCoding_NetAPIClient.m in Sources */,
 				C9FBAC8C2320F6EA00ABA649 /* UIColor+Expanded.m in Sources */,
 				C981F4032307DBE300CA91A5 /* DDNavigationController.m in Sources */,
 				C9CF2FAC230EC18F007165BD /* OtherLoginView.m in Sources */,
@@ -1167,21 +1232,25 @@
 				C9BA86592324DBE600D46E3C /* PackageView.m in Sources */,
 				C9379DF223165C750045D7C5 /* HomeViewController.m in Sources */,
 				C95E558E230D48660076E914 /* UITextFieldInherit.m in Sources */,
+				C9A5F2AD2332460100D70084 /* HYOCoding_NetAPIManager.m in Sources */,
 				C9FBAC722320F6E400ABA649 /* LXCalenderCell.m in Sources */,
 				C91C8B7C23288E29006EA6E5 /* PhotoWallViewController.m in Sources */,
 				C91C8B812328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m in Sources */,
 				C9FBAC862320F6EA00ABA649 /* UILabel+LXLabel.m in Sources */,
 				C9DB73E7231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
 				C9FBAC6F2320F6E400ABA649 /* LXCalendarMonthModel.m in Sources */,
+				C9A768542333A66D00EE7A93 /* LoginModel.m in Sources */,
 				C90631D123113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */,
 				C9CF2FA2230E6F70007165BD /* UIImageView+Common.m in Sources */,
 				C95E5588230D31490076E914 /* UITextField+Common.m in Sources */,
+				C9A5F2B223324E1C00D70084 /* NSObject+Common.m in Sources */,
 				C9CF2FA7230EC10E007165BD /* OtherLoginViewController.m in Sources */,
 				C9379DFD231686880045D7C5 /* HomePageTableViewCell.m in Sources */,
 				C9379DF8231660F20045D7C5 /* HomeTableViewCell.m in Sources */,
 				C9ABDFE7230BFBC00055D5B0 /* PersonalInfoViewController.m in Sources */,
 				C9EB18C62330902400DBA76E /* FontTableViewCell.m in Sources */,
 				C9FBAC662320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
+				C9A7685A2333A73000EE7A93 /* HYOJson.m in Sources */,
 				C9ABDFCB230BDE910055D5B0 /* LoginViewController.m in Sources */,
 				C981F4552307E7A500CA91A5 /* UIColor+Comomn.m in Sources */,
 				C9FBAC692320F6E400ABA649 /* LXCalendarView.m in Sources */,
@@ -1198,6 +1267,7 @@
 				C9ABDFED230C15CF0055D5B0 /* PersonalInfoView.m in Sources */,
 				C90631CD2311345A0073BAA1 /* ThirdLoginView.m in Sources */,
 				C981F3F32307BCA900CA91A5 /* DailyDiaryUITests.m in Sources */,
+				C9A5F2AB2332460100D70084 /* HYOCoding_NetAPIClient.m in Sources */,
 				C9FBAC8D2320F6EA00ABA649 /* UIColor+Expanded.m in Sources */,
 				C981F4042307DBE300CA91A5 /* DDNavigationController.m in Sources */,
 				C9CF2FAD230EC18F007165BD /* OtherLoginView.m in Sources */,
@@ -1215,21 +1285,25 @@
 				C9BA865A2324DBE600D46E3C /* PackageView.m in Sources */,
 				C9379DF323165C750045D7C5 /* HomeViewController.m in Sources */,
 				C95E558F230D48660076E914 /* UITextFieldInherit.m in Sources */,
+				C9A5F2AE2332460100D70084 /* HYOCoding_NetAPIManager.m in Sources */,
 				C9FBAC732320F6E400ABA649 /* LXCalenderCell.m in Sources */,
 				C91C8B7D23288E29006EA6E5 /* PhotoWallViewController.m in Sources */,
 				C91C8B822328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m in Sources */,
 				C9FBAC872320F6EA00ABA649 /* UILabel+LXLabel.m in Sources */,
 				C9DB73E8231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
 				C9FBAC702320F6E400ABA649 /* LXCalendarMonthModel.m in Sources */,
+				C9A768552333A66D00EE7A93 /* LoginModel.m in Sources */,
 				C90631D223113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */,
 				C9CF2FA3230E6F70007165BD /* UIImageView+Common.m in Sources */,
 				C95E5589230D31490076E914 /* UITextField+Common.m in Sources */,
+				C9A5F2B323324E1C00D70084 /* NSObject+Common.m in Sources */,
 				C9CF2FA8230EC10E007165BD /* OtherLoginViewController.m in Sources */,
 				C9379DFE231686880045D7C5 /* HomePageTableViewCell.m in Sources */,
 				C9379DF9231660F20045D7C5 /* HomeTableViewCell.m in Sources */,
 				C9ABDFE8230BFBC00055D5B0 /* PersonalInfoViewController.m in Sources */,
 				C9EB18C72330902400DBA76E /* FontTableViewCell.m in Sources */,
 				C9FBAC672320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
+				C9A7685B2333A73000EE7A93 /* HYOJson.m in Sources */,
 				C9ABDFCC230BDE910055D5B0 /* LoginViewController.m in Sources */,
 				C981F4562307E7A500CA91A5 /* UIColor+Comomn.m in Sources */,
 				C9FBAC6A2320F6E400ABA649 /* LXCalendarView.m in Sources */,

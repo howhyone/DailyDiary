@@ -11,7 +11,7 @@
 #import "PersonalInfoViewController.h"
 #import "HomeViewController.h"
 #import "OtherLoginViewController.h"
-
+//#import "AFHTTPRequestOperationManager"
 
 @interface LoginViewController ()
 
@@ -100,9 +100,34 @@
             [SecVerify loginWithModel:model completion:^(NSDictionary *resultDic, NSError *error) {
                 if (!error)
                 {
-                    HomeViewController *homeVC = [[HomeViewController alloc] init];
-                    [self.navigationController pushViewController:homeVC animated:NO];
-                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kLoginKey];
+                    NSString *pathStr = @"/mob_diary/login/byVerify";
+                    NSString *appkeyStr = kMobAppkey;
+                    NSString *appSecretStr = kMobAppSecret;
+                    NSString *tokenStr = [resultDic objectForKey:@"token"];
+                    NSString *opTokenStr = [resultDic objectForKey:@"operatorToken"];
+                    NSString *operatorStr = [resultDic objectForKey:@"operatorType"];
+                    NSString *phoneOperatorStr = [NSObject getcarrierName];
+                    NSMutableDictionary *netMutableDic = [[NSMutableDictionary alloc] initWithCapacity:1];
+                    [netMutableDic setObject:appkeyStr forKey:@"appkey"];
+                    [netMutableDic setObject:tokenStr forKey:@"token"];
+                    [netMutableDic setObject:opTokenStr forKey:@"opToken"];
+                    [netMutableDic setObject:operatorStr forKey:@"operator"];
+                    [netMutableDic setObject:phoneOperatorStr forKey:@"phoneOperator"];
+                    [netMutableDic setObject:@"" forKey:@"md5"];
+                    [netMutableDic setObject:appSecretStr forKey:@"appSecret"];
+                    
+                    [[HYOCoding_NetAPIManager sharedManager] request_VerifyLogin_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+                        if (!error) {
+                            NSLog(@"success ---------- data = %@",data);
+                            
+                            HomeViewController *homeVC = [[HomeViewController alloc] init];
+                            [self.navigationController pushViewController:homeVC animated:NO];
+                            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kLoginKey];
+                            
+                        }else{
+                            DebugLog(@"error is ======%@",error);
+                        }
+                    }];
                 }
                 else
                 {
@@ -110,7 +135,7 @@
                     [self.navigationController pushViewController:otherLoginVC animated:YES];
                 }
             }];
-        }
+        }		
         else
         {
             NSLog(@"预取号失败%@", error);

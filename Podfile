@@ -8,6 +8,7 @@ target 'DailyDiary' do
       pod 'IQKeyboardManager'
       pod 'MJRefresh'
       pod 'TZImagePickerController' #选择相册图片
+      pod 'AFNetworking', '~> 3.0'
 
       
       

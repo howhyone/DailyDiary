@@ -37,6 +37,9 @@
 #pragma mark ----------点击事件的代理回调
 -(void)getVerCodeWithPhone:(NSString *)phoneStr
 {
+    
+    
+    
     _phoneStr = phoneStr;
     [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phoneStr zone:@"86" template:nil result:^(NSError *error) {
         if (error) {
@@ -61,6 +64,16 @@
     [SMSSDK commitVerificationCode:codeStr phoneNumber:_phoneStr zone:@"86" result:^(NSError *error) {
         if (!error) {
             NSLog(@"success is ===+++++");
+            NSString *pathStr = @"/mob_diary/login/bySms";
+            NSMutableDictionary *netMutableDic = [NSMutableDictionary dictionaryWithCapacity:1];
+            
+            [netMutableDic setObject:@"17521317395" forKey:@"phone"];
+            [[HYOCoding_NetAPIManager sharedManager] request_SMSLogin_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+                
+            }];
+            
+            
+            
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kLoginKey];
             HomeViewController *homeVC = [[HomeViewController alloc] init];
             [self.navigationController pushViewController:homeVC animated:NO];
