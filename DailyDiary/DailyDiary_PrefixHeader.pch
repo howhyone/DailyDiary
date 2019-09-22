@@ -29,6 +29,11 @@
 #define kLoginKey @"loginKey"
 #define kActiveKey @"activeKey"
 #define kPhoneKey @"phoneKey"
+#define kFontSizeKey @"fontSizeKey"
+#define kFontNameKey @"fontNameKey"
+
+#define kNotificationFontSize @"notificationFontSize"
+#define kNotificationFontName @"notificationFontName"
 
 #import <Masonry/Masonry.h>
 #import "UIColor+Comomn.h"
@@ -37,6 +42,7 @@
 #import "UITextField+Common.h"
 #import "UIImageView+Common.h"
 #import "NSObject+Common.h"
+#import "UITextView+Common.h"
 
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "HYOCoding_NetAPIManager.h"
@@ -47,6 +53,7 @@
 
 
 //calendarSDK 需要的
+
 #define WeakSelf(weakSelf)  __weak __typeof(self) weakSelf = self;
 #define NAVH (MAX(Device_Width, Device_Height)  == 812 ? 88 : 64)
 #define TABBARH 49

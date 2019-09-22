@@ -119,9 +119,9 @@
             NSLog(@" 字体下载完成 ");
             dispatch_async( dispatch_get_main_queue(), ^ {
                 // 可以在这里修改 UI 控件的字体
-                [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:@"fontnamekey"];
+                [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:kFontNameKey];
 
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"fontnamekey" object:self];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];
                 
             });
         } else if (state == kCTFontDescriptorMatchingDownloading) {

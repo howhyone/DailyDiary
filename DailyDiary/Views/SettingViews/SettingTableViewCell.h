@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FontSizeSettingTableViewCell : SettingTableViewCell
 
+@property(nonatomic, strong)UIButton *currentSelectedBtn;
+
 @end
 
 @interface WarnSettingTableViewCell : SettingTableViewCell

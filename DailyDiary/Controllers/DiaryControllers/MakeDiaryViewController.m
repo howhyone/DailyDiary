@@ -11,12 +11,15 @@
 #import "LXCalender.h"
 #import "PackageView.h"
 #import <TZImagePickerController.h>
+#import "PhotoInfoViewController.h"
 
-@interface MakeDiaryViewController ()<clickDateSelectorProtocol,clickKeyboardToolBarItemDelegate,TZImagePickerControllerDelegate>
+
+@interface MakeDiaryViewController ()<clickDateSelectorProtocol,clickKeyboardToolBarItemDelegate,TZImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic, strong)TitleDateView *titleDateView;
 @property(nonatomic, strong)LXCalendarView *calendarView;
 @property(nonatomic,strong) NSMutableArray *selectionPhotoArray;
-
+@property(nonatomic, strong)UICollectionView *diaryCollectionView;
+@property(nonatomic, assign)NSUInteger imageCont;
 @end
 
 @implementation MakeDiaryViewController
@@ -58,37 +61,85 @@
 
 -(void)setupViewInfo
 {
+    __weak typeof(self) weakSelf = self;
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(popHomeController)];
     _titleDateView = [[TitleDateView alloc] initWithFrame:CGRectMake(0, 0, 130 * kScale_Width, 21 * kScale_Height)];
     [self.navigationItem setTitleView:_titleDateView];
      _titleDateView.dateDelegate = self;
     
-    _makeDiaryView = [[MakeDiaryView alloc] initWithFrame:CGRectMake(0, kStateNavigationHeight, kScreen_Width, kScreen_Height)];
+    [self setupDiaryCollectionView];
+    
+    _makeDiaryView = [[MakeDiaryView alloc] init];
     _makeDiaryView.keyboardToolBarView.delegate = self;
     [self.view addSubview:_makeDiaryView];
+    [_makeDiaryView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.top).offset(kStateNavigationHeight + 10 * kScale_Height);
+        make.left.equalTo(self.view.left).offset(15 * kScale_Width);
+        make.right.equalTo(self.view.right).offset(15 * kScale_Width);
+        make.bottom.equalTo(weakSelf.diaryCollectionView.top).offset(10 * kScale_Height);
+    }];
 }
 
--(NSMutableAttributedString *)setAttributedString
+
+-(void)setupDiaryCollectionView
 {
-    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
-    attachment.image = _selectionPhotoArray[0];
-    attachment.bounds = CGRectMake(0, 0, 40, 40);
-    NSAttributedString *textAttachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
-    NSMutableAttributedString *mutableAttributed = [[NSMutableAttributedString alloc] initWithAttributedString:_makeDiaryView.diaryTextView.attributedText];
-    [mutableAttributed insertAttributedString:textAttachmentString atIndex:_makeDiaryView.diaryTextView.selectedRange.location];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:5.0];
-    [paragraphStyle setParagraphSpacing:20.0];
-    [paragraphStyle setAlignment:NSTextAlignmentLeft];
-    [mutableAttributed addAttribute:NSParagraphStyleAttributeName  value:paragraphStyle range:NSMakeRange(0, _makeDiaryView.diaryTextView.text.length)];
-    return mutableAttributed;
-    
+    if (!_diaryCollectionView) {
+        CGRect collectionViewFrame = CGRectMake(0, 400, kScreen_Width, 77 * kScale_Height);
+        UICollectionViewFlowLayout *diaryFlowLayout = [[UICollectionViewFlowLayout alloc] init];
+        diaryFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        diaryFlowLayout.itemSize = CGSizeMake(105 * kScale_Width, 77 * kScale_Height);
+//        diaryFlowLayout.minimumInteritemSpacing =  15;
+//        diaryFlowLayout.sectionInset = UIEdgeInsetsMake(0, 20, 0, 20);
+        _diaryCollectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:diaryFlowLayout];
+        _diaryCollectionView.delegate = self;
+        _diaryCollectionView.dataSource = self;
+        _diaryCollectionView.showsHorizontalScrollIndicator = NO;
+        _diaryCollectionView.bounces = NO;
+        [_diaryCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"diaryImageCollectionViewCell"];
+    }
+    [self.view addSubview:_diaryCollectionView];
+    [_diaryCollectionView setBackgroundColor:[UIColor whiteColor]];
+    [_diaryCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.left).offset(15 * kScale_Width);
+        make.right.equalTo(self.view.right).offset(-15 * kScale_Width);
+        make.bottom.equalTo(self.view.bottom).offset(-10 * kScale_Height);
+        make.height.equalTo(77 * kScale_Height);
+    }];
+    return ;
 }
 
-     
-     
+#pragma mark -------- UICollectionView代理事件
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (_selectionPhotoArray.count) {
+        _imageCont = _selectionPhotoArray.count + _imageCont;
+        return _imageCont;
+    }else{
+        return 1;
+    }
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"diaryImageCollectionViewCell" forIndexPath:indexPath];
+    UIImageView *diaryImageView = [[UIImageView alloc] initWithImage:_selectionPhotoArray[indexPath.row]];
+    diaryImageView.frame = CGRectMake(0, 0, 105 * kScale_Width, 77 * kScale_Height);
+    diaryImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [cell addSubview:diaryImageView];
+    cell.backgroundColor = [UIColor yellowColor];
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    WeakSelf(weakSelf);
+    PhotoInfoViewController *photoInfoVC = [[PhotoInfoViewController alloc] init];
+    [photoInfoVC setDeletedPhotoBlock:^(UIImage * _Nonnull deletedPhotoImage) {
+        [weakSelf.selectionPhotoArray removeObject:deletedPhotoImage];
+    }];
+    photoInfoVC.photoImage = _selectionPhotoArray[indexPath.row];
+    [self.navigationController pushViewController:photoInfoVC animated:NO];
+}
 
 #pragma mark ----------按钮点击事件
 
@@ -180,7 +231,7 @@
             UIImage *img = photo[i];//压缩图片
             [weakSelf.selectionPhotoArray addObject:img];
         }
-        weakSelf.makeDiaryView.diaryTextView.attributedText = [self setAttributedString];
+        [weakSelf.diaryCollectionView reloadData];
         
     }];
     [self presentViewController:imagePickerVc animated:YES completion:nil];

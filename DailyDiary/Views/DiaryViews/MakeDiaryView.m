@@ -8,6 +8,10 @@
 
 #import "MakeDiaryView.h"
 
+@interface MakeDiaryView()<UITextViewDelegate>
+
+@end
+
 @implementation MakeDiaryView
 
 -(id)initWithFrame:(CGRect)frame
@@ -20,20 +24,42 @@
 
 -(void)setupViewInfo
 {
-    [self setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
-    _diaryTextView = [[UITextView alloc] initWithFrame:self.bounds];
+    __weak typeof(self) weakSelf = self;
+    _titleTextField = [UITextField textFieldWithFont:15 withTextColor:0x151718];
+    _titleTextField.placeholder = @"标题";
+    _titleTextField.backgroundColor = [UIColor colorWithRGBHex:0xf5f6f8];
+    [self addSubview:_titleTextField];
+    [_titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.top).offset(10);
+        make.left.equalTo(self.left).offset(0);
+        make.right.equalTo(self.right).offset(0);
+        make.height.equalTo(21 * kScale_Height);
+    }];
+    
+    _diaryTextView = [UITextView textViewWithFontSize:15.0 WithFontColor:0x151718];
     [self addSubview:_diaryTextView];
+    [_diaryTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.titleTextField.bottom).offset(10 * kScale_Height);
+        make.left.equalTo(weakSelf.titleTextField.left).offset(0);
+        make.right.equalTo(weakSelf.titleTextField.right).offset(0);
+        make.bottom.equalTo(self.bottom).offset(0);
+    }];
+
+    
+//    _diaryImageScrollView = [[UIScrollView alloc] init];
+//    _diaryImageScrollView.hidden = YES;
+//    [self addSubview:_diaryImageScrollView];
+//    [_diaryImageScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(weakSelf.diaryTextView.bottom).offset(10 * kScale_Height);
+//        make.left.equalTo(weakSelf.diaryTextView.left).offset(0);
+//        make.height.equalTo(77 * kScale_Height);
+//        make.right.equalTo(weakSelf.diaryTextView.right).offset(0);
+//    }];
+    
     _keyboardToolBarView = [[KeyboardToolBarView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 42 * kScale_Height)];
     _diaryTextView.inputAccessoryView = _keyboardToolBarView;
     
-    
-    UIImage *image1 = [UIImage imageNamed:@"微博"];
-    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
-    attachment.image = image1;
-    
 }
-
-
 
 
 

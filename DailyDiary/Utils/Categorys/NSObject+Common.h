@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(NSString *)getCurrentDateYearMonth;
 
++ (UIImage *)imageWithColor:(UIColor *)color;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,11 +10,34 @@
 
 @implementation UITextField (Common)
 
-+(UITextFieldInherit *)textFieldWithFont:(CGFloat)fontSize withTextColor:(UInt32)textColor withBackgroundColor:(UInt32)backgroundColor
+-(instancetype)init
+{
+    if (self == [super init]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeFont:) name:kNotificationFontSize object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeFont:) name:kNotificationFontName object:nil];
+    }
+    return self;
+}
+
+-(void)changeFont:(NSNotification *)object
+{
+    NSString *currentFontName = [[NSUserDefaults standardUserDefaults] objectForKey:kFontNameKey];
+    CGFloat currentFontSizeStr = [[[NSUserDefaults standardUserDefaults] objectForKey:kFontSizeKey] floatValue];
+    self.font = [UIFont fontWithName:currentFontName size:currentFontSizeStr];
+}
+
++(UITextFieldInherit *)textFieldWithFont:(CGFloat)fontSize withTextColor:(UInt32)textColor
 {
     UITextFieldInherit *textFieldCommon = [[UITextFieldInherit alloc] init];
     textFieldCommon.font = [UIFont systemFontOfSize:fontSize];
     textFieldCommon.textColor = [UIColor colorWithRGBHex:textColor];
+    return textFieldCommon;
+}
+
+
++(UITextFieldInherit *)textFieldWithFont:(CGFloat)fontSize withTextColor:(UInt32)textColor withBackgroundColor:(UInt32)backgroundColor
+{
+    UITextFieldInherit *textFieldCommon = [self textFieldWithFont:fontSize withTextColor:textColor];
     [textFieldCommon setBackgroundColor:[UIColor colorWithRGBHex:backgroundColor]];
     return textFieldCommon;
 }

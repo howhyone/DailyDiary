@@ -14,12 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface MakeDiaryView : UIView
-
+@property(nonatomic, strong)UIScrollView *diaryImageScrollView;
+@property(nonatomic, strong)UITextField *titleTextField;
+@property(nonatomic, strong)UILabel *diaryPlaceholdLabel;
 @property(nonatomic, strong)UITextView *diaryTextView;
 @property(nonatomic, strong) KeyboardToolBarView *keyboardToolBarView;
 
-
 @end
+
+
+
 
 //导航控制器title：日历选择器
 

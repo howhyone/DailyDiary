@@ -129,41 +129,47 @@
         [fontSizeBtn addTarget:self action:@selector(switchFontSize:) forControlEvents:UIControlEventTouchUpInside];
         fontSizeBtn.layer.cornerRadius = 11;
         fontSizeBtn.layer.masksToBounds = YES;
-        [fontSizeBtn setTitleColor:[UIColor colorWithRGBHex:0xfefefe] forState:UIControlStateHighlighted];
-        
+        [fontSizeBtn setTitleColor:[UIColor colorWithRGBHex:0xfefefe] forState:UIControlStateSelected];
+        [fontSizeBtn setBackgroundImage:[NSObject imageWithColor:[UIColor colorWithRGBHex:0x26ad95]] forState:UIControlStateSelected];
         [self addSubview:fontSizeBtn];
         [fontSizeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(self.right).offset((-15 + i * 40) * kScale_Width);
+            make.right.equalTo(self.right).offset(-(15 + i * 40) * kScale_Width);
             make.top.equalTo(self.top).offset(11 * kScale_Height);
             make.bottom.equalTo(self.bottom).offset(-11 * kScale_Height);
             make.width.equalTo(30 * kScale_Width);
         }];
     }
-    
 }
 
 
 -(void)switchFontSize:(UIButton *)button
 {
-    [button setBackgroundColor:[UIColor colorWithRGBHex:0x26ad950]];
+    self.currentSelectedBtn.selected = NO;
+    button.selected = YES;
+    self.currentSelectedBtn = button;
     switch (button.tag) {
         case 10000:
             NSLog(@"tag ===== 10000");
+            [[NSUserDefaults standardUserDefaults] setObject:@"12" forKey:kFontSizeKey];
             break;
         case 10001:
             NSLog(@"tag ===== 10000");
+            [[NSUserDefaults standardUserDefaults] setObject:@"16" forKey:kFontSizeKey];
             break;
         case 10002:
             NSLog(@"tag ===== 10000");
+            [[NSUserDefaults standardUserDefaults] setObject:@"20" forKey:kFontSizeKey];
             break;
         default:
             break;
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontSize object:nil];
+
 }
 
 @end
 
-//字体设置
+//提醒写日记
 @implementation WarnSettingTableViewCell
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

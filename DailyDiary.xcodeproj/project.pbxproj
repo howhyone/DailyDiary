@@ -154,6 +154,12 @@
 		C9DB73EB231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
 		C9DB73EC231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
 		C9DB73ED231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
+		C9E8DF0523371BF300CEA682 /* UITextView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF0423371BF300CEA682 /* UITextView+Common.m */; };
+		C9E8DF0623371BF300CEA682 /* UITextView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF0423371BF300CEA682 /* UITextView+Common.m */; };
+		C9E8DF0723371BF300CEA682 /* UITextView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF0423371BF300CEA682 /* UITextView+Common.m */; };
+		C9E8DF8C2337836E00CEA682 /* PhotoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF8B2337836E00CEA682 /* PhotoInfoViewController.m */; };
+		C9E8DF8D2337836E00CEA682 /* PhotoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF8B2337836E00CEA682 /* PhotoInfoViewController.m */; };
+		C9E8DF8E2337836E00CEA682 /* PhotoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF8B2337836E00CEA682 /* PhotoInfoViewController.m */; };
 		C9EB18C023308F9500DBA76E /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB18BF23308F9500DBA76E /* FontViewController.m */; };
 		C9EB18C123308F9500DBA76E /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB18BF23308F9500DBA76E /* FontViewController.m */; };
 		C9EB18C223308F9600DBA76E /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB18BF23308F9500DBA76E /* FontViewController.m */; };
@@ -345,6 +351,10 @@
 		C9DB73E5231E3E2700DDB1CB /* MakeDiaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeDiaryViewController.m; sourceTree = "<group>"; };
 		C9DB73E9231E3F5600DDB1CB /* MakeDiaryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeDiaryView.h; sourceTree = "<group>"; };
 		C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeDiaryView.m; sourceTree = "<group>"; };
+		C9E8DF0323371BF300CEA682 /* UITextView+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Common.h"; sourceTree = "<group>"; };
+		C9E8DF0423371BF300CEA682 /* UITextView+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Common.m"; sourceTree = "<group>"; };
+		C9E8DF8A2337836E00CEA682 /* PhotoInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoInfoViewController.h; sourceTree = "<group>"; };
+		C9E8DF8B2337836E00CEA682 /* PhotoInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoViewController.m; sourceTree = "<group>"; };
 		C9EB18BE23308F9500DBA76E /* FontViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontViewController.h; sourceTree = "<group>"; };
 		C9EB18BF23308F9500DBA76E /* FontViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontViewController.m; sourceTree = "<group>"; };
 		C9EB18C32330902400DBA76E /* FontTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
@@ -471,6 +481,8 @@
 				C9DB73E5231E3E2700DDB1CB /* MakeDiaryViewController.m */,
 				C9B1528723223A350034285F /* SearchDiaryViewController.h */,
 				C9B1528823223A350034285F /* SearchDiaryViewController.m */,
+				C9E8DF8A2337836E00CEA682 /* PhotoInfoViewController.h */,
+				C9E8DF8B2337836E00CEA682 /* PhotoInfoViewController.m */,
 			);
 			path = DiaryControllers;
 			sourceTree = "<group>";
@@ -770,6 +782,8 @@
 				C95E5586230D31490076E914 /* UITextField+Common.m */,
 				C9CF2F9F230E6F70007165BD /* UIImageView+Common.h */,
 				C9CF2FA0230E6F70007165BD /* UIImageView+Common.m */,
+				C9E8DF0323371BF300CEA682 /* UITextView+Common.h */,
+				C9E8DF0423371BF300CEA682 /* UITextView+Common.m */,
 				C9A5F2AF23324E1C00D70084 /* NSObject+Common.h */,
 				C9A5F2B023324E1C00D70084 /* NSObject+Common.m */,
 			);
@@ -1194,12 +1208,14 @@
 				C9FBAC5F2320F6E400ABA649 /* LXCalendarHearder.m in Sources */,
 				C9FBAC852320F6EA00ABA649 /* UILabel+LXLabel.m in Sources */,
 				C9DB73EB231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
+				C9E8DF0523371BF300CEA682 /* UITextView+Common.m in Sources */,
 				C9A5F2AC2332460100D70084 /* HYOCoding_NetAPIManager.m in Sources */,
 				C9A5F2A92332460100D70084 /* HYOCoding_NetAPIClient.m in Sources */,
 				C9FBAC652320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
 				C9FBAC7F2320F6EA00ABA649 /* UIView+FTCornerdious.m in Sources */,
 				C91C8B802328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m in Sources */,
 				C90631CB2311345A0073BAA1 /* ThirdLoginView.m in Sources */,
+				C9E8DF8C2337836E00CEA682 /* PhotoInfoViewController.m in Sources */,
 				C9CF2FA6230EC10E007165BD /* OtherLoginViewController.m in Sources */,
 				C90631D023113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */,
 				C91C8B7B23288E29006EA6E5 /* PhotoWallViewController.m in Sources */,
@@ -1229,6 +1245,7 @@
 				C981F4502307E65D00CA91A5 /* UILabel+Common.m in Sources */,
 				C9FBAC6C2320F6E400ABA649 /* NSDate+GFCalendar.m in Sources */,
 				C9ABDFF1230C17D90055D5B0 /* UIButton+Common.m in Sources */,
+				C9E8DF0623371BF300CEA682 /* UITextView+Common.m in Sources */,
 				C9BA86592324DBE600D46E3C /* PackageView.m in Sources */,
 				C9379DF223165C750045D7C5 /* HomeViewController.m in Sources */,
 				C95E558E230D48660076E914 /* UITextFieldInherit.m in Sources */,
@@ -1250,6 +1267,7 @@
 				C9ABDFE7230BFBC00055D5B0 /* PersonalInfoViewController.m in Sources */,
 				C9EB18C62330902400DBA76E /* FontTableViewCell.m in Sources */,
 				C9FBAC662320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
+				C9E8DF8D2337836E00CEA682 /* PhotoInfoViewController.m in Sources */,
 				C9A7685A2333A73000EE7A93 /* HYOJson.m in Sources */,
 				C9ABDFCB230BDE910055D5B0 /* LoginViewController.m in Sources */,
 				C981F4552307E7A500CA91A5 /* UIColor+Comomn.m in Sources */,
@@ -1282,6 +1300,7 @@
 				C981F4512307E65D00CA91A5 /* UILabel+Common.m in Sources */,
 				C9FBAC6D2320F6E400ABA649 /* NSDate+GFCalendar.m in Sources */,
 				C9ABDFF2230C17D90055D5B0 /* UIButton+Common.m in Sources */,
+				C9E8DF0723371BF300CEA682 /* UITextView+Common.m in Sources */,
 				C9BA865A2324DBE600D46E3C /* PackageView.m in Sources */,
 				C9379DF323165C750045D7C5 /* HomeViewController.m in Sources */,
 				C95E558F230D48660076E914 /* UITextFieldInherit.m in Sources */,
@@ -1303,6 +1322,7 @@
 				C9ABDFE8230BFBC00055D5B0 /* PersonalInfoViewController.m in Sources */,
 				C9EB18C72330902400DBA76E /* FontTableViewCell.m in Sources */,
 				C9FBAC672320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
+				C9E8DF8E2337836E00CEA682 /* PhotoInfoViewController.m in Sources */,
 				C9A7685B2333A73000EE7A93 /* HYOJson.m in Sources */,
 				C9ABDFCC230BDE910055D5B0 /* LoginViewController.m in Sources */,
 				C981F4562307E7A500CA91A5 /* UIColor+Comomn.m in Sources */,
