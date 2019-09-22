@@ -25,13 +25,23 @@
 #import "HYOJson.h"
 #import <objc/runtime.h>
 @implementation HYOJson
-+(id)objectWithModelClass:(NSString *)modelClass withJsonString:(NSString *)jsonStr
+
+
+#pragma mark ---------创建一个model类中的属性 setter方法
+//-(SEL)createSetterWithPropertyName:(NSString *)propertyName
+//{
+//    propertyName = [propertyName capitalizedString]; //首字母大写
+//    NSString *setterMethod = [NSString stringWithFormat:@"set%@",propertyName];
+//    SEL setterSel = NSSelectorFromString(setterMethod);
+//    return NSSelectorFromString(setterMethod);
+//}
+
++(id)objectWithModelClass:(NSString *)modelClass withJsonString:(id)jsonDic
 {
-    if (!modelClass || !jsonStr ) {
+    if (!modelClass || !jsonDic ) {
         return nil;
     }
-    NSData *jsonData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
-    id jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    
     if (![jsonDic isKindOfClass:[NSDictionary class]]) {
         return nil;
     }
@@ -43,15 +53,24 @@
     if (![resDic isKindOfClass:[NSDictionary class]]) {
         return nil;
     }
-    NSMutableArray *modelArr = [NSMutableArray arrayWithCapacity:1];
     u_int count;
-    objc_property_t *propertyList = class_copyPropertyList([modelClass class], &count);
+    id modelObject = [[NSClassFromString(modelClass) alloc] init];
+    objc_property_t *propertyList = class_copyPropertyList([NSClassFromString(modelClass) class], &count);
     for (int i = 0; i < count; i++) {
         const char *propertyChar = property_getName(propertyList[i]);
         NSString *propertyName = [NSString stringWithUTF8String:propertyChar];
         NSString *propertyValue = [resDic objectForKey:propertyName];
-        [modelArr addObject:propertyValue];
+        propertyName = [propertyName capitalizedString]; //首字母大写
+        NSString *setterMethod = [NSString stringWithFormat:@"set%@:",propertyName];
+        SEL setterSel = NSSelectorFromString(setterMethod);
+       
+        if ([modelObject respondsToSelector:setterSel]) {
+            [modelObject performSelectorOnMainThread:setterSel withObject:propertyValue waitUntilDone:[NSThread isMainThread]];
+        }
     }
-    return modelArr;
+    return modelObject;
 }
+
+
+
 @end

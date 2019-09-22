@@ -11,8 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HYOJson : NSObject
+-(SEL)createSetterWithPropertyName:(NSString *)propertyName;
 
-+(id)objectWithModelClass:(NSString *)modelClass withJsonString:(NSString *)jsonStr;
++(id)objectWithModelClass:(NSString *)modelClass withJsonString:(id)jsonDic;
 @end
 
 NS_ASSUME_NONNULL_END

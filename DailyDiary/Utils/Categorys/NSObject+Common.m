@@ -38,4 +38,23 @@
     return carrierNameStr;
 }
 
++(NSString *)currentItmeStr
+{
+    NSDate *currentDate = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval TimeInterval = [currentDate timeIntervalSince1970] * 1000;
+    NSString *TimeStr = [NSString stringWithFormat:@"%f",TimeInterval];
+    return TimeStr;
+}
+
++(NSString *)getCurrentDateYearMonth
+{
+    NSDate *currentDate = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:currentDate];
+    NSInteger year = [dateComponent year];
+    NSInteger month = [dateComponent month];
+    return [NSString stringWithFormat:@"%ld-%ld",year,month];
+}
+
 @end

@@ -779,10 +779,10 @@
 		C9A5F2A4233245DA00D70084 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				C9A5F2A62332460000D70084 /* HYOCoding_NetAPIClient.h */,
-				C9A5F2A72332460100D70084 /* HYOCoding_NetAPIClient.m */,
 				C9A5F2A52332460000D70084 /* HYOCoding_NetAPIManager.h */,
 				C9A5F2A82332460100D70084 /* HYOCoding_NetAPIManager.m */,
+				C9A5F2A62332460000D70084 /* HYOCoding_NetAPIClient.h */,
+				C9A5F2A72332460100D70084 /* HYOCoding_NetAPIClient.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";

@@ -22,8 +22,32 @@
     PersonalInfoView *personalInfoView = [[PersonalInfoView alloc] initWithFrame:CGRectMake(0,kStateNavigationHeight,kScreen_Width,kScreen_Height)];
     personalInfoView.delegate = self;
     
-    
+    [self httpRequestInquiry];
     [self.view addSubview:personalInfoView];
+}
+
+-(void)httpRequestInquiry
+{
+    NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
+    NSMutableDictionary *paramsMutableDic = [NSMutableDictionary dictionaryWithCapacity:1];
+    [paramsMutableDic setObject:phoneStr forKey:@"phone"];
+    NSString *pathStr = @"/mob_diary/user/info";
+    [[HYOCoding_NetAPIManager sharedManager] request_UserInquiry_WithPath:pathStr Params:paramsMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        
+    }];
+}
+-(void)httpRequestUserEdit
+{
+    NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
+    NSMutableDictionary *paramsMutableDic = [NSMutableDictionary dictionaryWithCapacity:1];
+    [paramsMutableDic setObject:phoneStr forKey:@"phone"];
+    [paramsMutableDic setObject:@"zx" forKey:@"name"];
+    
+//    [paramsMutableDic setObject:@"" forKey:@"file"];
+    NSString *pathStr = @"/mob_diary/user/edit";
+    [[HYOCoding_NetAPIManager sharedManager] request_UserEdit_WithPath:pathStr Params:paramsMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        
+    }];
 }
 
 -(void)clickButton:(NSInteger)buttonTag
@@ -37,6 +61,7 @@
             break;
         case 1003: //提交个人资料
             NSLog(@"1003 =====");
+            [self httpRequestUserEdit];
             break;
         case 1004: // 微信授权
             NSLog(@"1004------");

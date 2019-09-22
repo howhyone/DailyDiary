@@ -20,12 +20,15 @@
 #define kNavigationBarHeigth self.navigationController.navigationBar.frame.size.height
 #define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
 #define kStateNavigationHeight kNavigationBarHeigth+kStatusBarHeight
-#define kLoginKey @"loginKey"
-#define kActivekey @"activeKey"
+
 #define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+
 #define kMobAppkey @"2c574691c6986"
 #define kMobAppSecret @"4b5cd595eb07b5cf17bb269f7a51391d"
-#define WeakSelf __weak typeof(self) weakSelf = self;
+
+#define kLoginKey @"loginKey"
+#define kActiveKey @"activeKey"
+#define kPhoneKey @"phoneKey"
 
 #import <Masonry/Masonry.h>
 #import "UIColor+Comomn.h"

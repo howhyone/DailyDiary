@@ -7,18 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "LoginModel.h"
-//#import "User.h"
-//#import "ProjectModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HYOCoding_NetAPIManager : NSObject
 
-
-
 +(instancetype)sharedManager;
-
 
 #pragma mark ------------ login
 
@@ -26,6 +20,22 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)request_VerifyLogin_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
 
 -(void)request_SMSLogin_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
+
+#pragma mark -------- 用户信息
+
+-(void)request_UserInquiry_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
+
+-(void)request_UserEdit_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
+
+#pragma mark ----------- 日记首页
+
+-(void)request_EditDiray_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
+
+-(void)request_ListDiary_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
+
+-(void)request_DetailDiary_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
+
+
 
 @end
 

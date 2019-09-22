@@ -8,7 +8,7 @@
 
 #import "HYOCoding_NetAPIClient.h"
 
-static NSString *const kBaseURLStr = @"http://6ypi2h.natappfree.cc";
+static NSString *const kBaseURLStr = @"http://dhrm8r.natappfree.cc";
 
 @implementation HYOCoding_NetAPIClient
 
@@ -97,11 +97,87 @@ static  HYOCoding_NetAPIClient *clienOnce = nil;
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 block(responseObject,nil);
-                NSLog(@"dataDic =========== $%@",responseObject);
 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 block(nil,error);
-                NSLog(@"error is==========+%@",error);
+            }];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)request_UserInquiry_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block
+{
+    if (!path || !params) {
+        return;
+    }
+    switch (methord) {
+        case GET:
+        {
+            [self GET:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+            }];
+        }
+            break;
+        case POST:
+        {
+            [self POST:path parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+            }];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)request_UserEdit_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block
+{
+    if (!path || !params) {
+        return;
+    }
+    switch (methord) {
+        case GET:
+        {
+            [self GET:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+            }];
+        }
+            break;
+        case POST:
+        {
+            [self POST:path parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+                NSString *phoneStr = @"17521317395";
+                NSData *phoneData = [phoneStr dataUsingEncoding:NSUTF8StringEncoding];
+                [formData appendPartWithFormData:phoneData name:@"phone"];
+                NSString *nameStr = @"zx";
+                NSData *nameData = [nameStr dataUsingEncoding:NSUTF8StringEncoding];
+                [formData appendPartWithFormData:nameData name:@"name"];
+                UIImage *imageFile = [UIImage imageNamed:@"jjy2.jpg"];
+                NSData *dataFile = UIImageJPEGRepresentation(imageFile, 1.0);
+                [formData appendPartWithFileData:dataFile name:[NSString stringWithFormat:@"jjy2"] fileName:[NSString stringWithFormat:@"jjy2.png"] mimeType:@"image/JPG"];
+            } progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
 
             }];
         }
@@ -111,9 +187,124 @@ static  HYOCoding_NetAPIClient *clienOnce = nil;
     }
 }
 
--(void)request_ProjectCont_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block
+-(void)request_EditDiray_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block
 {
-    
+    if (!path || !params) {
+        return;
+    }
+    switch (methord) {
+        case GET:
+        {
+            [self GET:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+            }];
+        }
+            break;
+        case POST:
+        {
+            [self POST:path parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+                NSString *phoneStr = @"17521317395";
+                NSData *phoneData = [phoneStr dataUsingEncoding:NSUTF8StringEncoding];
+                [formData appendPartWithFormData:phoneData name:@"userId"];
+                NSString *nameStr = @"zx";
+                NSData *nameData = [nameStr dataUsingEncoding:NSUTF8StringEncoding];
+                [formData appendPartWithFormData:nameData name:@"title"];
+                NSString *dateStr = @"20190916";
+                NSData *dateData = [dateStr dataUsingEncoding:NSUTF8StringEncoding];
+                [formData appendPartWithFormData:dateData name:@"date"];
+                NSString *contextStr = @"context";
+                NSData *contextData = [contextStr dataUsingEncoding:NSUTF8StringEncoding];
+                [formData appendPartWithFormData:contextData name:@"context"];
+                UIImage *imageFile = [UIImage imageNamed:@"jjy2.jpg"];
+                NSData *dataFile = UIImageJPEGRepresentation(imageFile, 1.0);
+                [formData appendPartWithFileData:dataFile name:[NSString stringWithFormat:@"jjy2"] fileName:[NSString stringWithFormat:@"jjy2.png"] mimeType:@"image/JPG"];
+            } progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+                
+            }];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
+-(void)request_ListDiary_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block
+{
+    if (!path || !params) {
+        return;
+    }
+    switch (methord) {
+        case GET:
+        {
+            [self GET:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+            }];
+        }
+            break;
+        case POST:
+        {
+            [self POST:path parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+            }];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+
+
+-(void)request_DetailDiary_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block
+{
+    if (!path || !params) {
+        return;
+    }
+    switch (methord) {
+        case GET:
+        {
+            [self GET:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+            }];
+        }
+            break;
+        case POST:
+        {
+            [self POST:path parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+            }];
+        }
+            break;
+        default:
+            break;
+    }
+}
 @end

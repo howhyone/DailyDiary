@@ -37,9 +37,6 @@
 #pragma mark ----------点击事件的代理回调
 -(void)getVerCodeWithPhone:(NSString *)phoneStr
 {
-    
-    
-    
     _phoneStr = phoneStr;
     [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phoneStr zone:@"86" template:nil result:^(NSError *error) {
         if (error) {
@@ -50,14 +47,6 @@
     }];
 }
 
--(void)thirdLoginWithPlatfromType:(SSDKPlatformType)platformType
-{
-    [ThirdLoginFunction thirdLoginPlatfromType:platformType withBlock:^(SSDKResponseState responseState, SSDKUser * _Nonnull userInfosss, NSError * _Nonnull error) {
-        
-    }];
-
-}
-
 -(void)phoneLoginWithVerCode:(NSString *)codeStr
 {
     NSLog(@"phoneLogin----");
@@ -66,23 +55,23 @@
             NSLog(@"success is ===+++++");
             NSString *pathStr = @"/mob_diary/login/bySms";
             NSMutableDictionary *netMutableDic = [NSMutableDictionary dictionaryWithCapacity:1];
-            
-            [netMutableDic setObject:@"17521317395" forKey:@"phone"];
+            WeakSelf(weakSelf);
+            [netMutableDic setObject:weakSelf.phoneStr forKey:@"phone"];
             [[HYOCoding_NetAPIManager sharedManager] request_SMSLogin_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
-                
+                if (!error && data) {
+                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kLoginKey];
+                    [[NSUserDefaults standardUserDefaults] setObject:weakSelf.phoneStr forKey:kPhoneKey];
+                    HomeViewController *homeVC = [[HomeViewController alloc] init];
+                    [self.navigationController pushViewController:homeVC animated:NO];
+                }
             }];
-            
-            
-            
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kLoginKey];
-            HomeViewController *homeVC = [[HomeViewController alloc] init];
-            [self.navigationController pushViewController:homeVC animated:NO];
+
         }else{
             NSLog(@"error is ===+++++%@",error);
         }
     }];
 }
-
+        
 /*
 #pragma mark - Navigation
 

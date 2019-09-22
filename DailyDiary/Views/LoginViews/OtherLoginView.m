@@ -21,7 +21,7 @@
 -(id)initWithFrame:(CGRect)frame
 {
     if ([super initWithFrame:frame]) {
-        _timeNum = 60;
+        _timeNum = 59;
         [self setupViewInfo];
     }
     return self;
@@ -138,7 +138,7 @@
 
 -(void)regreshButton
 {
-    if (_timeNum > 0) {
+    if (_timeNum > 1) {
         _timeNum = _timeNum - 1;
         [self.verBtn setTitle:[NSString stringWithFormat:@"%d",_timeNum] forState:UIControlStateNormal];
         self.verBtn.enabled = NO;
@@ -146,6 +146,7 @@
         [self.verBtn setTitle:@"发送验证码" forState:UIControlStateNormal];
         self.verBtn.enabled = YES;
         [self releaseTimer];
+        _timeNum = 59;
     }
 }
 //释放timer

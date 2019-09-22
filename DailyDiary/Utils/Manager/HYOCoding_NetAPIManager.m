@@ -8,7 +8,7 @@
 
 #import "HYOCoding_NetAPIManager.h"
 #import "HYOCoding_NetAPIClient.h"
-
+#import "LoginModel.h"
 
 @implementation HYOCoding_NetAPIManager
 
@@ -27,25 +27,20 @@
 -(void)request_VerifyLogin_WithPath:(NSString *)path Params:(id)params andBlock:(void (^)(id data, NSError * error))block
 {
     HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
-//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    
- 
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+
     [manager request_Login_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
-            NSDictionary *dataDic = [data objectForKey:@"data"];
-            NSLog(@"dataDic =========== $%@",dataDic);
-            NSArray *dataAerr = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            NSLog(@"dataDic =========== $%@",data);
+            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            block(loginM,nil);
             
-//            User *userM = [NSObject objectOfClass:@"User" fromJson:dataDic];
-//            block(userM,nil);
         }else{
             block(nil,error);
             NSLog(@"error is==========+%@",error);
         }
-        
-        
+
     }];
 }
 
@@ -59,13 +54,104 @@
     
     [manager request_Login_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
-            NSDictionary *dataDic = [data objectForKey:@"data"];
-            NSLog(@"dataDic =========== $%@",dataDic);
-            //            User *userM = [NSObject objectOfClass:@"User" fromJson:dataDic];
-            //            block(userM,nil);
+            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            block(loginM,error);
         }else{
-            block(nil,error);
+            block(data,error);
             NSLog(@"error is==========+%@",error);
+        }
+    }];
+}
+
+-(void)request_UserInquiry_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block
+{
+    HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
+   
+    [manager request_UserInquiry_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            NSLog(@"data is ======+%@",data);
+            block(loginM,error);
+        }else{
+            NSLog(@"error is==========+%@",error);
+            block(data,error);
+        }
+    }];
+}
+-(void)request_UserEdit_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block
+{
+    HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:
+                                                         @"application/json",
+                                                         @"text/html"       ,
+                                                         @"image/jpeg"      ,
+                                                         @"image/png"       ,
+                                                         @"image/jpg"       ,
+                                                         @"application/octet-stream",
+                                                         @"text/json"      ,
+                                                         nil] ;
+    
+    [manager request_UserEdit_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            NSLog(@"data is ======+%@",data);
+            block(loginM,error);
+        }else{
+            NSLog(@"error is==========+%@",error);
+            block(data,error);
+        }
+    }];
+}
+
+
+-(void)request_EditDiray_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block
+{
+    HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
+
+    [manager request_EditDiray_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+	            block(loginM,error);
+        }else{
+            NSLog(@"error is==========+%@",error);
+            block(data,error);
+        }
+    }];
+}
+
+-(void)request_ListDiary_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block
+{
+    HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager request_ListDiary_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            NSLog(@"ListDiary data ===========%@",data);
+            block(loginM,error);
+        }else{
+            NSLog(@"error is==========+%@",error);
+             block(data,error);
+        }
+    }];
+}
+
+-(void)request_DetailDiary_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block
+{
+    HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
+
+    [manager request_DetailDiary_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            NSLog(@"data ===========%@",data);
+            block(loginM,error);
+        }else{
+            NSLog(@"error is==========+%@",error);
+            block(data,error);
         }
     }];
 }

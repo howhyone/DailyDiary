@@ -39,6 +39,22 @@
     [self setupViewInfo];
     
 }
+#pragma mark --------网络请求
+-(void)httpRequestEditDiary
+{
+    NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
+    NSMutableDictionary *paramsMutableDic = [NSMutableDictionary dictionaryWithCapacity:1];
+    [paramsMutableDic setObject:@"1" forKey:@"title"];
+    [paramsMutableDic setObject:@"20190916" forKey:@"date"];
+    [paramsMutableDic setObject:@"3" forKey:@"context"];
+    [paramsMutableDic setObject:phoneStr forKey:@"userId"];
+    NSMutableArray *mutableArr = [NSMutableArray arrayWithCapacity:1];
+    [paramsMutableDic setObject:mutableArr forKey:@"files"];
+    NSString *pathStr = @"/mob_diary/diary/edit";
+    [[HYOCoding_NetAPIManager sharedManager] request_EditDiray_WithPath:pathStr Params:paramsMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        
+    }];
+}
 
 -(void)setupViewInfo
 {
@@ -172,6 +188,7 @@
 
 -(void)clickKeyboardToolBarDoneItem
 {
+    [self httpRequestEditDiary];
     [self.navigationController popViewControllerAnimated:NO];
 }
 

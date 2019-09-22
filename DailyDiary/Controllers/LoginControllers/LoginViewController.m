@@ -11,6 +11,7 @@
 #import "PersonalInfoViewController.h"
 #import "HomeViewController.h"
 #import "OtherLoginViewController.h"
+#import "loginModel.h"
 //#import "AFHTTPRequestOperationManager"
 
 @interface LoginViewController ()
@@ -116,13 +117,15 @@
                     [netMutableDic setObject:@"" forKey:@"md5"];
                     [netMutableDic setObject:appSecretStr forKey:@"appSecret"];
                     
-                    [[HYOCoding_NetAPIManager sharedManager] request_VerifyLogin_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
-                        if (!error) {
+                    [[HYOCoding_NetAPIManager sharedManager] request_VerifyLogin_WithPath:pathStr Params:netMutableDic andBlock:^(id   data, NSError *  error) {
+                        if (!error && data) {
                             NSLog(@"success ---------- data = %@",data);
-                            
+                            LoginModel *loginM = (LoginModel *)data;
+                            [[NSUserDefaults standardUserDefaults] setObject:loginM.phone forKey:kPhoneKey];
+                            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kLoginKey];
+
                             HomeViewController *homeVC = [[HomeViewController alloc] init];
                             [self.navigationController pushViewController:homeVC animated:NO];
-                            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kLoginKey];
                             
                         }else{
                             DebugLog(@"error is ======%@",error);

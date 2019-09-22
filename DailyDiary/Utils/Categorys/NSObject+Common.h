@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(NSString *)getcarrierName;
 
++(NSString *)currentItmeStr;
+
++(NSString *)getCurrentDateYearMonth;
+
 @end
 
 NS_ASSUME_NONNULL_END

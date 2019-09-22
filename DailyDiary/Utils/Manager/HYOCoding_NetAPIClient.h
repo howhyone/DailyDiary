@@ -24,7 +24,17 @@ typedef enum {
 
 -(void)request_Login_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block;
 
--(void)request_ProjectCont_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block;
+-(void)request_UserInquiry_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block;
+
+-(void)request_UserEdit_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block;
+
+
+-(void)request_EditDiray_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block;
+
+-(void)request_ListDiary_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block;
+
+-(void)request_DetailDiary_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block;
+
 
 -(void)requestJsonDataWithPath:(NSString *)aPath
                     withParams:(NSDictionary *)params

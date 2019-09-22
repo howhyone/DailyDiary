@@ -34,6 +34,27 @@
     return _photoWallCollectionView;
 }
 
+-(void)httpRequestDetail
+{
+    NSString *currentTimeStr = [NSObject getCurrentDateYearMonth];
+    NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
+    NSMutableDictionary *netMutableDic = [[NSMutableDictionary alloc] initWithCapacity:1];
+    [netMutableDic setObject:@"20190918" forKey:@"time"];
+    [netMutableDic setObject:phoneStr forKey:@"phone"];
+    NSString *pathStr = @"/mob_diary/diary/detail";
+    [[HYOCoding_NetAPIManager sharedManager] request_DetailDiary_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        
+    }];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
+    [self.view addSubview:self.photoWallCollectionView];
+    [_photoWallCollectionView setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
+    
+}
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return 30;
@@ -48,18 +69,14 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    MakeDiaryViewController *makeDiaryVC = [[MakeDiaryViewController alloc] init];
     
+    [self httpRequestDetail];
+    
+    MakeDiaryViewController *makeDiaryVC = [[MakeDiaryViewController alloc] init];
     [self.navigationController pushViewController:makeDiaryVC animated:YES];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
-    [self.view addSubview:self.photoWallCollectionView];
-    [_photoWallCollectionView setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
-    
-}
+
 
 /*
 #pragma mark - Navigation

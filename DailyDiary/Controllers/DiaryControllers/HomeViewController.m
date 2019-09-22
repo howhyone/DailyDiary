@@ -40,6 +40,19 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupViewInfo];
+    [self httpRequest];
+}
+
+-(void)httpRequest
+{
+    NSString *currentTimeStr = [NSObject getCurrentDateYearMonth];
+    NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
+    NSMutableDictionary *netMutableDic = [[NSMutableDictionary alloc] initWithCapacity:1];
+    [netMutableDic setObject:@"201909" forKey:@"time"];
+    [netMutableDic setObject:phoneStr forKey:@"phone"];
+    NSString *pathStr = @"/mob_diary/diary/list";
+    [[HYOCoding_NetAPIManager sharedManager] request_ListDiary_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+    }];
 }
 
 -(void)setupViewInfo
