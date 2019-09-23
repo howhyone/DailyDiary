@@ -35,6 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)request_DetailDiary_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
 
+#pragma mark ----------- 搜索日记
+
+-(void)request_SearchDiray_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
 
 
 @end

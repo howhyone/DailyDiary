@@ -163,6 +163,7 @@
         default:
             break;
     }
+
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontSize object:nil];
 
 }

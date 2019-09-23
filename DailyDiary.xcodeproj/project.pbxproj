@@ -14,6 +14,9 @@
 		C90631D023113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */; };
 		C90631D123113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */; };
 		C90631D223113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */; };
+		C90994E12338609C001DCC57 /* DiaryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C90994E02338609C001DCC57 /* DiaryListModel.m */; };
+		C90994E22338609C001DCC57 /* DiaryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C90994E02338609C001DCC57 /* DiaryListModel.m */; };
+		C90994E32338609C001DCC57 /* DiaryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C90994E02338609C001DCC57 /* DiaryListModel.m */; };
 		C916EE5F2327D227005BDF4C /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C916EE5E2327D227005BDF4C /* pic.jpg */; };
 		C916EE612327D241005BDF4C /* jjy2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C916EE602327D241005BDF4C /* jjy2.jpg */; };
 		C91C8B7B23288E29006EA6E5 /* PhotoWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91C8B7A23288E29006EA6E5 /* PhotoWallViewController.m */; };
@@ -238,6 +241,8 @@
 		C90631CA2311345A0073BAA1 /* ThirdLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdLoginView.m; sourceTree = "<group>"; };
 		C90631CE23113C3C0073BAA1 /* ThirdLoginFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdLoginFunction.h; sourceTree = "<group>"; };
 		C90631CF23113C3C0073BAA1 /* ThirdLoginFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdLoginFunction.m; sourceTree = "<group>"; };
+		C90994DF2338609C001DCC57 /* DiaryListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiaryListModel.h; sourceTree = "<group>"; };
+		C90994E02338609C001DCC57 /* DiaryListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiaryListModel.m; sourceTree = "<group>"; };
 		C916EE5E2327D227005BDF4C /* pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic.jpg; sourceTree = "<group>"; };
 		C916EE602327D241005BDF4C /* jjy2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jjy2.jpg; sourceTree = "<group>"; };
 		C91C8B7923288E29006EA6E5 /* PhotoWallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoWallViewController.h; sourceTree = "<group>"; };
@@ -472,6 +477,15 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
+		C90994DE23386062001DCC57 /* DiaryModels */ = {
+			isa = PBXGroup;
+			children = (
+				C90994DF2338609C001DCC57 /* DiaryListModel.h */,
+				C90994E02338609C001DCC57 /* DiaryListModel.m */,
+			);
+			path = DiaryModels;
+			sourceTree = "<group>";
+		};
 		C9379DEE23165C150045D7C5 /* DiaryControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,6 +639,7 @@
 		C981F4072307DCFC00CA91A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C90994DE23386062001DCC57 /* DiaryModels */,
 				C9A768502333A65800EE7A93 /* LoginModels */,
 			);
 			path = Models;
@@ -1217,6 +1232,7 @@
 				C90631CB2311345A0073BAA1 /* ThirdLoginView.m in Sources */,
 				C9E8DF8C2337836E00CEA682 /* PhotoInfoViewController.m in Sources */,
 				C9CF2FA6230EC10E007165BD /* OtherLoginViewController.m in Sources */,
+				C90994E12338609C001DCC57 /* DiaryListModel.m in Sources */,
 				C90631D023113C3C0073BAA1 /* ThirdLoginFunction.m in Sources */,
 				C91C8B7B23288E29006EA6E5 /* PhotoWallViewController.m in Sources */,
 			);
@@ -1238,6 +1254,7 @@
 				C9DB73EC231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
 				C9FBAC832320F6EA00ABA649 /* UIView+LX_Frame.m in Sources */,
 				C9FBAC5A2320F6E400ABA649 /* LXCalendarWeekView.m in Sources */,
+				C90994E22338609C001DCC57 /* DiaryListModel.m in Sources */,
 				C97244DF232641D00000F916 /* SettingViewController.m in Sources */,
 				C981F40F2307DECB00CA91A5 /* DD_RootViewController.m in Sources */,
 				C9EB18C123308F9500DBA76E /* FontViewController.m in Sources */,
@@ -1293,6 +1310,7 @@
 				C9DB73ED231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
 				C9FBAC842320F6EA00ABA649 /* UIView+LX_Frame.m in Sources */,
 				C9FBAC5B2320F6E400ABA649 /* LXCalendarWeekView.m in Sources */,
+				C90994E32338609C001DCC57 /* DiaryListModel.m in Sources */,
 				C97244E0232641D00000F916 /* SettingViewController.m in Sources */,
 				C981F4102307DECB00CA91A5 /* DD_RootViewController.m in Sources */,
 				C9EB18C223308F9600DBA76E /* FontViewController.m in Sources */,

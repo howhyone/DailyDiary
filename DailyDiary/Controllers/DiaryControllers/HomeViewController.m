@@ -12,10 +12,14 @@
 #import "MakeDiaryViewController.h"
 #import "SettingViewController.h"
 #import "SearchDiaryViewController.h"
+#import "DiaryListModel.h"
 
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *homeTableView;
+@property(nonatomic, strong)NSArray *diaryModelArr;
+@property(nonatomic, strong)DiaryListModel *diaryListM;
+@property(nonatomic, copy) NSString *dateStr;
 @end
 
 @implementation HomeViewController
@@ -33,6 +37,10 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
         [_homeTableView registerClass:[ImageTextTableViewCell class] forCellReuseIdentifier:@"ImageTextTableViewCell"];
         _homeTableView.showsVerticalScrollIndicator = NO;
         _homeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        UILabel *footLabel = [UILabel labelWithFont:13.0 WithText:@"~明日再续~" WithColor:0x151718];
+        footLabel.frame = CGRectMake(0, 0, kScreen_Width, 26);
+        footLabel.textAlignment = NSTextAlignmentCenter;
+        _homeTableView.tableFooterView =footLabel;
     }
     return _homeTableView;
 }
@@ -40,18 +48,31 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupViewInfo];
-    [self httpRequest];
+    _dateStr = [NSObject getCurrentDateYearMonth];
+    [self httpRequest:_dateStr withRefreshTag:@""];
 }
 
--(void)httpRequest
+-(void)httpRequest:(NSString *)httpDateStr withRefreshTag:(NSString *)refreshTag
 {
-    NSString *currentTimeStr = [NSObject getCurrentDateYearMonth];
+    WeakSelf(weakSelf);
     NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
     NSMutableDictionary *netMutableDic = [[NSMutableDictionary alloc] initWithCapacity:1];
-    [netMutableDic setObject:@"201909" forKey:@"time"];
+    [netMutableDic setObject:httpDateStr forKey:@"time"];
     [netMutableDic setObject:phoneStr forKey:@"phone"];
     NSString *pathStr = @"/mob_diary/diary/list";
+
     [[HYOCoding_NetAPIManager sharedManager] request_ListDiary_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.diaryModelArr = (NSArray *)data;
+                [weakSelf.homeTableView reloadData];
+                if ([refreshTag isEqualToString:@"downFresh"]) {
+                    [weakSelf.homeTableView.mj_header endRefreshing];
+                }else if ([refreshTag isEqualToString:@"upFresh"]){
+                    [weakSelf.homeTableView.mj_footer endRefreshing];
+                }
+            });
+        }
     }];
 }
 
@@ -65,10 +86,10 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     [self.view addSubview:self.homeTableView];
     
     _homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downFreshloadData)];
-    [_homeTableView.mj_header beginRefreshing];
+//    [_homeTableView.mj_header beginRefreshing];
 
     _homeTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(upFreshLoadMoreData)];
-    [_homeTableView.mj_footer beginRefreshing];
+//    [_homeTableView.mj_footer beginRefreshing];
     
     UIView *bottomView = [[UIView alloc] init];
     [bottomView setBackgroundColor:[UIColor colorWithRGBHex:0x151718]];
@@ -113,7 +134,7 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 30;
+    return _diaryModelArr.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,16 +142,26 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     return 117 * kScale_Height;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 26.0;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    if (indexPath.row % 2 == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCell"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    _diaryListM = _diaryModelArr[indexPath.row];
+    if (!_diaryListM.photo) {
+        HomeTableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCell"];
+        homeCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        homeCell.diaryListM = _diaryListM;
+        return homeCell;
     }else{
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ImageTextTableViewCell"];
+        ImageTextTableViewCell *imageTextCell = [tableView dequeueReusableCellWithIdentifier:@"ImageTextTableViewCell"];
+        imageTextCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        imageTextCell.diaryListM = _diaryListM;
+        return imageTextCell;
     }
-    
     return cell;
 }
 
@@ -163,25 +194,46 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     //这里加入的是网络请求，带上相关参数，利用网络工具进行请求。我这里没有网络就模拟一下数据吧。
     //网络不管请求成功还是失败都要结束更新。
     NSLog(@"我在下拉刷新");
-    __weak typeof(self) weakSelf = self;
-    //利用延时函数模拟网络加载
-//    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
-//    dispatch_after(time, dispatch_get_main_queue(), ^{
-//        [weakSelf.homeTableView.mj_header endRefreshing];
-//        [weakSelf.homeTableView reloadData];
-//    });
+    NSString *yearStr = [_dateStr substringToIndex:4];
+    NSString *monthStr = [_dateStr substringFromIndex:4];
+    uint yearInt = [yearStr intValue];
+    uint monthInt = [monthStr intValue];
+    if (monthInt <= 12 && monthInt > 0) {
+        monthInt --;
+    }else{
+        monthInt = 12;
+        yearInt --;
+    }
+    if (monthInt < 10) {
+        monthStr = [NSString stringWithFormat:@"0%d",monthInt];
+    }
+    self.homeTableView.tableFooterView.hidden = YES;
+    self.homeTableView.scrollsToTop = YES;
+    _dateStr = [NSString stringWithFormat:@"%d%@",yearInt,monthStr];
+    [self httpRequest:_dateStr withRefreshTag:@"downFresh"];
 }
 //上拉加载更多
 - (void)upFreshLoadMoreData
 {
-    //在这里上拉加载更多，将加载的数据拼接在数据源后面就可以了。
-    //利用延时函数模拟网络加载
-    __weak typeof(self) weakSelf = self;
-
-    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
-    dispatch_after(time, dispatch_get_main_queue(), ^{
-        [weakSelf.homeTableView.mj_footer endRefreshing];
-        [weakSelf.homeTableView reloadData];
-    });
+    NSString *yearStr = [_dateStr substringToIndex:4];
+    NSString *monthStr = [_dateStr substringFromIndex:4];
+    uint yearInt = [yearStr intValue];
+    uint monthInt = [monthStr intValue];
+    if (monthInt < 12) {
+        monthInt ++;
+    }else{
+        monthInt = 1;
+        yearInt ++;
+    }
+    if (monthInt < 10) {
+        monthStr = [NSString stringWithFormat:@"0%d",monthInt];
+    }
+    NSString *currentDataStr = [NSObject getCurrentDateYearMonth];
+    _dateStr = [NSString stringWithFormat:@"%d%@",yearInt,monthStr];
+//    [self.homeTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+    if ([_dateStr isEqualToString:currentDataStr]) {
+        self.homeTableView.tableFooterView.hidden = NO;
+    }
+    [self httpRequest:_dateStr withRefreshTag:@"upFresh"];
 }
 @end

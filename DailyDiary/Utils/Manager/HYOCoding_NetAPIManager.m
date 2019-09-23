@@ -9,6 +9,7 @@
 #import "HYOCoding_NetAPIManager.h"
 #import "HYOCoding_NetAPIClient.h"
 #import "LoginModel.h"
+#import "DiaryListModel.h"
 
 @implementation HYOCoding_NetAPIManager
 
@@ -128,11 +129,14 @@
     HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
 //    manager.requestSerializer = [AFJSONRequestSerializer serializer];
 //    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    AFJSONResponseSerializer *response = [AFJSONResponseSerializer serializer];
+    response.removesKeysWithNullValues = YES;
+    manager.responseSerializer = response;
     [manager request_ListDiary_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
-            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            NSArray *diaryListArr = [HYOJson objectWithModelClass:@"DiaryListModel" withJsonString:data];
             NSLog(@"ListDiary data ===========%@",data);
-            block(loginM,error);
+            block(diaryListArr,error);
         }else{
             NSLog(@"error is==========+%@",error);
              block(data,error);
@@ -145,6 +149,22 @@
     HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
 
     [manager request_DetailDiary_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            NSLog(@"data ===========%@",data);
+            block(loginM,error);
+        }else{
+            NSLog(@"error is==========+%@",error);
+            block(data,error);
+        }
+    }];
+}
+
+-(void)request_SearchDiray_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block
+{
+    HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
+    
+    [manager request_SearchDiary_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
             LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
             NSLog(@"data ===========%@",data);

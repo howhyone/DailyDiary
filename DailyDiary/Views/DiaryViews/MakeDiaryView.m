@@ -44,26 +44,11 @@
         make.right.equalTo(weakSelf.titleTextField.right).offset(0);
         make.bottom.equalTo(self.bottom).offset(0);
     }];
-
-    
-//    _diaryImageScrollView = [[UIScrollView alloc] init];
-//    _diaryImageScrollView.hidden = YES;
-//    [self addSubview:_diaryImageScrollView];
-//    [_diaryImageScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(weakSelf.diaryTextView.bottom).offset(10 * kScale_Height);
-//        make.left.equalTo(weakSelf.diaryTextView.left).offset(0);
-//        make.height.equalTo(77 * kScale_Height);
-//        make.right.equalTo(weakSelf.diaryTextView.right).offset(0);
-//    }];
     
     _keyboardToolBarView = [[KeyboardToolBarView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 42 * kScale_Height)];
     _diaryTextView.inputAccessoryView = _keyboardToolBarView;
     
 }
-
-
-
-
 @end
 
 

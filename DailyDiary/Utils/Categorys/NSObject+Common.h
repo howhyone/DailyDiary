@@ -21,7 +21,15 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)getCurrentDateYearMonth;
 
 + (UIImage *)imageWithColor:(UIColor *)color;
+/**
+ 日期字符串转周几
+ **/
++(NSString*)getWeekDay:(NSString*)currentStr;
 
+/**
+ 日期字符串转单独的年、月、日、时、
+ **/
++(NSDateComponents *)getDateComponentsDate:(NSString *)dateStr;
 @end
 
 NS_ASSUME_NONNULL_END

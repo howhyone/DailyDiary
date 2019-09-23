@@ -8,7 +8,7 @@
 
 #import "HYOCoding_NetAPIClient.h"
 
-static NSString *const kBaseURLStr = @"http://dhrm8r.natappfree.cc";
+static NSString *const kBaseURLStr = @"http://mg8d8h.natappfree.cc";
 
 @implementation HYOCoding_NetAPIClient
 
@@ -275,6 +275,40 @@ static  HYOCoding_NetAPIClient *clienOnce = nil;
 
 
 -(void)request_DetailDiary_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block
+{
+    if (!path || !params) {
+        return;
+    }
+    switch (methord) {
+        case GET:
+        {
+            [self GET:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+            }];
+        }
+            break;
+        case POST:
+        {
+            [self POST:path parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                block(responseObject,nil);
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                block(nil,error);
+            }];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)request_SearchDiary_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block
 {
     if (!path || !params) {
         return;

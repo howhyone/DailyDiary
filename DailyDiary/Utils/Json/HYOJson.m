@@ -28,13 +28,13 @@
 
 
 #pragma mark ---------创建一个model类中的属性 setter方法
-//-(SEL)createSetterWithPropertyName:(NSString *)propertyName
-//{
-//    propertyName = [propertyName capitalizedString]; //首字母大写
-//    NSString *setterMethod = [NSString stringWithFormat:@"set%@",propertyName];
-//    SEL setterSel = NSSelectorFromString(setterMethod);
-//    return NSSelectorFromString(setterMethod);
-//}
+-(SEL)createSetterWithPropertyName:(NSString *)propertyName
+{
+    propertyName = [propertyName capitalizedString]; //首字母大写
+    NSString *setterMethod = [NSString stringWithFormat:@"set%@",propertyName];
+    SEL setterSel = NSSelectorFromString(setterMethod);
+    return setterSel;
+}
 
 +(id)objectWithModelClass:(NSString *)modelClass withJsonString:(id)jsonDic
 {
@@ -49,26 +49,67 @@
     if (![dataDic isKindOfClass:[NSDictionary class]]) {
         return nil;
     }
-    id resDic = [dataDic objectForKey:@"res"];
-    if (![resDic isKindOfClass:[NSDictionary class]]) {
-        return nil;
+    NSString *flagStr = nil;
+    if ([[dataDic allKeys] containsObject:@"flag"]) {
+        flagStr = [dataDic objectForKey:@"flag"];
     }
-    u_int count;
-    id modelObject = [[NSClassFromString(modelClass) alloc] init];
-    objc_property_t *propertyList = class_copyPropertyList([NSClassFromString(modelClass) class], &count);
-    for (int i = 0; i < count; i++) {
-        const char *propertyChar = property_getName(propertyList[i]);
-        NSString *propertyName = [NSString stringWithUTF8String:propertyChar];
-        NSString *propertyValue = [resDic objectForKey:propertyName];
-        propertyName = [propertyName capitalizedString]; //首字母大写
-        NSString *setterMethod = [NSString stringWithFormat:@"set%@:",propertyName];
-        SEL setterSel = NSSelectorFromString(setterMethod);
-       
-        if ([modelObject respondsToSelector:setterSel]) {
-            [modelObject performSelectorOnMainThread:setterSel withObject:propertyValue waitUntilDone:[NSThread isMainThread]];
+    id resDic = nil;
+    if ([[dataDic allKeys] containsObject:@"res"]) {
+        resDic = [dataDic objectForKey:@"res"];
+        if (![resDic isKindOfClass:[NSDictionary class]]) {
+            return nil;
         }
     }
-    return modelObject;
+    NSArray *listArr = nil;
+    if ([[dataDic allKeys] containsObject:@"flag"]) {
+       id listTempArr = [dataDic objectForKey:@"list"];
+        if (![listTempArr isKindOfClass:[NSArray class]]) {
+            return nil;
+        }else{
+            listArr = listTempArr;
+        }
+    }
+
+    u_int propertyCount;
+    id modelObject = [[NSClassFromString(modelClass) alloc] init];
+    objc_property_t *propertyList = class_copyPropertyList([NSClassFromString(modelClass) class], &propertyCount);
+    if (resDic) {
+        for (int i = 0; i < propertyCount; i++) {
+            const char *propertyChar = property_getName(propertyList[i]);
+            NSString *propertyName = [NSString stringWithUTF8String:propertyChar];
+            NSString *propertyValue = [resDic objectForKey:propertyName];
+            propertyName = [propertyName capitalizedString]; //首字母大写
+            NSString *setterMethod = [NSString stringWithFormat:@"set%@:",propertyName];
+            SEL setterSel = NSSelectorFromString(setterMethod);
+            
+            if ([modelObject respondsToSelector:setterSel]) {
+                [modelObject performSelectorOnMainThread:setterSel withObject:propertyValue waitUntilDone:[NSThread isMainThread]];
+            }
+        }
+        return modelObject;
+    }
+    if (listArr) {
+        NSMutableArray *modelMutableArr = [NSMutableArray arrayWithCapacity:1];
+        for (int i = 0; i < listArr.count;i++) {
+            modelObject = [[NSClassFromString(modelClass) alloc] init];
+            NSDictionary *listDiaryDic = listArr[i];
+            for (int j = 0; j < propertyCount; j++) {
+                const char *propertyChar = property_getName(propertyList[j]);
+                NSString *propertyName = [NSString stringWithUTF8String:propertyChar];
+                NSString *propertyValue = nil;
+                if ([propertyName isEqualToString:@"DiaryId"]) {
+                    propertyValue = [listDiaryDic objectForKey:@"id"];
+                }else{
+                    propertyValue = [listDiaryDic objectForKey:propertyName];
+                }
+                [modelObject setValue:propertyValue forKey:propertyName];
+            }
+            [modelObject setValue:flagStr forKey:@"flag"];
+            [modelMutableArr addObject:modelObject];
+        }
+        return modelMutableArr;
+    }
+    return nil;
 }
 
 

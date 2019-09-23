@@ -20,13 +20,12 @@
 
 -(void)setupViewInfo
 {
-    
-    
+    WeakSelf(weakSelf);
     UIView *headerView = [[UIView alloc] init];
     [headerView setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
-    UILabel *headerLabel = [UILabel labelWithFont:12.0 WithText:@"- 2019年7月 -" WithColor:0xb4b5b6];
-    [headerView addSubview:headerLabel];
-    [headerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    _headerLabel = [UILabel labelWithFont:12.0 WithText:@"- 2019年7月 -" WithColor:0xb4b5b6];
+    [headerView addSubview:_headerLabel];
+    [_headerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(headerView.top).offset(10);
         make.centerX.equalTo(headerView.centerX).offset(0);
         make.height.equalTo(17 * kScale_Height);
@@ -39,7 +38,6 @@
         make.height.equalTo(37 * kScale_Height);
     }];
     
-    __weak typeof(self) weakSelf = self;
     _dayLabel = [UILabel labelWithFont:24.0 WithText:@"14" WithColor:0x151718];
     _dayLabel.font = [UIFont fontWithName:@"DINAlternate-Bold" size:24.0];
     [self addSubview:_dayLabel];
@@ -79,6 +77,17 @@
     }];
 }
 
+-(void)setDiaryListM:(id)object
+{
+    DiaryListModel *diaryListM = (DiaryListModel *)object;
+    NSString *headerStr = [diaryListM.date substringToIndex:6];
+    _headerLabel.text = headerStr;
+    NSDateComponents *diaryDateCmponents = [NSObject getDateComponentsDate:diaryListM.date];
+    _dayLabel.text = [NSString stringWithFormat:@"%ld",diaryDateCmponents.day];
+    _weekLabel.text = [NSObject getWeekDay:diaryListM.date];
+    _diaryTextLabel.text = diaryListM.title;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -97,14 +106,6 @@
 
 @implementation ImageTextTableViewCell
 
-//-(id)initWithFrame:(CGRect)frame
-//{
-//    if (self == [super initWithFrame:frame]) {
-//        [self setupImageViewInfo];
-//    }
-//    return self;
-//}
-
 -(void)setupViewInfo
 {
     [super setupViewInfo];
@@ -118,5 +119,12 @@
         make.right.equalTo(self.right).offset(-10 * kScale_Width);
     }];
     
+}
+
+-(void)setDiaryListM:(id)object
+{
+    [super setDiaryListM:object];
+    DiaryListModel *diaryListM = (DiaryListModel *)object;
+    [_diaryImageView sd_setImageWithURL:[NSURL URLWithString:diaryListM.photo]];
 }
 @end

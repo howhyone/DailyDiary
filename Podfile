@@ -9,8 +9,9 @@ target 'DailyDiary' do
       pod 'MJRefresh'
       pod 'TZImagePickerController' #选择相册图片
       pod 'AFNetworking', '~> 3.0'
+      pod 'SDWebImage','4.4.7'
+#      pod 'SDWebImage/GIF','~>4.4.7'
 
-      
       
       pod 'mob_sharesdk','~> 4.2.8'
       pod 'mob_sharesdk/ShareSDKUI'

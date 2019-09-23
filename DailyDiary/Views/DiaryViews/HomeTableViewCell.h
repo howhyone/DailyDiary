@@ -7,19 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DiaryListModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeTableViewCell : UITableViewCell
+@property(nonatomic, strong)UILabel *headerLabel;
 @property(nonatomic, strong)UILabel *dayLabel;
 @property(nonatomic, strong)UILabel *weekLabel;
 @property(nonatomic, strong)UILabel *diaryTextLabel;
-
+@property(nonatomic, strong)DiaryListModel *diaryListM;
 @end
 
 @interface ImageTextTableViewCell : HomeTableViewCell
 @property(nonatomic, strong)UIImageView *diaryImageView;
-
 @end
 
 NS_ASSUME_NONNULL_END

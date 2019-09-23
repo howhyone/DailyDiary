@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Views/DiaryViews/HomePageTableViewCell.m"
-            timestampString = "590815618.7750961"
+            timestampString = "590923763.665692"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Views/DiaryViews/HomePageTableViewCell.m"
-            timestampString = "590815618.7755179"
+            timestampString = "590923763.665767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -123,11 +123,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-            timestampString = "590758083.427824"
+            timestampString = "590933543.207249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-request_UserEdit_WithPath:Params:andBlock:"
             landmarkType = "7">
             <Locations>
@@ -139,11 +139,11 @@
                   moduleName = "DailyDiary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-                  timestampString = "590846352.652657"
+                  timestampString = "590933543.5202219"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
                   offsetFromSymbolStart = "376">
                </Location>
                <Location
@@ -154,11 +154,11 @@
                   moduleName = "DailyDiary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-                  timestampString = "590846352.656297"
+                  timestampString = "590933543.5221061"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
                   offsetFromSymbolStart = "84">
                </Location>
             </Locations>
@@ -171,11 +171,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-            timestampString = "590758083.428395"
+            timestampString = "590933543.20733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-request_UserEdit_WithPath:Params:andBlock:"
             landmarkType = "7">
          </BreakpointContent>
@@ -187,11 +187,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-            timestampString = "590758083.428763"
+            timestampString = "590933543.207394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "-request_UserEdit_WithPath:Params:andBlock:"
             landmarkType = "7">
          </BreakpointContent>
@@ -203,43 +203,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-            timestampString = "590758083.429108"
+            timestampString = "590933543.207462"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "-request_DetailDiary_WithPath:Params:andBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
+            timestampString = "590933543.207516"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "-request_DetailDiary_WithPath:Params:andBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
+            timestampString = "590933543.207569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
             endingLineNumber = "151"
-            landmarkName = "-request_DetailDiary_WithPath:Params:andBlock:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-            timestampString = "590758083.42945"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "-request_DetailDiary_WithPath:Params:andBlock:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-            timestampString = "590758083.429763"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
             landmarkName = "-request_DetailDiary_WithPath:Params:andBlock:"
             landmarkType = "7">
             <Locations>
@@ -251,11 +251,11 @@
                   moduleName = "DailyDiary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-                  timestampString = "590846352.694119"
+                  timestampString = "590933543.541364"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "147"
-                  endingLineNumber = "147"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
                   offsetFromSymbolStart = "164">
                </Location>
                <Location
@@ -266,11 +266,11 @@
                   moduleName = "DailyDiary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-                  timestampString = "590846352.697686"
+                  timestampString = "590933543.543209"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
                   offsetFromSymbolStart = "84">
                </Location>
             </Locations>
@@ -283,11 +283,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-            timestampString = "590758083.430106"
+            timestampString = "590933543.207624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-request_EditDiray_WithPath:Params:andBlock:"
             landmarkType = "7">
          </BreakpointContent>
@@ -299,11 +299,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-            timestampString = "590758083.430432"
+            timestampString = "590933543.207679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "-request_EditDiray_WithPath:Params:andBlock:"
             landmarkType = "7">
          </BreakpointContent>
@@ -315,7 +315,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIClient.m"
-            timestampString = "590758083.430779"
+            timestampString = "590933543.207733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
@@ -331,7 +331,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIClient.m"
-            timestampString = "590758083.430836"
+            timestampString = "590933543.207779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
@@ -347,7 +347,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIClient.m"
-            timestampString = "590758083.43088"
+            timestampString = "590933543.207826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
@@ -363,7 +363,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Controllers/DiaryControllers/MakeDiaryViewController.m"
-            timestampString = "590846352.4378901"
+            timestampString = "590933037.0161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
@@ -378,13 +378,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Categorys/UITextView+Common.m"
-            timestampString = "590846352.4388289"
+            filePath = "DailyDiary/Controllers/DiaryControllers/SearchDiaryViewController.m"
+            timestampString = "590933543.207917"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-changeFont:"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-searchDiaryHttpRequestWithTitle:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -395,27 +395,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Utils/Categorys/UITextView+Common.m"
-            timestampString = "590846352.439797"
+            timestampString = "590933543.20797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "-init"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Categorys/UITextField+Common.m"
-            timestampString = "590846352.43997"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "-changeFont:"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,13 +410,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Categorys/UITextField+Common.m"
-            timestampString = "590846353.338267"
+            filePath = "DailyDiary/Views/DiaryViews/MakeDiaryView.m"
+            timestampString = "590933543.208017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "-init"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-setupViewInfo"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

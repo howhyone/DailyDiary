@@ -58,6 +58,21 @@
 
 }
 
+-(void)searchDiaryHttpRequestWithTitle:(NSString *)titleStr
+{
+    NSString *pathStr = @"/mob_diary/diary/listByTitle";
+    NSMutableDictionary *netMutableDic = [NSMutableDictionary dictionaryWithCapacity:1];
+    NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
+    [netMutableDic setObject:phoneStr forKey:@"phone"];
+    [netMutableDic setObject:titleStr forKey:@"title"];
+    [[HYOCoding_NetAPIManager sharedManager] request_SearchDiray_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            NSLog(@"-------");
+        }
+    }];
+
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 30;
@@ -87,6 +102,12 @@
 //    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
+#pragma mark --------- searchBar text改变回调
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    NSLog(@"textDidChange--------");
+    [self searchDiaryHttpRequestWithTitle:searchText];
+}
 
 -(void)clickBack
 {
