@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(id)objectWithModelClass:(NSString *)modelClass withJsonString:(id)jsonDic;
 
-+(id)objectArrarWithModelClass:(NSString *)modelClass withJsonString:(id)jsonDic;
+//+(id)objectArrarWithModelClass:(NSString *)modelClass withJsonString:(id)jsonDic;
 
 
 @end

@@ -8,10 +8,14 @@
 
 #import "SearchDiaryViewController.h"
 #import "HomeTableViewCell.h"
+#import "DiaryListModel.h"
+#import "MakeDiaryViewController.h"
 
 @interface SearchDiaryViewController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *homeTableView;
-
+@property(nonatomic, strong)NSArray *diaryModelArr;
+@property(nonatomic, strong)DiaryListModel *diaryListM;
+@property(nonatomic, copy) NSString *dateStr;
 @end
 
 @implementation SearchDiaryViewController
@@ -60,6 +64,7 @@
 
 -(void)searchDiaryHttpRequestWithTitle:(NSString *)titleStr
 {
+    WeakSelf(weakSelf);
     NSString *pathStr = @"/mob_diary/diary/listByTitle";
     NSMutableDictionary *netMutableDic = [NSMutableDictionary dictionaryWithCapacity:1];
     NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
@@ -68,6 +73,8 @@
     [[HYOCoding_NetAPIManager sharedManager] request_SearchDiray_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
             NSLog(@"-------");
+            weakSelf.diaryModelArr = (NSArray *)data;
+            [weakSelf.homeTableView reloadData];
         }
     }];
 
@@ -75,7 +82,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 30;
+    return _diaryModelArr.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,29 +90,47 @@
     return 117 * kScale_Height;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 26.0;
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    if (indexPath.row % 2 == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCell"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    _diaryListM = _diaryModelArr[indexPath.row];
+    if (!_diaryListM.photo) { //
+        HomeTableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCell"];
+        homeCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        homeCell.diaryListM = _diaryListM;
+        return homeCell;
     }else{
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ImageTextTableViewCell"];
+        ImageTextTableViewCell *imageTextCell = [tableView dequeueReusableCellWithIdentifier:@"ImageTextTableViewCell"];
+        imageTextCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        imageTextCell.diaryListM = _diaryListM;
+        return imageTextCell;
     }
-    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    MakeDiaryViewController *makeDiaryVC = [[MakeDiaryViewController alloc] init];
+    _diaryListM = _diaryModelArr[indexPath.row];
+    makeDiaryVC.dateStr = _diaryListM.date;
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kRequestDiaryDetailBoolKRey];
+    [self.navigationController pushViewController:makeDiaryVC  animated:YES];
 }
+
 
 #pragma mark --------- searchBar text改变回调
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     NSLog(@"textDidChange--------");
+    if ([searchText isEqualToString:@""]) {
+        return;
+    }
     [self searchDiaryHttpRequestWithTitle:searchText];
 }
 

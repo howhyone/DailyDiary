@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MakeDiaryViewController : UIViewController
 
 @property(nonatomic, strong)MakeDiaryView *makeDiaryView;
+@property(nonatomic, copy)NSString *dateStr;
+@property(nonatomic, strong)NSArray *httpRequestImageArr;
 
 @end
 

@@ -12,6 +12,7 @@
 #import "PackageView.h"
 #import <TZImagePickerController.h>
 #import "PhotoInfoViewController.h"
+#import "DiaryDetailModel.h"
 
 
 @interface MakeDiaryViewController ()<clickDateSelectorProtocol,clickKeyboardToolBarItemDelegate,TZImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
@@ -19,7 +20,11 @@
 @property(nonatomic, strong)LXCalendarView *calendarView;
 @property(nonatomic,strong) NSMutableArray *selectionPhotoArray;
 @property(nonatomic, strong)UICollectionView *diaryCollectionView;
-@property(nonatomic, assign)NSUInteger imageCont;
+@property(nonatomic, assign)NSUInteger imageCount;
+@property(nonatomic, strong)DiaryDetailModel *diaryDetailM;
+@property(nonatomic, assign)NSUInteger requestImageCount;
+@property(nonatomic, strong)NSArray *requestImageArr;
+@property(nonatomic, strong)NSMutableArray *totalImageMutableArr;
 @end
 
 @implementation MakeDiaryViewController
@@ -38,24 +43,57 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    _totalImageMutableArr = [[NSMutableArray alloc] initWithCapacity:1];
     [self setupViewInfo];
     
 }
 #pragma mark --------网络请求
--(void)httpRequestEditDiary
+-(void)httpRequestDetailWithDate:(NSString *)dateStr
 {
+    WeakSelf(weakSelf);
+    NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
+    NSMutableDictionary *netMutableDic = [[NSMutableDictionary alloc] initWithCapacity:1];
+    [netMutableDic setObject:dateStr forKey:@"time"];
+    [netMutableDic setObject:phoneStr forKey:@"phone"];
+    NSString *pathStr = @"/mob_diary/diary/detail";
+    [[HYOCoding_NetAPIManager sharedManager] request_DetailDiary_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            NSLog(@"data ============ %@",data);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.makeDiaryView.diaryDetailM = data;
+                NSString *photoTotal = weakSelf.makeDiaryView.diaryDetailM.photo;
+                if (photoTotal.length) {
+                    weakSelf.httpRequestImageArr = [photoTotal componentsSeparatedByString:@";"];
+                    weakSelf.requestImageCount = weakSelf.httpRequestImageArr.count;
+                    [weakSelf.totalImageMutableArr addObjectsFromArray:weakSelf.httpRequestImageArr];
+                }
+                [weakSelf.diaryCollectionView reloadData];
+            });
+        }
+    }];
+}
+
+-(void)httpRequestEditDiaryWithTitle:(NSString *)titleStr WithDate:(NSString *)dateStr WithContext:(NSString *)contextStr WithFile:(NSArray *)fileArr
+{
+    WeakSelf(weakSelf);
     NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
     NSMutableDictionary *paramsMutableDic = [NSMutableDictionary dictionaryWithCapacity:1];
-    [paramsMutableDic setObject:@"1" forKey:@"title"];
-    [paramsMutableDic setObject:@"20190916" forKey:@"date"];
-    [paramsMutableDic setObject:@"3" forKey:@"context"];
+    [paramsMutableDic setObject:titleStr forKey:@"title"];
+    [paramsMutableDic setObject:dateStr forKey:@"date"];
+    [paramsMutableDic setObject:contextStr forKey:@"context"];
     [paramsMutableDic setObject:phoneStr forKey:@"userId"];
-    NSMutableArray *mutableArr = [NSMutableArray arrayWithCapacity:1];
-    [paramsMutableDic setObject:mutableArr forKey:@"files"];
+    [paramsMutableDic setObject:fileArr forKey:@"file"];
     NSString *pathStr = @"/mob_diary/diary/edit";
     [[HYOCoding_NetAPIManager sharedManager] request_EditDiray_WithPath:pathStr Params:paramsMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
-        
+        if (data && !error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"data ========%@",data);
+                weakSelf.diaryDetailM = [[DiaryDetailModel alloc] init];
+                weakSelf.diaryDetailM = data;
+                weakSelf.makeDiaryView.diaryDetailM = data;
+            });
+        }
     }];
 }
 
@@ -65,6 +103,12 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(popHomeController)];
     _titleDateView = [[TitleDateView alloc] initWithFrame:CGRectMake(0, 0, 130 * kScale_Width, 21 * kScale_Height)];
+    NSDateFormatter *titleDateFormatter = [[NSDateFormatter alloc] init];
+    titleDateFormatter.dateFormat = @"yyyyMMdd";
+    NSDate *titleDate = [titleDateFormatter dateFromString:_dateStr];
+    titleDateFormatter.dateFormat = @"yyyy年 MM月dd日";
+    NSString *titleStr = [titleDateFormatter stringFromDate:titleDate];
+    _titleDateView.titleLabel.text = titleStr;
     [self.navigationItem setTitleView:_titleDateView];
      _titleDateView.dateDelegate = self;
     
@@ -81,7 +125,6 @@
     }];
 }
 
-
 -(void)setupDiaryCollectionView
 {
     if (!_diaryCollectionView) {
@@ -89,8 +132,6 @@
         UICollectionViewFlowLayout *diaryFlowLayout = [[UICollectionViewFlowLayout alloc] init];
         diaryFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         diaryFlowLayout.itemSize = CGSizeMake(105 * kScale_Width, 77 * kScale_Height);
-//        diaryFlowLayout.minimumInteritemSpacing =  15;
-//        diaryFlowLayout.sectionInset = UIEdgeInsetsMake(0, 20, 0, 20);
         _diaryCollectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:diaryFlowLayout];
         _diaryCollectionView.delegate = self;
         _diaryCollectionView.dataSource = self;
@@ -111,22 +152,28 @@
 
 #pragma mark -------- UICollectionView代理事件
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (_selectionPhotoArray.count) {
-        _imageCont = _selectionPhotoArray.count + _imageCont;
-        return _imageCont;
+    if (_selectionPhotoArray.count || _requestImageCount) {
+        _imageCount = _selectionPhotoArray.count + _requestImageCount;
+        return _imageCount;
     }else{
-        return 1;
+        return 0;
     }
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"diaryImageCollectionViewCell" forIndexPath:indexPath];
-    UIImageView *diaryImageView = [[UIImageView alloc] initWithImage:_selectionPhotoArray[indexPath.row]];
+    UIImageView *diaryImageView = [[UIImageView alloc] init];
     diaryImageView.frame = CGRectMake(0, 0, 105 * kScale_Width, 77 * kScale_Height);
+    NSLog(@"row is %ld ---- _httpRequestImageArr.count is %ld------- _selectionPhotoArray.count is %ld",indexPath.row,_httpRequestImageArr.count,_selectionPhotoArray.count);
+    if (indexPath.row < _httpRequestImageArr.count && _httpRequestImageArr) {
+        [diaryImageView sd_setImageWithURL:[NSURL URLWithString:_httpRequestImageArr[indexPath.row]]];
+    }else if(_selectionPhotoArray){
+        diaryImageView.image = _selectionPhotoArray[indexPath.row - _httpRequestImageArr.count];
+    }
+    
     diaryImageView.contentMode = UIViewContentModeScaleAspectFill;
     [cell addSubview:diaryImageView];
-    cell.backgroundColor = [UIColor yellowColor];
     return cell;
 }
 
@@ -134,10 +181,13 @@
 {
     WeakSelf(weakSelf);
     PhotoInfoViewController *photoInfoVC = [[PhotoInfoViewController alloc] init];
-    [photoInfoVC setDeletedPhotoBlock:^(UIImage * _Nonnull deletedPhotoImage) {
-        [weakSelf.selectionPhotoArray removeObject:deletedPhotoImage];
+    [photoInfoVC setDeletedPhotoBlock:^(NSMutableArray *currentPhotoArr) {
+        weakSelf.totalImageMutableArr = currentPhotoArr;
+        [weakSelf.diaryCollectionView reloadData];
     }];
-    photoInfoVC.photoImage = _selectionPhotoArray[indexPath.row];
+    
+    photoInfoVC.photoInteger = indexPath.row;
+    photoInfoVC.photoImageArr = _totalImageMutableArr;
     [self.navigationController pushViewController:photoInfoVC animated:NO];
 }
 
@@ -145,7 +195,21 @@
 
 -(void)popHomeController
 {
-    [self.navigationController popViewControllerAnimated:NO];
+    UIAlertController *makeDiaryAlterC = [[UIAlertController alloc] init];
+    UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"保存并退出" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self clickKeyboardToolBarDoneItem];
+    }];
+    UIAlertAction *backAction = [UIAlertAction actionWithTitle:@"放弃保存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popViewControllerAnimated:NO];
+
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [makeDiaryAlterC addAction:saveAction];
+    [makeDiaryAlterC addAction:backAction];
+    [makeDiaryAlterC addAction:cancelAction];
+    [self presentViewController:makeDiaryAlterC animated:YES completion:nil];
 }
 
 #pragma mark ---------- 按钮点击事件的代理
@@ -173,7 +237,20 @@
     calendarView.selectBlock = ^(NSInteger year, NSInteger month, NSInteger day) {
         NSLog(@"%ld年 - %ld月 - %ld日",year,month,day);
         weakSelf.titleDateView.titleLabel.text = [NSString stringWithFormat:@"%ld年 %ld月%ld日",year,month,day];
-        
+        NSString *monthStr = @"";
+        NSString *dayStr = @"";
+        if (month < 10 ) {
+            monthStr = [NSString stringWithFormat:@"0%ld",month];
+        }else{
+            monthStr = [NSString stringWithFormat:@"%ld",month];
+        }
+        if (day < 10) {
+            dayStr = [NSString stringWithFormat:@"0%ld",day];
+        }else{
+            dayStr = [NSString stringWithFormat:@"%ld",day];
+        }
+        NSString *dateStr = [NSString stringWithFormat:@"%ld%@%@",year,monthStr,dayStr];
+        [self httpRequestDetailWithDate:dateStr];
     };
     self.calendarView = calendarView;
     [self.view addSubview:calendarView];
@@ -191,10 +268,19 @@
     [_calendarView removeFromSuperview];
 }
 
+
 -(void)viewWillAppear:(BOOL)animated
 {
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowzx:) name:UIKeyboardDidShowNotification object:nil];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHidden) name:UIKeyboardDidHideNotification object:nil];
+    WeakSelf(weakSelf);
+    BOOL requestDetailB = [[NSUserDefaults standardUserDefaults] boolForKey:kRequestDiaryDetailBoolKRey];
+    if (requestDetailB) {
+        [self httpRequestDetailWithDate:_dateStr];
+        [weakSelf.diaryCollectionView reloadData];
+
+    }
+    
     [super viewWillAppear:animated];
 }
 -(void)viewWillDisappear:(BOOL)animated
@@ -223,6 +309,7 @@
 //添加相册图片
 -(void)clickKeyboardToolBarAlbumItem
 {
+    [_selectionPhotoArray removeAllObjects];
     __weak typeof(self) weakSelf= self;
     NSInteger Count =  9;//剩余可选图片数量
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:Count delegate:self];
@@ -231,15 +318,22 @@
             UIImage *img = photo[i];//压缩图片
             [weakSelf.selectionPhotoArray addObject:img];
         }
+        [weakSelf.totalImageMutableArr addObjectsFromArray:weakSelf.selectionPhotoArray];
         [weakSelf.diaryCollectionView reloadData];
-        
     }];
+     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kRequestDiaryDetailBoolKRey];
     [self presentViewController:imagePickerVc animated:YES completion:nil];
 }
 
 -(void)clickKeyboardToolBarDoneItem
 {
-    [self httpRequestEditDiary];
+    NSString *titleStr = _makeDiaryView.titleTextField.text;
+    NSString *contextStr = _makeDiaryView.diaryTextView.text;
+    NSMutableArray *fileMutableArr = [NSMutableArray arrayWithArray:_httpRequestImageArr];
+    
+    
+    [fileMutableArr addObjectsFromArray:self.selectionPhotoArray];
+    [self httpRequestEditDiaryWithTitle:titleStr WithDate:_dateStr WithContext:contextStr  WithFile:fileMutableArr];
     [self.navigationController popViewControllerAnimated:NO];
 }
 

@@ -121,7 +121,6 @@
 
 -(void)clickLogout
 {
-    
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示"
                                                                    message:@"确定退出登录？"
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -138,8 +137,6 @@
                                                              //响应事件
                                                              NSLog(@"action = %@", action);
                                                          }];
-    
-    
     
     [alert addAction:defaultAction];
     [alert addAction:cancelAction];

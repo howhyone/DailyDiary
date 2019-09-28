@@ -31,6 +31,7 @@
 #define kPhoneKey @"phoneKey"
 #define kFontSizeKey @"fontSizeKey"
 #define kFontNameKey @"fontNameKey"
+#define kRequestDiaryDetailBoolKRey @"requestDiaryDetailBoolKRey"
 
 #define kNotificationFontSize @"notificationFontSize"
 #define kNotificationFontName @"notificationFontName"

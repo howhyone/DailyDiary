@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 @interface PersonalInfoView : UIView
 @property(nonatomic, weak)id <ClickButtonDelegate>delegate;
+@property(nonatomic, strong)UIImageView *headerImageView;
+@property(nonatomic, strong)UILabel *nameLabel;
+@property(nonatomic, strong)UITextFieldInherit *nameTextField;
 @end
 
 NS_ASSUME_NONNULL_END

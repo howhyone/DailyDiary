@@ -25,6 +25,9 @@
 		C91C8B802328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91C8B7F2328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m */; };
 		C91C8B812328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91C8B7F2328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m */; };
 		C91C8B822328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91C8B7F2328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m */; };
+		C91E0605233CA63100B54E8C /* PicturesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C91E0604233CA63100B54E8C /* PicturesListModel.m */; };
+		C91E0606233CA63100B54E8C /* PicturesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C91E0604233CA63100B54E8C /* PicturesListModel.m */; };
+		C91E0607233CA63100B54E8C /* PicturesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C91E0604233CA63100B54E8C /* PicturesListModel.m */; };
 		C9379DF123165C750045D7C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DF023165C750045D7C5 /* HomeViewController.m */; };
 		C9379DF223165C750045D7C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DF023165C750045D7C5 /* HomeViewController.m */; };
 		C9379DF323165C750045D7C5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DF023165C750045D7C5 /* HomeViewController.m */; };
@@ -163,6 +166,9 @@
 		C9E8DF8C2337836E00CEA682 /* PhotoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF8B2337836E00CEA682 /* PhotoInfoViewController.m */; };
 		C9E8DF8D2337836E00CEA682 /* PhotoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF8B2337836E00CEA682 /* PhotoInfoViewController.m */; };
 		C9E8DF8E2337836E00CEA682 /* PhotoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF8B2337836E00CEA682 /* PhotoInfoViewController.m */; };
+		C9E98E01233A17F8005F7FED /* DiaryDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E98E00233A17F8005F7FED /* DiaryDetailModel.m */; };
+		C9E98E02233A17F8005F7FED /* DiaryDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E98E00233A17F8005F7FED /* DiaryDetailModel.m */; };
+		C9E98E03233A17F8005F7FED /* DiaryDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E98E00233A17F8005F7FED /* DiaryDetailModel.m */; };
 		C9EB18C023308F9500DBA76E /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB18BF23308F9500DBA76E /* FontViewController.m */; };
 		C9EB18C123308F9500DBA76E /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB18BF23308F9500DBA76E /* FontViewController.m */; };
 		C9EB18C223308F9600DBA76E /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB18BF23308F9500DBA76E /* FontViewController.m */; };
@@ -250,6 +256,8 @@
 		C91C8B7E2328A3EA006EA6E5 /* PhotoWallCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoWallCollectionViewCell.h; sourceTree = "<group>"; };
 		C91C8B7F2328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoWallCollectionViewCell.m; sourceTree = "<group>"; };
 		C91C8B832328DDB0006EA6E5 /* DailyDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDiary.entitlements; sourceTree = "<group>"; };
+		C91E0603233CA63100B54E8C /* PicturesListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicturesListModel.h; sourceTree = "<group>"; };
+		C91E0604233CA63100B54E8C /* PicturesListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicturesListModel.m; sourceTree = "<group>"; };
 		C9379DEF23165C750045D7C5 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C9379DF023165C750045D7C5 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		C9379DF5231660F20045D7C5 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
@@ -360,6 +368,8 @@
 		C9E8DF0423371BF300CEA682 /* UITextView+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Common.m"; sourceTree = "<group>"; };
 		C9E8DF8A2337836E00CEA682 /* PhotoInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoInfoViewController.h; sourceTree = "<group>"; };
 		C9E8DF8B2337836E00CEA682 /* PhotoInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoViewController.m; sourceTree = "<group>"; };
+		C9E98DFF233A17F8005F7FED /* DiaryDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiaryDetailModel.h; sourceTree = "<group>"; };
+		C9E98E00233A17F8005F7FED /* DiaryDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailModel.m; sourceTree = "<group>"; };
 		C9EB18BE23308F9500DBA76E /* FontViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontViewController.h; sourceTree = "<group>"; };
 		C9EB18BF23308F9500DBA76E /* FontViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontViewController.m; sourceTree = "<group>"; };
 		C9EB18C32330902400DBA76E /* FontTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
@@ -482,8 +492,19 @@
 			children = (
 				C90994DF2338609C001DCC57 /* DiaryListModel.h */,
 				C90994E02338609C001DCC57 /* DiaryListModel.m */,
+				C9E98DFF233A17F8005F7FED /* DiaryDetailModel.h */,
+				C9E98E00233A17F8005F7FED /* DiaryDetailModel.m */,
 			);
 			path = DiaryModels;
+			sourceTree = "<group>";
+		};
+		C91E0602233CA5F400B54E8C /* SettingModel */ = {
+			isa = PBXGroup;
+			children = (
+				C91E0603233CA63100B54E8C /* PicturesListModel.h */,
+				C91E0604233CA63100B54E8C /* PicturesListModel.m */,
+			);
+			path = SettingModel;
 			sourceTree = "<group>";
 		};
 		C9379DEE23165C150045D7C5 /* DiaryControllers */ = {
@@ -532,6 +553,8 @@
 				C91C8B7A23288E29006EA6E5 /* PhotoWallViewController.m */,
 				C9EB18BE23308F9500DBA76E /* FontViewController.h */,
 				C9EB18BF23308F9500DBA76E /* FontViewController.m */,
+				C9ABDFE4230BFBC00055D5B0 /* PersonalInfoViewController.h */,
+				C9ABDFE5230BFBC00055D5B0 /* PersonalInfoViewController.m */,
 			);
 			path = SettingConotrollers;
 			sourceTree = "<group>";
@@ -545,6 +568,8 @@
 				C91C8B7F2328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m */,
 				C9EB18C32330902400DBA76E /* FontTableViewCell.h */,
 				C9EB18C42330902400DBA76E /* FontTableViewCell.m */,
+				C9ABDFE9230C15CF0055D5B0 /* PersonalInfoView.h */,
+				C9ABDFEA230C15CF0055D5B0 /* PersonalInfoView.m */,
 			);
 			path = SettingViews;
 			sourceTree = "<group>";
@@ -639,6 +664,7 @@
 		C981F4072307DCFC00CA91A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C91E0602233CA5F400B54E8C /* SettingModel */,
 				C90994DE23386062001DCC57 /* DiaryModels */,
 				C9A768502333A65800EE7A93 /* LoginModels */,
 			);
@@ -839,8 +865,6 @@
 			children = (
 				C9ABDFC8230BDE910055D5B0 /* LoginViewController.h */,
 				C9ABDFC9230BDE910055D5B0 /* LoginViewController.m */,
-				C9ABDFE4230BFBC00055D5B0 /* PersonalInfoViewController.h */,
-				C9ABDFE5230BFBC00055D5B0 /* PersonalInfoViewController.m */,
 				C9CF2FA4230EC10E007165BD /* OtherLoginViewController.h */,
 				C9CF2FA5230EC10E007165BD /* OtherLoginViewController.m */,
 			);
@@ -922,8 +946,6 @@
 		C9EB18C92330904F00DBA76E /* PersonalInfoViews */ = {
 			isa = PBXGroup;
 			children = (
-				C9ABDFE9230C15CF0055D5B0 /* PersonalInfoView.h */,
-				C9ABDFEA230C15CF0055D5B0 /* PersonalInfoView.m */,
 			);
 			path = PersonalInfoViews;
 			sourceTree = "<group>";
@@ -1203,6 +1225,7 @@
 				C9A768532333A66D00EE7A93 /* LoginModel.m in Sources */,
 				C9DB73E6231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
 				C9A768592333A73000EE7A93 /* HYOJson.m in Sources */,
+				C9E98E01233A17F8005F7FED /* DiaryDetailModel.m in Sources */,
 				C97244E42326424E0000F916 /* SettingTableViewCell.m in Sources */,
 				C9FBAC712320F6E400ABA649 /* LXCalenderCell.m in Sources */,
 				C981F3DE2307BCA800CA91A5 /* main.m in Sources */,
@@ -1226,6 +1249,7 @@
 				C9E8DF0523371BF300CEA682 /* UITextView+Common.m in Sources */,
 				C9A5F2AC2332460100D70084 /* HYOCoding_NetAPIManager.m in Sources */,
 				C9A5F2A92332460100D70084 /* HYOCoding_NetAPIClient.m in Sources */,
+				C91E0605233CA63100B54E8C /* PicturesListModel.m in Sources */,
 				C9FBAC652320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
 				C9FBAC7F2320F6EA00ABA649 /* UIView+FTCornerdious.m in Sources */,
 				C91C8B802328A3EA006EA6E5 /* PhotoWallCollectionViewCell.m in Sources */,
@@ -1250,6 +1274,7 @@
 				C9FBAC8C2320F6EA00ABA649 /* UIColor+Expanded.m in Sources */,
 				C981F4032307DBE300CA91A5 /* DDNavigationController.m in Sources */,
 				C9CF2FAC230EC18F007165BD /* OtherLoginView.m in Sources */,
+				C9E98E02233A17F8005F7FED /* DiaryDetailModel.m in Sources */,
 				C9FBAC892320F6EA00ABA649 /* LxButton.m in Sources */,
 				C9DB73EC231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
 				C9FBAC832320F6EA00ABA649 /* UIView+LX_Frame.m in Sources */,
@@ -1282,6 +1307,7 @@
 				C9379DFD231686880045D7C5 /* HomePageTableViewCell.m in Sources */,
 				C9379DF8231660F20045D7C5 /* HomeTableViewCell.m in Sources */,
 				C9ABDFE7230BFBC00055D5B0 /* PersonalInfoViewController.m in Sources */,
+				C91E0606233CA63100B54E8C /* PicturesListModel.m in Sources */,
 				C9EB18C62330902400DBA76E /* FontTableViewCell.m in Sources */,
 				C9FBAC662320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
 				C9E8DF8D2337836E00CEA682 /* PhotoInfoViewController.m in Sources */,
@@ -1306,6 +1332,7 @@
 				C9FBAC8D2320F6EA00ABA649 /* UIColor+Expanded.m in Sources */,
 				C981F4042307DBE300CA91A5 /* DDNavigationController.m in Sources */,
 				C9CF2FAD230EC18F007165BD /* OtherLoginView.m in Sources */,
+				C9E98E03233A17F8005F7FED /* DiaryDetailModel.m in Sources */,
 				C9FBAC8A2320F6EA00ABA649 /* LxButton.m in Sources */,
 				C9DB73ED231E3F5600DDB1CB /* MakeDiaryView.m in Sources */,
 				C9FBAC842320F6EA00ABA649 /* UIView+LX_Frame.m in Sources */,
@@ -1338,6 +1365,7 @@
 				C9379DFE231686880045D7C5 /* HomePageTableViewCell.m in Sources */,
 				C9379DF9231660F20045D7C5 /* HomeTableViewCell.m in Sources */,
 				C9ABDFE8230BFBC00055D5B0 /* PersonalInfoViewController.m in Sources */,
+				C91E0607233CA63100B54E8C /* PicturesListModel.m in Sources */,
 				C9EB18C72330902400DBA76E /* FontTableViewCell.m in Sources */,
 				C9FBAC672320F6E400ABA649 /* LXCalendarDayModel.m in Sources */,
 				C9E8DF8E2337836E00CEA682 /* PhotoInfoViewController.m in Sources */,

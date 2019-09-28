@@ -27,7 +27,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     BOOL loginBool = [[NSUserDefaults standardUserDefaults] boolForKey:kLoginKey];
-    if (loginBool) {
+    if (1) {//loginBool
         self.window.rootViewController = [[DDNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
 
     }else{

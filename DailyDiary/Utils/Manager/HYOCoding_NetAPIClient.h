@@ -37,6 +37,7 @@ typedef enum {
 
 -(void)request_SearchDiary_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block;
 
+-(void)request_PicturesList_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block;
 
 -(void)requestJsonDataWithPath:(NSString *)aPath
                     withParams:(NSDictionary *)params

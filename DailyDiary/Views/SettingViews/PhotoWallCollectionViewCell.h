@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PicturesListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PhotoWallCollectionViewCell : UICollectionViewCell
@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)UILabel *numberLabel;
 @property(nonatomic, strong)UILabel *dateLabel;
 
+@property(nonatomic, strong)PicturesListModel *picturesListM;
 @end
 
 NS_ASSUME_NONNULL_END

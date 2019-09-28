@@ -51,5 +51,19 @@
     }];
 }
 
+-(void)setPicturesListM:(id)object
+{
+    PicturesListModel *pictureListM = (PicturesListModel *)object;
+    [_photoImageView sd_setImageWithURL:[NSURL URLWithString:pictureListM.src]];
+    _numberLabel.text = [NSString stringWithFormat:@"%@",pictureListM.num];
+    
+    NSString *dateStr = pictureListM.date;
+    NSDateComponents *pictureDateComponents = [NSObject getDateComponentsDate:dateStr];
+    NSInteger dayInt = pictureDateComponents.day;
+    NSInteger monthInt = pictureDateComponents.month;
+    NSInteger yearInt = pictureDateComponents.year;
+    NSString *dateText = [NSString stringWithFormat:@"%ld月%ld日 %ld",monthInt,dayInt,yearInt];
+    _dateLabel.text = dateText;
+}
 
 @end

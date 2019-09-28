@@ -81,15 +81,14 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     [self.view setBackgroundColor:[UIColor colorWithRGBHex:0xf5f6f8]];
     UILabel *titleLabel = [UILabel labelWithFont:15.0 WithText:@"DAYDAY日记" WithColor:0x151718];
     self.navigationItem.titleView = titleLabel;
+    self.navigationItem.hidesBackButton = YES;
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"设置"] style:UIBarButtonItemStylePlain target:self action:@selector(clickSetting)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     [self.view addSubview:self.homeTableView];
     
     _homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downFreshloadData)];
-//    [_homeTableView.mj_header beginRefreshing];
 
     _homeTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(upFreshLoadMoreData)];
-//    [_homeTableView.mj_footer beginRefreshing];
     
     UIView *bottomView = [[UIView alloc] init];
     [bottomView setBackgroundColor:[UIColor colorWithRGBHex:0x151718]];
@@ -151,7 +150,7 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 {
     UITableViewCell *cell = nil;
     _diaryListM = _diaryModelArr[indexPath.row];
-    if (!_diaryListM.photo) {
+    if (!_diaryListM.photo) { //
         HomeTableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCell"];
         homeCell.selectionStyle = UITableViewCellSelectionStyleNone;
         homeCell.diaryListM = _diaryListM;
@@ -168,7 +167,11 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [self.navigationController pushViewController:[[MakeDiaryViewController alloc] init] animated:YES];
+    MakeDiaryViewController *makeDiaryVC = [[MakeDiaryViewController alloc] init];
+    _diaryListM = _diaryModelArr[indexPath.row];
+    makeDiaryVC.dateStr = _diaryListM.date;
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kRequestDiaryDetailBoolKRey];
+    [self.navigationController pushViewController:makeDiaryVC  animated:YES];
 }
 #pragma mark -----------按钮点击事件
 -(void)clickSetting
@@ -180,6 +183,7 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 -(void)clickMakeDiary
 {
     MakeDiaryViewController *makeDiaryVC = [[MakeDiaryViewController alloc] init];
+    makeDiaryVC.dateStr = [NSObject getCurrentDate];
     [self.navigationController pushViewController:makeDiaryVC animated:NO];
 }
 

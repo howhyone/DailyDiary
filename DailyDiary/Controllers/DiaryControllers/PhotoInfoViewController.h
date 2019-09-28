@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PhotoInfoViewController : UIViewController
 
 
-@property(nonatomic, copy)void(^deletedPhotoBlock)(UIImage *deletedPhotoImage);
-@property(nonatomic, strong)UIImage *photoImage;
-
+@property(nonatomic, copy)void(^deletedPhotoBlock)(NSMutableArray *currentPhotoArr);
+@property(nonatomic, assign)NSInteger photoInteger;
+@property(nonatomic, strong)NSArray *photoImageArr;
 @end
 
 NS_ASSUME_NONNULL_END

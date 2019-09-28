@@ -10,16 +10,17 @@
 
 @implementation UITextFieldInherit
 
-- (CGRect)leftViewRectForBounds:(CGRect)bounds{
+- (CGRect)leftViewRectForBounds:(CGRect)bounds
+{
     CGRect leftRect = [super leftViewRectForBounds:bounds];
-    leftRect.origin.x += 10;
+    leftRect.origin.x += 10 * kScale_Width;
     return leftRect;
 }
 
 - (CGRect)rightViewRectForBounds:(CGRect)bounds;
 {
     CGRect rightRect = [super rightViewRectForBounds:bounds];
-    rightRect.origin.x -= 13.0;
+    rightRect.origin.x -= 13.0 * kScale_Width;
     return rightRect;
 }
 
@@ -27,13 +28,18 @@
 {
     // 调用[super textRectForBounds:bounds] 就是添加 leftview 后的bounds
     CGRect textRect = [super textRectForBounds:bounds];
-    return CGRectInset(textRect, 10, 0);
+    textRect.origin.x += 18.0 * kScale_Width;
+    return textRect;
 }
 
 -(CGRect)editingRectForBounds:(CGRect)bounds
 {
-    CGRect textRect = [super textRectForBounds:bounds];
-    return CGRectInset(textRect, 10, 0);
+    CGRect textRect = [super editingRectForBounds:bounds];
+    textRect.origin.x += 18.0 * kScale_Width;
+    return textRect;
 }
 
 @end
+
+
+

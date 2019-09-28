@@ -60,9 +60,21 @@
             return nil;
         }
     }
+    
+    
     NSArray *listArr = nil;
-    if ([[dataDic allKeys] containsObject:@"flag"]) {
-       id listTempArr = [dataDic objectForKey:@"list"];
+    
+    if ([modelClass isEqualToString:@"PicturesListModel"]) {
+        id listTempArr = [dataDic objectForKey:@"list"];
+        if (![listTempArr isKindOfClass:[NSArray class]]) {
+            return nil;
+        }else{
+            listArr = listTempArr;
+        }
+    }
+    
+    if ([modelClass isEqualToString:@"DiaryListModel"]) {
+        id listTempArr = [dataDic objectForKey:@"list"];
         if (![listTempArr isKindOfClass:[NSArray class]]) {
             return nil;
         }else{
@@ -70,6 +82,8 @@
         }
     }
 
+    
+    
     u_int propertyCount;
     id modelObject = [[NSClassFromString(modelClass) alloc] init];
     objc_property_t *propertyList = class_copyPropertyList([NSClassFromString(modelClass) class], &propertyCount);
@@ -104,10 +118,28 @@
                 }
                 [modelObject setValue:propertyValue forKey:propertyName];
             }
-            [modelObject setValue:flagStr forKey:@"flag"];
+            if ([modelClass isEqualToString:@"DiaryListModel"]) {
+                [modelObject setValue:flagStr forKey:@"flag"];
+            }
             [modelMutableArr addObject:modelObject];
         }
         return modelMutableArr;
+    }
+    
+    if (dataDic && !listArr && !resDic) {
+        for (int i = 0; i < propertyCount; i++) {
+            const char *propertyChar = property_getName(propertyList[i]);
+            NSString *propertyName = [NSString stringWithUTF8String:propertyChar];
+            NSString *propertyValue = [dataDic objectForKey:propertyName];
+            if ([propertyName isEqualToString:@"DiaryId"]) {
+                propertyValue = [dataDic objectForKey:@"id"];
+            }else{
+                propertyValue = [dataDic objectForKey:propertyName];
+            }
+            [modelObject setValue:propertyValue forKey:propertyName];
+        
+        }
+        return modelObject;
     }
     return nil;
 }

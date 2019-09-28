@@ -39,6 +39,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)request_SearchDiray_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
 
+#pragma mark ------------ 照片墙
+-(void)request_PicturesList_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block;
+
 
 @end
 

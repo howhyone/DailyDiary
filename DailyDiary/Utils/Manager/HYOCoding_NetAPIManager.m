@@ -10,6 +10,8 @@
 #import "HYOCoding_NetAPIClient.h"
 #import "LoginModel.h"
 #import "DiaryListModel.h"
+#import "DiaryDetailModel.h"
+#import "PicturesListModel.h"
 
 @implementation HYOCoding_NetAPIManager
 
@@ -115,8 +117,7 @@
 
     [manager request_EditDiray_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
-            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
-	            block(loginM,error);
+            block(data,error);
         }else{
             NSLog(@"error is==========+%@",error);
             block(data,error);
@@ -127,8 +128,6 @@
 -(void)request_ListDiary_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block
 {
     HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
-//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     AFJSONResponseSerializer *response = [AFJSONResponseSerializer serializer];
     response.removesKeysWithNullValues = YES;
     manager.responseSerializer = response;
@@ -138,7 +137,9 @@
             NSLog(@"ListDiary data ===========%@",data);
             block(diaryListArr,error);
         }else{
-            NSLog(@"error is==========+%@",error);
+            NSData *data = error.userInfo[@"com.alamofire.serialization.response.error.data"] ;
+            NSString *errorStr = [[ NSString alloc ] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"origialerror is %@\n error is==========+%@",error,errorStr);
              block(data,error);
         }
     }];
@@ -150,11 +151,11 @@
 
     [manager request_DetailDiary_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
-            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
-            NSLog(@"data ===========%@",data);
-            block(loginM,error);
+            DiaryDetailModel *diaryDetailM  = [HYOJson objectWithModelClass:@"DiaryDetailModel" withJsonString:data];
+            NSLog(@"DetailDiarydata ===========%@",data);
+            block(diaryDetailM,error);
         }else{
-            NSLog(@"error is==========+%@",error);
+            NSLog(@"DetailDiarydata error==========+%@",error);
             block(data,error);
         }
     }];
@@ -166,9 +167,24 @@
     
     [manager request_SearchDiary_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
-            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            NSArray *diaryListArr = [HYOJson objectWithModelClass:@"DiaryListModel" withJsonString:data];
+            NSLog(@"ListDiary data ===========%@",data);
+            block(diaryListArr,error);
+        }else{
+            NSLog(@"error is==========+%@",error);
+            block(data,error);
+        }
+    }];
+}
+
+-(void)request_PicturesList_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block
+{
+    HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
+    [manager request_PicturesList_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            PicturesListModel *picturesListM  = [HYOJson objectWithModelClass:@"PicturesListModel" withJsonString:data];
             NSLog(@"data ===========%@",data);
-            block(loginM,error);
+            block(picturesListM,error);
         }else{
             NSLog(@"error is==========+%@",error);
             block(data,error);

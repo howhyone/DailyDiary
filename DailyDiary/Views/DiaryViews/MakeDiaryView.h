@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PackageView.h"
+#import "DiaryDetailModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)UITextField *titleTextField;
 @property(nonatomic, strong)UILabel *diaryPlaceholdLabel;
 @property(nonatomic, strong)UITextView *diaryTextView;
-@property(nonatomic, strong) KeyboardToolBarView *keyboardToolBarView;
-
+@property(nonatomic, strong)KeyboardToolBarView *keyboardToolBarView;
+@property(nonatomic, strong)DiaryDetailModel *diaryDetailM;
 @end
 
 

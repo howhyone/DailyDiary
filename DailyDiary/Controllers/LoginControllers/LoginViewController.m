@@ -82,7 +82,6 @@
 
 -(void)clickPhoneLogin
 {
-    
     OtherLoginViewController *otherLoginVC = [[OtherLoginViewController alloc] init];
     [self.navigationController pushViewController:otherLoginVC animated:NO];
 }

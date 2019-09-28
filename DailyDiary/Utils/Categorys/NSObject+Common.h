@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(NSString *)currentItmeStr;
 
++(NSString *)getCurrentDate;
+
 +(NSString *)getCurrentDateYearMonth;
 
 + (UIImage *)imageWithColor:(UIColor *)color;
@@ -30,6 +32,14 @@ NS_ASSUME_NONNULL_BEGIN
  日期字符串转单独的年、月、日、时、
  **/
 +(NSDateComponents *)getDateComponentsDate:(NSString *)dateStr;
+
++ (NSData *)imageData:(UIImage *)myimage;
+
+/**随机生成一个字符串*/
+- (NSString *)randomString:(NSInteger)length;
+/**随机生成一个中文名字*/
+-(NSString *)randomChineseName:(NSInteger )integer;
+
 @end
 
 NS_ASSUME_NONNULL_END

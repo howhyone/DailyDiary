@@ -9,6 +9,8 @@
 #import "PersonalInfoView.h"
 #import "UITextFieldInherit.h"
 #import "ThirdLoginView.h"
+
+
 @implementation PersonalInfoView
 
 -(id)initWithFrame:(CGRect)frame
@@ -26,7 +28,8 @@
     headerImageView.layer.cornerRadius = 45;
     headerImageView.layer.masksToBounds = YES;
     [headerImageView setImage:[UIImage imageNamed:@"头像"]];
-    [self addSubview:headerImageView];
+    self.headerImageView = headerImageView;
+    [self addSubview:self.headerImageView];
     [headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.top).offset(47 * kScale_Height);
         make.centerX.equalTo(self.centerX).offset(0);
@@ -52,28 +55,31 @@
     nameTextField.layer.cornerRadius = 23;
     nameTextField.layer.masksToBounds = YES;
     UIView *leftTextFieldV = ({
-    UIView *leftTextFieldV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 73 * kScale_Width, 46 * kScale_Height)];
-        UILabel *nameLabel = [UILabel labelWithFont:14.0 WithText:@"昵称" WithColor:0xB4B5B6];
-        nameLabel.frame = CGRectMake(0, 0, 28 * kScale_Width, 46 * kScale_Height);
-//        nameLabel.textAlignment = NSTextAlignmentCenter;
-        [leftTextFieldV addSubview:nameLabel];
-        [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(leftTextFieldV.top).offset(0);
-            make.left.equalTo(leftTextFieldV.left).offset(0);
-            make.height.equalTo(54 * kScale_Height);
-        }];
-        
+    leftTextFieldV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 54 * kScale_Width, 46 * kScale_Height)];
+        self.nameLabel = [UILabel labelWithFont:14.0 WithText:@"昵称" WithColor:0xB4B5B6];
+        self.nameLabel.frame = CGRectMake(0, 0, 53 * kScale_Width, 46 * kScale_Height);
+        [leftTextFieldV addSubview:self.nameLabel];
+        /***** 添加了masonry约束，textfield不可以编辑，UIFielEditor没有***/
+//        [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(leftTextFieldV.top).offset(0);
+//            make.left.equalTo(leftTextFieldV.left).offset(0);
+//            make.width.equalTo(54 * kScale_Width);
+//            make.height.equalTo(46 * kScale_Height);
+//        }];
+
         UIView *lineView = [[UIView alloc] init];
         [lineView setBackgroundColor:[UIColor colorWithRGBHex:0xFFFFFF]];
+        lineView.frame = CGRectMake(53 * kScale_Width, 0, 1 * kScale_Width, 46 * kScale_Height);
         [leftTextFieldV addSubview:lineView];
-        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(nameLabel.right).offset(11 * kScale_Width);
-            make.width.equalTo(1);
-            make.height.equalTo(54 * kScale_Height);
-            make.top.equalTo(nameLabel.top).offset(0);
-        }];
+//        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.nameLabel.right).offset(11 * kScale_Width);
+//            make.width.equalTo(1);
+//            make.height.equalTo(54 * kScale_Height);
+//            make.top.equalTo(self.nameLabel.top).offset(0);
+//        }];
         leftTextFieldV;
     });
+
     nameTextField.leftView = leftTextFieldV;
     nameTextField.leftViewMode = UITextFieldViewModeAlways;
     
@@ -85,6 +91,8 @@
     nameTextField.rightView = randomBtn;
     nameTextField.rightViewMode = UITextFieldViewModeAlways;
     
+    nameTextField.textAlignment = NSTextAlignmentLeft;
+    self.nameTextField = nameTextField;
     [self addSubview:nameTextField];
     [nameTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(uploadHeaderBtn.bottom).offset(50 * kScale_Height);
@@ -113,16 +121,7 @@
         make.width.equalTo(260 * kScale_Width);
         make.height.equalTo(46 * kScale_Height);
     }];
-//    第三方登录 去掉
-//    UIView *thirdLoginV = [[ThirdLoginView alloc] init];
-//    [self addSubview:thirdLoginV];
-//    [thirdLoginV mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(commmitBtn.bottom).offset(90 * kScale_Height);
-//        make.left.equalTo(commmitBtn.left).offset(0);
-//        make.right.equalTo(commmitBtn.right).offset(0);
-//        make.bottom.equalTo(self.bottom).offset(-33 * kScale_Height);
-//    }];
-   
+
 }
 
 #pragma mark -------- 点击事件
@@ -136,9 +135,11 @@
 -(void)randomName:(UIButton *)button
 {
     NSLog(@"=======");
-    if ([self.delegate respondsToSelector:@selector(clickButton:)]) {
-        [self.delegate clickButton:button.tag];
-    }
+    NSString *randomStr = [NSObject randomChineseName:1];
+    _nameTextField.text = randomStr;
+//    if ([self.delegate respondsToSelector:@selector(clickButton:)]) {
+//        [self.delegate clickButton:button.tag];
+//    }
 }
 -(void)commitPersonalInfo:(UIButton *)button
 {
@@ -147,18 +148,5 @@
         [self.delegate clickButton:button.tag];
     }
 }
--(void)wechatLogin:(UIButton *)button
-{
-    NSLog(@"222222");
-    if ([self.delegate respondsToSelector:@selector(clickButton:)]) {
-        [self.delegate clickButton:button.tag];
-    }
-}
--(void)sinaLogin:(UIButton *)button
-{
-    NSLog(@"121232");
-    if ([self.delegate respondsToSelector:@selector(clickButton:)]) {
-        [self.delegate clickButton:button.tag];
-    }
-}
+
 @end

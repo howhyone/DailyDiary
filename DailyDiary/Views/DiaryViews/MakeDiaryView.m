@@ -47,8 +47,16 @@
     
     _keyboardToolBarView = [[KeyboardToolBarView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 42 * kScale_Height)];
     _diaryTextView.inputAccessoryView = _keyboardToolBarView;
-    
 }
+
+-(void)setDiaryDetailM:(id)object
+{
+    _diaryDetailM = (DiaryDetailModel *)object;
+    _titleTextField.text = _diaryDetailM.title;
+    _diaryTextView.text = _diaryDetailM.context;
+}
+
+
 @end
 
 
@@ -83,18 +91,17 @@
         make.centerY.equalTo(weakSelf.dateBtn.centerY).offset(0);
     }];
 
-    UILabel *titleLabel = [UILabel labelWithFont:15.0 WithText:@"2019年 7月6日" WithColor:0x151718];
-    titleLabel.textAlignment = NSTextAlignmentRight;
-    self.titleLabel = titleLabel;
-    [_dateBtn addSubview:titleLabel];
-    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    _titleLabel = [UILabel labelWithFont:15.0 WithText:@"暂无日期" WithColor:0x151718];
+    _titleLabel.textAlignment = NSTextAlignmentRight;
+    [_dateBtn addSubview:_titleLabel];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(titleImageView.left).offset(-10);
         make.centerY.equalTo(titleImageView.centerY).offset(0);
         make.height.equalTo(21);
         make.left.equalTo(weakSelf.left).offset(0);
     }];
     
-    UITapGestureRecognizer *titleTapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickDateSelector:)];
+    UITapGestureRecognizer *titleTapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickDateSelector)];
     self.userInteractionEnabled = YES;
     [self addGestureRecognizer:titleTapGes];
 }
