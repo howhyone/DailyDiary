@@ -240,8 +240,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "372"
             endingLineNumber = "372"
-            landmarkName = "-requestWithMethod:URLString:parameters:error:"
-            landmarkType = "7">
+            landmarkName = "AFHTTPRequestSerializer"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -257,8 +257,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1346"
             endingLineNumber = "1346"
-            landmarkName = "-requestBySerializingRequest:withParameters:error:"
-            landmarkType = "7">
+            landmarkName = "AFPropertyListRequestSerializer"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -308,7 +308,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1352"
             endingLineNumber = "1352"
-            landmarkName = "-requestBySerializingRequest:withParameters:error:"
+            landmarkName = "-initWithCoder:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -325,8 +325,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "734"
             endingLineNumber = "734"
-            landmarkName = "-appendPartWithFileURL:name:fileName:mimeType:error:"
+            landmarkName = "-appendPartWithInputStream:name:fileName:length:mimeType:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F1DF4B3F-9BC1-45E6-A68F-5264AE7C1C08 - 19ff86ab9535426e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AFStreamingMultipartFormData appendPartWithInputStream:name:fileName:length:mimeType:]"
+                  moduleName = "DailyDiary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "736"
+                  endingLineNumber = "736"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "F1DF4B3F-9BC1-45E6-A68F-5264AE7C1C08 - 19ff86ab9535426e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AFStreamingMultipartFormData appendPartWithInputStream:name:fileName:length:mimeType:]"
+                  moduleName = "DailyDiary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "736"
+                  endingLineNumber = "736"
+                  offsetFromSymbolStart = "192">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -342,25 +374,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "759"
             endingLineNumber = "759"
-            landmarkName = "-appendPartWithInputStream:name:fileName:length:mimeType:"
+            landmarkName = "-appendPartWithFileData:name:fileName:mimeType:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D06A76A6-739C-4E8C-8663-02FFC7FA4662"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m"
-            timestampString = "591086181.837934"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "830"
-            endingLineNumber = "830"
-            landmarkName = "-requestByFinalizingMultipartFormData"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DEFD4137-7D4A-49AD-B649-0023BABAC8A3 - d5af102aa7c4b8b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AFStreamingMultipartFormData appendPartWithFileData:name:fileName:mimeType:]"
+                  moduleName = "DailyDiary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "760"
+                  endingLineNumber = "760"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "DEFD4137-7D4A-49AD-B649-0023BABAC8A3 - d5af102aa7c4b8b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AFStreamingMultipartFormData appendPartWithFileData:name:fileName:mimeType:]"
+                  moduleName = "DailyDiary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "760"
+                  endingLineNumber = "760"
+                  offsetFromSymbolStart = "172">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -393,7 +440,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "376"
             endingLineNumber = "376"
-            landmarkName = "-requestWithMethod:URLString:parameters:error:"
+            landmarkName = "-multipartFormRequestWithMethod:URLString:parameters:constructingBodyWithBlock:error:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -570,23 +617,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3511A31A-7678-4199-8DF6-8737370098CC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIManager.m"
-            timestampString = "591196182.687682"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-request_UserInquiry_WithPath:Params:andBlock:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B543FD3A-8255-417C-8AD3-36AD06F743BD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -598,57 +628,6 @@
             startingLineNumber = "170"
             endingLineNumber = "170"
             landmarkName = "-request_SearchDiray_WithPath:Params:andBlock:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5F4AD4F3-22DB-41FE-858C-69721DEE59D1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Json/HYOJson.m"
-            timestampString = "591196182.68787"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "+objectWithModelClass:withJsonString:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B8C6E1BD-6BF1-4EFF-BDB1-CD859BDEA664"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Json/HYOJson.m"
-            timestampString = "591196182.687971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "+objectWithModelClass:withJsonString:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BC8BC8FE-1F86-4620-B6EB-8CB0AD32C2E7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Json/HYOJson.m"
-            timestampString = "591196182.688024"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "+objectWithModelClass:withJsonString:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -672,48 +651,82 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "781BF5F1-9008-4A88-B27D-7A5DC8967120"
+            uuid = "FABF25E8-DE15-4ECE-9C18-84848A536476"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/LoginControllers/OtherLoginViewController.m"
-            timestampString = "591196302.641938"
+            filePath = "DailyDiary/Utils/Categorys/NSObject+Common.m"
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-phoneLoginWithVerCode:"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "-randomString:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31445969-7D9B-4212-9B79-00F59E9E45DF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DailyDiary/Utils/Categorys/NSObject+Common.m"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-stringFrom:length:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC1888EE-7E41-4282-A18A-D7AAC31CA915"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DailyDiary/Controllers/SettingConotrollers/PersonalInfoViewController.m"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-httpRequestUserEdit"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "781BF5F1-9008-4A88-B27D-7A5DC8967120 - 28b449a0e439b8fa"
+                  uuid = "DC1888EE-7E41-4282-A18A-D7AAC31CA915 - c1b7964e66d99721"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[OtherLoginViewController phoneLoginWithVerCode:]"
+                  symbolName = "-[PersonalInfoViewController httpRequestUserEdit]"
                   moduleName = "DailyDiary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/LoginControllers/OtherLoginViewController.m"
+                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/SettingConotrollers/PersonalInfoViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "92">
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "548">
                </Location>
                <Location
-                  uuid = "781BF5F1-9008-4A88-B27D-7A5DC8967120 - d8c9668e530de11b"
+                  uuid = "DC1888EE-7E41-4282-A18A-D7AAC31CA915 - e67ff5ca9f58c06"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__50-[OtherLoginViewController phoneLoginWithVerCode:]_block_invoke"
+                  symbolName = "__49-[PersonalInfoViewController httpRequestUserEdit]_block_invoke"
                   moduleName = "DailyDiary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/LoginControllers/OtherLoginViewController.m"
+                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/SettingConotrollers/PersonalInfoViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "52">
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "84">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -721,12 +734,61 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B1F56CEB-7B87-4508-8F40-718249306C87"
+            uuid = "33C65DA4-594F-49C4-803B-EE2D04EA7981"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DailyDiary/Controllers/SettingConotrollers/PersonalInfoViewController.m"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-clickButton:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D651AF6-A579-4D26-89D1-428A3982FB34"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DailyDiary/Controllers/SettingConotrollers/PersonalInfoViewController.m"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-clickButton:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1632D978-1A6E-40F7-9E98-2B4888EF27EF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DailyDiary/Controllers/LoginControllers/LoginViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-secVerify"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEF01422-D34F-47CA-BA5E-BF1D428E67B5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Controllers/LoginControllers/OtherLoginViewController.m"
-            timestampString = "591196311.962284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -735,7 +797,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B1F56CEB-7B87-4508-8F40-718249306C87 - 7129674f413359df"
+                  uuid = "FEF01422-D34F-47CA-BA5E-BF1D428E67B5 - 7129674f413359df"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -750,7 +812,7 @@
                   offsetFromSymbolStart = "100">
                </Location>
                <Location
-                  uuid = "B1F56CEB-7B87-4508-8F40-718249306C87 - d199b77b01d1d7dd"
+                  uuid = "FEF01422-D34F-47CA-BA5E-BF1D428E67B5 - d199b77b01d1d7dd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -770,112 +832,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FABF25E8-DE15-4ECE-9C18-84848A536476"
+            uuid = "C2AED388-A884-4966-A3BB-1C4E72520E20"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Categorys/NSObject+Common.m"
+            filePath = "DailyDiary/Controllers/LoginControllers/OtherLoginViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "-randomString:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "31445969-7D9B-4212-9B79-00F59E9E45DF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Categorys/NSObject+Common.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "-stringFrom:length:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DC1888EE-7E41-4282-A18A-D7AAC31CA915"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/SettingConotrollers/PersonalInfoViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-httpRequestUserEdit"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DC1888EE-7E41-4282-A18A-D7AAC31CA915 - c1b7964e66d99721"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PersonalInfoViewController httpRequestUserEdit]"
-                  moduleName = "DailyDiary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/SettingConotrollers/PersonalInfoViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "548">
-               </Location>
-               <Location
-                  uuid = "DC1888EE-7E41-4282-A18A-D7AAC31CA915 - e67ff5ca9f58c06"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__49-[PersonalInfoViewController httpRequestUserEdit]_block_invoke"
-                  moduleName = "DailyDiary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mob/Documents/Small%20target/MobAPP/DailyDiary/DailyDiary/Controllers/SettingConotrollers/PersonalInfoViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "33C65DA4-594F-49C4-803B-EE2D04EA7981"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/SettingConotrollers/PersonalInfoViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-clickButton:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7D651AF6-A579-4D26-89D1-428A3982FB34"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/SettingConotrollers/PersonalInfoViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-clickButton:"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-getVerCodeWithPhone:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)randomString:(NSInteger)length;
 /**随机生成一个中文名字*/
 -(NSString *)randomChineseName:(NSInteger )integer;
+/**提示框*/
++(UIAlertController *)setAlerControlelrWithControllerTitle:(nullable NSString *)controllerTitleStr controllerMessage:(nullable NSString *)controllerMessageStrStr actionTitle:(nullable NSString *)actionTitleStr;
 
 @end
 

@@ -30,7 +30,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx617c77c82218ea2c</string>
+				<string>wx1b050162bb23ed83</string>
 			</array>
 		</dict>
 		<dict>
@@ -40,7 +40,27 @@
 			<string>weibo</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wb568898243</string>
+				<string>wb3034586688</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>moblink</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>mobtech.dailydiary</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>QQ</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>tencent1109702596</string>
 			</array>
 		</dict>
 	</array>
@@ -48,6 +68,18 @@
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>mqqopensdkapiV2</string>
+		<string>mqqopensdkapiV3</string>
+		<string>wtloginmqq2
+mqq
+mqqapi
+timapi
+mqqopensdkminiapp</string>
+		<string>mqq</string>
+		<string>mqqapi</string>
+		<string>timapi</string>
+		<string>mqqopensdkminiapp</string>
+		<string>mqqOpensdkSSoLogin</string>
 		<string>sinaweibohd</string>
 		<string>sinaweibo</string>
 		<string>weibosdk2.5</string>

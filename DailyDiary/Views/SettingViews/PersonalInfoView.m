@@ -27,7 +27,6 @@
     UIImageView *headerImageView =[[UIImageView alloc] init];
     headerImageView.layer.cornerRadius = 45;
     headerImageView.layer.masksToBounds = YES;
-    [headerImageView setImage:[UIImage imageNamed:@"头像"]];
     self.headerImageView = headerImageView;
     [self addSubview:self.headerImageView];
     [headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -147,6 +146,13 @@
     if ([self.delegate respondsToSelector:@selector(clickButton:)]) {
         [self.delegate clickButton:button.tag];
     }
+}
+
+-(void)setPersonalInfoModel:(id)object
+{
+    PersonalInfoModel *model = (PersonalInfoModel *)object;
+    [_headerImageView sd_setImageWithURL:[NSURL URLWithString:model.photo]];
+    _nameTextField.text = model.name;
 }
 
 @end

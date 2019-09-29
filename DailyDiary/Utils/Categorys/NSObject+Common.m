@@ -186,4 +186,12 @@
     return randomNameStr;
 }
 
++(UIAlertController *)setAlerControlelrWithControllerTitle:(nullable NSString *)controllerTitleStr controllerMessage:(nullable NSString *)controllerMessageStrStr actionTitle:(nullable NSString *)actionTitleStr
+{
+    UIAlertController *shareAlertC = [UIAlertController alertControllerWithTitle:controllerTitleStr message:controllerMessageStrStr preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:actionTitleStr style:UIAlertActionStyleDefault handler:nil];
+    [shareAlertC addAction:okAction];
+    return shareAlertC;
+}
+
 @end

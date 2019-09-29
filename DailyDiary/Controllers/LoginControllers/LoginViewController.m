@@ -95,8 +95,9 @@
             NSLog(@"预取号成功");
             // 自定义配置Model，currentViewController必传.
             SecVerifyCustomModel *model = [[SecVerifyCustomModel alloc] init];
-            model.switchAccHidden = YES;
+            model.switchHidden = [NSNumber numberWithInt:1];
             model.currentViewController = self;
+            model.currentViewController.modalPresentationStyle = UIModalPresentationFullScreen;
             [SecVerify loginWithModel:model completion:^(NSDictionary *resultDic, NSError *error) {
                 if (!error)
                 {

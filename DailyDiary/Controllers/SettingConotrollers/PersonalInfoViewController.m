@@ -30,12 +30,17 @@
 
 -(void)httpRequestInquiry
 {
+    WeakSelf(weakSelf);
     NSString *phoneStr = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneKey];
     NSMutableDictionary *paramsMutableDic = [NSMutableDictionary dictionaryWithCapacity:1];
     [paramsMutableDic setObject:phoneStr forKey:@"phone"];
     NSString *pathStr = @"/mob_diary/user/info";
     [[HYOCoding_NetAPIManager sharedManager] request_UserInquiry_WithPath:pathStr Params:paramsMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
-        
+        if (data && !error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.personalInfoView.personalInfoModel = data;
+            });
+        }
     }];
 }
 -(void)httpRequestUserEdit
@@ -49,7 +54,11 @@
     [paramsMutableDic setObject:headerImage forKey:@"file"];
     NSString *pathStr = @"/mob_diary/user/edit";
     [[HYOCoding_NetAPIManager sharedManager] request_UserEdit_WithPath:pathStr Params:paramsMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
-        
+        if (data && !error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:NO];
+            });
+        }
     }];
 }
 
@@ -59,17 +68,20 @@
         case 1001: // 上传头像
         {
             NSLog(@"1001------");
-//            __weak typeof(self) weakSelf= self;
-//            NSInteger Count =  1;//剩余可选图片数量
-//            TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:Count delegate:self];
-//            [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photo, NSArray * assets, BOOL isSelectOriginalPhoto) {
-//                for (NSInteger i = 0; i<photo.count; i++) {
-//                    UIImage *img = photo[i];//压缩图片
-//                    weakSelf.selectionHeaderImage = img;
-//                }
-//            }];
-//            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kRequestDiaryDetailBoolKRey];
-//            [self presentViewController:imagePickerVc animated:YES completion:nil];
+            __weak typeof(self) weakSelf= self;
+            NSInteger Count =  1;//剩余可选图片数量
+            TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:Count delegate:self];
+            imagePickerVc.modalPresentationStyle = UIModalPresentationFullScreen;
+            [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photo, NSArray * assets, BOOL isSelectOriginalPhoto) {
+                for (NSInteger i = 0; i<photo.count; i++) {
+                    UIImage *img = photo[i];//压缩图片
+                    weakSelf.selectionHeaderImage = img;
+                    weakSelf.personalInfoView.headerImageView.image = img;
+                }
+            }];
+            
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kRequestDiaryDetailBoolKRey];
+            [self presentViewController:imagePickerVc animated:YES completion:nil];
         }
             break;
         case 1002: // 随机昵称

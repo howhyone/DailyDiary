@@ -27,7 +27,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     BOOL loginBool = [[NSUserDefaults standardUserDefaults] boolForKey:kLoginKey];
-    if (1) {//loginBool
+    if (loginBool) {
         self.window.rootViewController = [[DDNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
 
     }else{
@@ -67,8 +67,9 @@
 -(void)registerShareSDK
 {
     [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
-        [platformsRegister setupWeChatWithAppId:@"wx617c77c82218ea2c" appSecret:@"c7253e5289986cf4c4c74d1ccc185fb1"];
-        [platformsRegister setupSinaWeiboWithAppkey:@"568898243" appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3" redirectUrl:@"http://www.sharesdk.cn"];
+        [platformsRegister setupWeChatWithAppId:@"wx1b050162bb23ed83" appSecret:@""];
+        [platformsRegister setupSinaWeiboWithAppkey:@"3034586688" appSecret:@"7c77cc41de78c4e312c351cb0b4548b3" redirectUrl:@"http://dashboard.mob.com/#!/share/plat/setup"];
+        [platformsRegister setupQQWithAppId:@"1109702596" appkey:@""];
     }];
 }
 

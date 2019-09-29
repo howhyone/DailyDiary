@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PersonalInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,6 +35,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface ShareSettingTableViewCell : SettingTableViewCell
+
+@end
+
 @protocol clickLogoutDelegate <NSObject>
 
 @optional
@@ -43,11 +48,13 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface SettingHeaderView : UIView
-@property(nonatomic, strong)UIButton *headerBtn;
+@property(nonatomic, strong)UIImageView *headerImageView;
 @property(nonatomic, strong)UILabel *nameLabel;
 @property(nonatomic, strong)UIButton *changeIntroBtn;
 @property(nonatomic, strong)UIButton *logoutBtn;
 @property(nonatomic, weak)id<clickLogoutDelegate> delegate;
+@property(nonatomic, strong)PersonalInfoModel *personalInfoModel;
+
 @end
 
 NS_ASSUME_NONNULL_END

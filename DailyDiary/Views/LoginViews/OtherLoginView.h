@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol ThirdLoginDelegate <NSObject>
 @required
 -(void)getVerCodeWithPhone:(NSString *)phoneStr;
--(void)thirdLoginWithPlatfromType:(SSDKPlatformType)platformType;
+//-(void)thirdLoginWithPlatfromType:(SSDKPlatformType)platformType;
 -(void)phoneLoginWithVerCode:(NSString *)codeStr;
 @end
 

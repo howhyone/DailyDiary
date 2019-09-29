@@ -12,6 +12,7 @@
 #import "DiaryListModel.h"
 #import "DiaryDetailModel.h"
 #import "PicturesListModel.h"
+#import "PersonalInfoModel.h"
 
 @implementation HYOCoding_NetAPIManager
 
@@ -72,9 +73,9 @@
    
     [manager request_UserInquiry_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
-            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
+            PersonalInfoModel *personalInfoM  = [HYOJson objectWithModelClass:@"PersonalInfoModel" withJsonString:data];
             NSLog(@"data is ======+%@",data);
-            block(loginM,error);
+            block(personalInfoM,error);
         }else{
             NSLog(@"error is==========+%@",error);
             block(data,error);
@@ -98,9 +99,8 @@
     
     [manager request_UserEdit_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
-            LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
             NSLog(@"data is ======+%@",data);
-            block(loginM,error);
+            block(data,error);
         }else{
             NSLog(@"error is==========+%@",error);
             block(data,error);

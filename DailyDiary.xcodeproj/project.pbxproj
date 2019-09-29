@@ -103,30 +103,6 @@
 		C9A768592333A73000EE7A93 /* HYOJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A768582333A73000EE7A93 /* HYOJson.m */; };
 		C9A7685A2333A73000EE7A93 /* HYOJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A768582333A73000EE7A93 /* HYOJson.m */; };
 		C9A7685B2333A73000EE7A93 /* HYOJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A768582333A73000EE7A93 /* HYOJson.m */; };
-		C9ABDFB0230BD8660055D5B0 /* SecVerify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA3230BD8660055D5B0 /* SecVerify.framework */; };
-		C9ABDFB1230BD8660055D5B0 /* SecVerify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA3230BD8660055D5B0 /* SecVerify.framework */; };
-		C9ABDFB2230BD8660055D5B0 /* SecVerify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA3230BD8660055D5B0 /* SecVerify.framework */; };
-		C9ABDFB3230BD8660055D5B0 /* EAccountApiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA6230BD8660055D5B0 /* EAccountApiSDK.framework */; };
-		C9ABDFB4230BD8660055D5B0 /* EAccountApiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA6230BD8660055D5B0 /* EAccountApiSDK.framework */; };
-		C9ABDFB5230BD8660055D5B0 /* EAccountApiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA6230BD8660055D5B0 /* EAccountApiSDK.framework */; };
-		C9ABDFB6230BD8660055D5B0 /* TYRZResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9ABDFA8230BD8660055D5B0 /* TYRZResource.bundle */; };
-		C9ABDFB7230BD8660055D5B0 /* TYRZResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9ABDFA8230BD8660055D5B0 /* TYRZResource.bundle */; };
-		C9ABDFB8230BD8660055D5B0 /* TYRZResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9ABDFA8230BD8660055D5B0 /* TYRZResource.bundle */; };
-		C9ABDFB9230BD8660055D5B0 /* TYRZSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA9230BD8660055D5B0 /* TYRZSDK.framework */; };
-		C9ABDFBA230BD8660055D5B0 /* TYRZSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA9230BD8660055D5B0 /* TYRZSDK.framework */; };
-		C9ABDFBB230BD8660055D5B0 /* TYRZSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFA9230BD8660055D5B0 /* TYRZSDK.framework */; };
-		C9ABDFBC230BD8660055D5B0 /* sdk_oauth.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9ABDFAB230BD8660055D5B0 /* sdk_oauth.bundle */; };
-		C9ABDFBD230BD8660055D5B0 /* sdk_oauth.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9ABDFAB230BD8660055D5B0 /* sdk_oauth.bundle */; };
-		C9ABDFBE230BD8660055D5B0 /* sdk_oauth.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9ABDFAB230BD8660055D5B0 /* sdk_oauth.bundle */; };
-		C9ABDFBF230BD8660055D5B0 /* OAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFAC230BD8660055D5B0 /* OAuth.framework */; };
-		C9ABDFC0230BD8660055D5B0 /* OAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFAC230BD8660055D5B0 /* OAuth.framework */; };
-		C9ABDFC1230BD8660055D5B0 /* OAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFAC230BD8660055D5B0 /* OAuth.framework */; };
-		C9ABDFC2230BD8660055D5B0 /* SecVerify.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9ABDFAD230BD8660055D5B0 /* SecVerify.bundle */; };
-		C9ABDFC3230BD8660055D5B0 /* SecVerify.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9ABDFAD230BD8660055D5B0 /* SecVerify.bundle */; };
-		C9ABDFC4230BD8660055D5B0 /* SecVerify.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9ABDFAD230BD8660055D5B0 /* SecVerify.bundle */; };
-		C9ABDFC5230BD8660055D5B0 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFAF230BD8660055D5B0 /* MOBFoundation.framework */; };
-		C9ABDFC6230BD8660055D5B0 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFAF230BD8660055D5B0 /* MOBFoundation.framework */; };
-		C9ABDFC7230BD8660055D5B0 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ABDFAF230BD8660055D5B0 /* MOBFoundation.framework */; };
 		C9ABDFCA230BDE910055D5B0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ABDFC9230BDE910055D5B0 /* LoginViewController.m */; };
 		C9ABDFCB230BDE910055D5B0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ABDFC9230BDE910055D5B0 /* LoginViewController.m */; };
 		C9ABDFCC230BDE910055D5B0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ABDFC9230BDE910055D5B0 /* LoginViewController.m */; };
@@ -160,6 +136,33 @@
 		C9DB73EB231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
 		C9DB73EC231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
 		C9DB73ED231E3F5600DDB1CB /* MakeDiaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */; };
+		C9E59ACC234092A100C60072 /* SecVerify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59ABF234092A100C60072 /* SecVerify.framework */; };
+		C9E59ACD234092A100C60072 /* SecVerify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59ABF234092A100C60072 /* SecVerify.framework */; };
+		C9E59ACE234092A100C60072 /* SecVerify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59ABF234092A100C60072 /* SecVerify.framework */; };
+		C9E59ACF234092A100C60072 /* EAccountHYSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59AC2234092A100C60072 /* EAccountHYSDK.framework */; };
+		C9E59AD0234092A100C60072 /* EAccountHYSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59AC2234092A100C60072 /* EAccountHYSDK.framework */; };
+		C9E59AD1234092A100C60072 /* EAccountHYSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59AC2234092A100C60072 /* EAccountHYSDK.framework */; };
+		C9E59AD2234092A100C60072 /* EAccountOpenPageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9E59AC3234092A100C60072 /* EAccountOpenPageResource.bundle */; };
+		C9E59AD3234092A100C60072 /* EAccountOpenPageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9E59AC3234092A100C60072 /* EAccountOpenPageResource.bundle */; };
+		C9E59AD4234092A100C60072 /* EAccountOpenPageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9E59AC3234092A100C60072 /* EAccountOpenPageResource.bundle */; };
+		C9E59AD5234092A100C60072 /* TYRZResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9E59AC5234092A100C60072 /* TYRZResource.bundle */; };
+		C9E59AD6234092A100C60072 /* TYRZResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9E59AC5234092A100C60072 /* TYRZResource.bundle */; };
+		C9E59AD7234092A100C60072 /* TYRZResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9E59AC5234092A100C60072 /* TYRZResource.bundle */; };
+		C9E59AD8234092A100C60072 /* TYRZSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59AC6234092A100C60072 /* TYRZSDK.framework */; };
+		C9E59AD9234092A100C60072 /* TYRZSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59AC6234092A100C60072 /* TYRZSDK.framework */; };
+		C9E59ADA234092A100C60072 /* TYRZSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59AC6234092A100C60072 /* TYRZSDK.framework */; };
+		C9E59ADB234092A100C60072 /* OAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59AC8234092A100C60072 /* OAuth.framework */; };
+		C9E59ADC234092A100C60072 /* OAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59AC8234092A100C60072 /* OAuth.framework */; };
+		C9E59ADD234092A100C60072 /* OAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59AC8234092A100C60072 /* OAuth.framework */; };
+		C9E59ADE234092A100C60072 /* SecVerify.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9E59AC9234092A100C60072 /* SecVerify.bundle */; };
+		C9E59ADF234092A100C60072 /* SecVerify.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9E59AC9234092A100C60072 /* SecVerify.bundle */; };
+		C9E59AE0234092A100C60072 /* SecVerify.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9E59AC9234092A100C60072 /* SecVerify.bundle */; };
+		C9E59AE1234092A100C60072 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59ACB234092A100C60072 /* MOBFoundation.framework */; };
+		C9E59AE2234092A100C60072 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59ACB234092A100C60072 /* MOBFoundation.framework */; };
+		C9E59AE3234092A100C60072 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E59ACB234092A100C60072 /* MOBFoundation.framework */; };
+		C9E59AE6234095C400C60072 /* PersonalInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E59AE5234095C400C60072 /* PersonalInfoModel.m */; };
+		C9E59AE7234095C400C60072 /* PersonalInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E59AE5234095C400C60072 /* PersonalInfoModel.m */; };
+		C9E59AE8234095C400C60072 /* PersonalInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E59AE5234095C400C60072 /* PersonalInfoModel.m */; };
 		C9E8DF0523371BF300CEA682 /* UITextView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF0423371BF300CEA682 /* UITextView+Common.m */; };
 		C9E8DF0623371BF300CEA682 /* UITextView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF0423371BF300CEA682 /* UITextView+Common.m */; };
 		C9E8DF0723371BF300CEA682 /* UITextView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8DF0423371BF300CEA682 /* UITextView+Common.m */; };
@@ -334,14 +337,6 @@
 		C9A768522333A66D00EE7A93 /* LoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		C9A768572333A73000EE7A93 /* HYOJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYOJson.h; sourceTree = "<group>"; };
 		C9A768582333A73000EE7A93 /* HYOJson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYOJson.m; sourceTree = "<group>"; };
-		C9ABDFA3230BD8660055D5B0 /* SecVerify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecVerify.framework; sourceTree = "<group>"; };
-		C9ABDFA6230BD8660055D5B0 /* EAccountApiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EAccountApiSDK.framework; sourceTree = "<group>"; };
-		C9ABDFA8230BD8660055D5B0 /* TYRZResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TYRZResource.bundle; sourceTree = "<group>"; };
-		C9ABDFA9230BD8660055D5B0 /* TYRZSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYRZSDK.framework; sourceTree = "<group>"; };
-		C9ABDFAB230BD8660055D5B0 /* sdk_oauth.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sdk_oauth.bundle; sourceTree = "<group>"; };
-		C9ABDFAC230BD8660055D5B0 /* OAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OAuth.framework; sourceTree = "<group>"; };
-		C9ABDFAD230BD8660055D5B0 /* SecVerify.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SecVerify.bundle; sourceTree = "<group>"; };
-		C9ABDFAF230BD8660055D5B0 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		C9ABDFC8230BDE910055D5B0 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C9ABDFC9230BDE910055D5B0 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C9ABDFE4230BFBC00055D5B0 /* PersonalInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
@@ -364,6 +359,16 @@
 		C9DB73E5231E3E2700DDB1CB /* MakeDiaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeDiaryViewController.m; sourceTree = "<group>"; };
 		C9DB73E9231E3F5600DDB1CB /* MakeDiaryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeDiaryView.h; sourceTree = "<group>"; };
 		C9DB73EA231E3F5600DDB1CB /* MakeDiaryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeDiaryView.m; sourceTree = "<group>"; };
+		C9E59ABF234092A100C60072 /* SecVerify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecVerify.framework; sourceTree = "<group>"; };
+		C9E59AC2234092A100C60072 /* EAccountHYSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EAccountHYSDK.framework; sourceTree = "<group>"; };
+		C9E59AC3234092A100C60072 /* EAccountOpenPageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EAccountOpenPageResource.bundle; sourceTree = "<group>"; };
+		C9E59AC5234092A100C60072 /* TYRZResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TYRZResource.bundle; sourceTree = "<group>"; };
+		C9E59AC6234092A100C60072 /* TYRZSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYRZSDK.framework; sourceTree = "<group>"; };
+		C9E59AC8234092A100C60072 /* OAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OAuth.framework; sourceTree = "<group>"; };
+		C9E59AC9234092A100C60072 /* SecVerify.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SecVerify.bundle; sourceTree = "<group>"; };
+		C9E59ACB234092A100C60072 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		C9E59AE4234095C400C60072 /* PersonalInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalInfoModel.h; sourceTree = "<group>"; };
+		C9E59AE5234095C400C60072 /* PersonalInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoModel.m; sourceTree = "<group>"; };
 		C9E8DF0323371BF300CEA682 /* UITextView+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Common.h"; sourceTree = "<group>"; };
 		C9E8DF0423371BF300CEA682 /* UITextView+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Common.m"; sourceTree = "<group>"; };
 		C9E8DF8A2337836E00CEA682 /* PhotoInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoInfoViewController.h; sourceTree = "<group>"; };
@@ -410,18 +415,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C981F4462307E3D800CA91A5 /* libz.tbd in Frameworks */,
-				C9ABDFBF230BD8660055D5B0 /* OAuth.framework in Frameworks */,
+				C9E59ADB234092A100C60072 /* OAuth.framework in Frameworks */,
 				C981F4442307E3D300CA91A5 /* libc++.tbd in Frameworks */,
 				C981F4422307E3CB00CA91A5 /* libxml2.tbd in Frameworks */,
-				C9ABDFB0230BD8660055D5B0 /* SecVerify.framework in Frameworks */,
-				C9ABDFB9230BD8660055D5B0 /* TYRZSDK.framework in Frameworks */,
-				C9ABDFC5230BD8660055D5B0 /* MOBFoundation.framework in Frameworks */,
+				C9E59ACC234092A100C60072 /* SecVerify.framework in Frameworks */,
+				C9E59AD8234092A100C60072 /* TYRZSDK.framework in Frameworks */,
+				C9E59AE1234092A100C60072 /* MOBFoundation.framework in Frameworks */,
 				C981F4402307E3C200CA91A5 /* libresolv.tbd in Frameworks */,
-				C9ABDFB3230BD8660055D5B0 /* EAccountApiSDK.framework in Frameworks */,
 				C981F43B2307E07100CA91A5 /* MOBFoundation.framework in Frameworks */,
 				C981F42F2307E07100CA91A5 /* MobAD.framework in Frameworks */,
 				C981F4322307E07100CA91A5 /* BUAdSDK.framework in Frameworks */,
 				C981F4382307E07100CA91A5 /* libGDTMobSDK.a in Frameworks */,
+				C9E59ACF234092A100C60072 /* EAccountHYSDK.framework in Frameworks */,
 				C75347448288A5B75A7CEA99 /* libPods-DailyDiary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,14 +435,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9ABDFBA230BD8660055D5B0 /* TYRZSDK.framework in Frameworks */,
+				C9E59AD0234092A100C60072 /* EAccountHYSDK.framework in Frameworks */,
 				C981F43C2307E07100CA91A5 /* MOBFoundation.framework in Frameworks */,
-				C9ABDFC6230BD8660055D5B0 /* MOBFoundation.framework in Frameworks */,
 				C981F4302307E07100CA91A5 /* MobAD.framework in Frameworks */,
-				C9ABDFC0230BD8660055D5B0 /* OAuth.framework in Frameworks */,
 				C981F4332307E07100CA91A5 /* BUAdSDK.framework in Frameworks */,
-				C9ABDFB4230BD8660055D5B0 /* EAccountApiSDK.framework in Frameworks */,
-				C9ABDFB1230BD8660055D5B0 /* SecVerify.framework in Frameworks */,
+				C9E59ADC234092A100C60072 /* OAuth.framework in Frameworks */,
+				C9E59ACD234092A100C60072 /* SecVerify.framework in Frameworks */,
+				C9E59AE2234092A100C60072 /* MOBFoundation.framework in Frameworks */,
+				C9E59AD9234092A100C60072 /* TYRZSDK.framework in Frameworks */,
 				C981F4392307E07100CA91A5 /* libGDTMobSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,14 +451,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9ABDFBB230BD8660055D5B0 /* TYRZSDK.framework in Frameworks */,
+				C9E59AD1234092A100C60072 /* EAccountHYSDK.framework in Frameworks */,
 				C981F43D2307E07100CA91A5 /* MOBFoundation.framework in Frameworks */,
-				C9ABDFC7230BD8660055D5B0 /* MOBFoundation.framework in Frameworks */,
 				C981F4312307E07100CA91A5 /* MobAD.framework in Frameworks */,
-				C9ABDFC1230BD8660055D5B0 /* OAuth.framework in Frameworks */,
 				C981F4342307E07100CA91A5 /* BUAdSDK.framework in Frameworks */,
-				C9ABDFB5230BD8660055D5B0 /* EAccountApiSDK.framework in Frameworks */,
-				C9ABDFB2230BD8660055D5B0 /* SecVerify.framework in Frameworks */,
+				C9E59ADD234092A100C60072 /* OAuth.framework in Frameworks */,
+				C9E59ACE234092A100C60072 /* SecVerify.framework in Frameworks */,
+				C9E59AE3234092A100C60072 /* MOBFoundation.framework in Frameworks */,
+				C9E59ADA234092A100C60072 /* TYRZSDK.framework in Frameworks */,
 				C981F43A2307E07100CA91A5 /* libGDTMobSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +508,8 @@
 			children = (
 				C91E0603233CA63100B54E8C /* PicturesListModel.h */,
 				C91E0604233CA63100B54E8C /* PicturesListModel.m */,
+				C9E59AE4234095C400C60072 /* PersonalInfoModel.h */,
+				C9E59AE5234095C400C60072 /* PersonalInfoModel.m */,
 			);
 			path = SettingModel;
 			sourceTree = "<group>";
@@ -644,7 +651,6 @@
 				C97244DA2326418B0000F916 /* SettingConotrollers */,
 				C9379DEE23165C150045D7C5 /* DiaryControllers */,
 				C9ABDF9B230BD6A00055D5B0 /* LoginControllers */,
-				C981F4472307E42E00CA91A5 /* OtherControllers */,
 				C981F40B2307DDB000CA91A5 /* RootControllers */,
 			);
 			path = Controllers;
@@ -653,7 +659,6 @@
 		C981F4062307DCE200CA91A5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C9EB18C92330904F00DBA76E /* PersonalInfoViews */,
 				C9EB18C82330903800DBA76E /* LoginViews */,
 				C97244E12326423F0000F916 /* SettingViews */,
 				C9379DF4231660C40045D7C5 /* DiaryViews */,
@@ -714,8 +719,8 @@
 		C981F4112307E05D00CA91A5 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C9E59ABD234092A100C60072 /* SecVeridySDK */,
 				C9FBAC462320F6CE00ABA649 /* CalendarSDK */,
-				C9ABDFA1230BD8660055D5B0 /* SecVerifySDK */,
 				C981F4122307E07100CA91A5 /* MobADSDK */,
 			);
 			path = Vendor;
@@ -803,13 +808,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C981F4472307E42E00CA91A5 /* OtherControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OtherControllers;
-			sourceTree = "<group>";
-		};
 		C981F4592307EF9A00CA91A5 /* Categorys */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,65 +869,65 @@
 			path = LoginControllers;
 			sourceTree = "<group>";
 		};
-		C9ABDFA1230BD8660055D5B0 /* SecVerifySDK */ = {
+		C9E59ABD234092A100C60072 /* SecVeridySDK */ = {
 			isa = PBXGroup;
 			children = (
-				C9ABDFA2230BD8660055D5B0 /* SecVerify */,
-				C9ABDFAE230BD8660055D5B0 /* Required */,
+				C9E59ABE234092A100C60072 /* SecVerify */,
+				C9E59ACA234092A100C60072 /* Required */,
 			);
-			path = SecVerifySDK;
+			path = SecVeridySDK;
 			sourceTree = "<group>";
 		};
-		C9ABDFA2230BD8660055D5B0 /* SecVerify */ = {
+		C9E59ABE234092A100C60072 /* SecVerify */ = {
 			isa = PBXGroup;
 			children = (
-				C9ABDFA3230BD8660055D5B0 /* SecVerify.framework */,
-				C9ABDFA4230BD8660055D5B0 /* PlatformSDK */,
-				C9ABDFAD230BD8660055D5B0 /* SecVerify.bundle */,
+				C9E59ABF234092A100C60072 /* SecVerify.framework */,
+				C9E59AC0234092A100C60072 /* PlatformSDK */,
+				C9E59AC9234092A100C60072 /* SecVerify.bundle */,
 			);
 			path = SecVerify;
 			sourceTree = "<group>";
 		};
-		C9ABDFA4230BD8660055D5B0 /* PlatformSDK */ = {
+		C9E59AC0234092A100C60072 /* PlatformSDK */ = {
 			isa = PBXGroup;
 			children = (
-				C9ABDFA5230BD8660055D5B0 /* Telecom */,
-				C9ABDFA7230BD8660055D5B0 /* Mobile */,
-				C9ABDFAA230BD8660055D5B0 /* Union */,
+				C9E59AC1234092A100C60072 /* Telecom */,
+				C9E59AC4234092A100C60072 /* Mobile */,
+				C9E59AC7234092A100C60072 /* Union */,
 			);
 			path = PlatformSDK;
 			sourceTree = "<group>";
 		};
-		C9ABDFA5230BD8660055D5B0 /* Telecom */ = {
+		C9E59AC1234092A100C60072 /* Telecom */ = {
 			isa = PBXGroup;
 			children = (
-				C9ABDFA6230BD8660055D5B0 /* EAccountApiSDK.framework */,
+				C9E59AC2234092A100C60072 /* EAccountHYSDK.framework */,
+				C9E59AC3234092A100C60072 /* EAccountOpenPageResource.bundle */,
 			);
 			path = Telecom;
 			sourceTree = "<group>";
 		};
-		C9ABDFA7230BD8660055D5B0 /* Mobile */ = {
+		C9E59AC4234092A100C60072 /* Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				C9ABDFA8230BD8660055D5B0 /* TYRZResource.bundle */,
-				C9ABDFA9230BD8660055D5B0 /* TYRZSDK.framework */,
+				C9E59AC5234092A100C60072 /* TYRZResource.bundle */,
+				C9E59AC6234092A100C60072 /* TYRZSDK.framework */,
 			);
 			path = Mobile;
 			sourceTree = "<group>";
 		};
-		C9ABDFAA230BD8660055D5B0 /* Union */ = {
+		C9E59AC7234092A100C60072 /* Union */ = {
 			isa = PBXGroup;
 			children = (
-				C9ABDFAB230BD8660055D5B0 /* sdk_oauth.bundle */,
-				C9ABDFAC230BD8660055D5B0 /* OAuth.framework */,
+				C9E59AC8234092A100C60072 /* OAuth.framework */,
 			);
 			path = Union;
 			sourceTree = "<group>";
 		};
-		C9ABDFAE230BD8660055D5B0 /* Required */ = {
+		C9E59ACA234092A100C60072 /* Required */ = {
 			isa = PBXGroup;
 			children = (
-				C9ABDFAF230BD8660055D5B0 /* MOBFoundation.framework */,
+				C9E59ACB234092A100C60072 /* MOBFoundation.framework */,
 			);
 			path = Required;
 			sourceTree = "<group>";
@@ -941,13 +939,6 @@
 				C9CF2FAA230EC18F007165BD /* OtherLoginView.m */,
 			);
 			path = LoginViews;
-			sourceTree = "<group>";
-		};
-		C9EB18C92330904F00DBA76E /* PersonalInfoViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PersonalInfoViews;
 			sourceTree = "<group>";
 		};
 		C9FBAC462320F6CE00ABA649 /* CalendarSDK */ = {
@@ -1117,15 +1108,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9ABDFBC230BD8660055D5B0 /* sdk_oauth.bundle in Resources */,
-				C9ABDFB6230BD8660055D5B0 /* TYRZResource.bundle in Resources */,
+				C9E59AD2234092A100C60072 /* EAccountOpenPageResource.bundle in Resources */,
+				C9E59AD5234092A100C60072 /* TYRZResource.bundle in Resources */,
+				C9E59ADE234092A100C60072 /* SecVerify.bundle in Resources */,
 				C9FBAC5C2320F6E400ABA649 /* LXCalendarHearder.xib in Resources */,
 				C981F3DB2307BCA800CA91A5 /* LaunchScreen.storyboard in Resources */,
 				C916EE5F2327D227005BDF4C /* pic.jpg in Resources */,
 				C981F4352307E07100CA91A5 /* BUAdSDK.bundle in Resources */,
 				C916EE612327D241005BDF4C /* jjy2.jpg in Resources */,
 				C9FBAC622320F6E400ABA649 /* LXCalenderCell.xib in Resources */,
-				C9ABDFC2230BD8660055D5B0 /* SecVerify.bundle in Resources */,
 				C981F3D82307BCA800CA91A5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1134,11 +1125,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9ABDFC3230BD8660055D5B0 /* SecVerify.bundle in Resources */,
+				C9E59AD3234092A100C60072 /* EAccountOpenPageResource.bundle in Resources */,
+				C9E59AD6234092A100C60072 /* TYRZResource.bundle in Resources */,
 				C9FBAC5D2320F6E400ABA649 /* LXCalendarHearder.xib in Resources */,
-				C9ABDFBD230BD8660055D5B0 /* sdk_oauth.bundle in Resources */,
-				C9ABDFB7230BD8660055D5B0 /* TYRZResource.bundle in Resources */,
 				C981F4362307E07100CA91A5 /* BUAdSDK.bundle in Resources */,
+				C9E59ADF234092A100C60072 /* SecVerify.bundle in Resources */,
 				C9FBAC632320F6E400ABA649 /* LXCalenderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1147,11 +1138,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9ABDFC4230BD8660055D5B0 /* SecVerify.bundle in Resources */,
+				C9E59AD4234092A100C60072 /* EAccountOpenPageResource.bundle in Resources */,
+				C9E59AD7234092A100C60072 /* TYRZResource.bundle in Resources */,
 				C9FBAC5E2320F6E400ABA649 /* LXCalendarHearder.xib in Resources */,
-				C9ABDFBE230BD8660055D5B0 /* sdk_oauth.bundle in Resources */,
-				C9ABDFB8230BD8660055D5B0 /* TYRZResource.bundle in Resources */,
 				C981F4372307E07100CA91A5 /* BUAdSDK.bundle in Resources */,
+				C9E59AE0234092A100C60072 /* SecVerify.bundle in Resources */,
 				C9FBAC642320F6E400ABA649 /* LXCalenderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1222,6 +1213,7 @@
 				C95E5587230D31490076E914 /* UITextField+Common.m in Sources */,
 				C9ABDFCA230BDE910055D5B0 /* LoginViewController.m in Sources */,
 				C9FBAC592320F6E400ABA649 /* LXCalendarWeekView.m in Sources */,
+				C9E59AE6234095C400C60072 /* PersonalInfoModel.m in Sources */,
 				C9A768532333A66D00EE7A93 /* LoginModel.m in Sources */,
 				C9DB73E6231E3E2700DDB1CB /* MakeDiaryViewController.m in Sources */,
 				C9A768592333A73000EE7A93 /* HYOJson.m in Sources */,
@@ -1285,6 +1277,7 @@
 				C9EB18C123308F9500DBA76E /* FontViewController.m in Sources */,
 				C9FBAC802320F6EA00ABA649 /* UIView+FTCornerdious.m in Sources */,
 				C981F4502307E65D00CA91A5 /* UILabel+Common.m in Sources */,
+				C9E59AE7234095C400C60072 /* PersonalInfoModel.m in Sources */,
 				C9FBAC6C2320F6E400ABA649 /* NSDate+GFCalendar.m in Sources */,
 				C9ABDFF1230C17D90055D5B0 /* UIButton+Common.m in Sources */,
 				C9E8DF0623371BF300CEA682 /* UITextView+Common.m in Sources */,
@@ -1343,6 +1336,7 @@
 				C9EB18C223308F9600DBA76E /* FontViewController.m in Sources */,
 				C9FBAC812320F6EA00ABA649 /* UIView+FTCornerdious.m in Sources */,
 				C981F4512307E65D00CA91A5 /* UILabel+Common.m in Sources */,
+				C9E59AE8234095C400C60072 /* PersonalInfoModel.m in Sources */,
 				C9FBAC6D2320F6E400ABA649 /* NSDate+GFCalendar.m in Sources */,
 				C9ABDFF2230C17D90055D5B0 /* UIButton+Common.m in Sources */,
 				C9E8DF0723371BF300CEA682 /* UITextView+Common.m in Sources */,
@@ -1532,11 +1526,11 @@
 					"$(PROJECT_DIR)/DailyDiary/Vendor/MobADSDK/MobAD",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/MobADSDK/MobAD/Channels/BUAdSDK",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/MobADSDK/Required",
-					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify",
-					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Telecom",
-					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Mobile",
-					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Union",
-					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/Required",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Telecom",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Mobile",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Union",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/Required",
 				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/DailyDiary/DailyDiary_PrefixHeader.pch";
 				INFOPLIST_FILE = DailyDiary/Info.plist;
@@ -1575,11 +1569,11 @@
 					"$(PROJECT_DIR)/DailyDiary/Vendor/MobADSDK/MobAD",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/MobADSDK/MobAD/Channels/BUAdSDK",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/MobADSDK/Required",
-					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify",
-					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Telecom",
-					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Mobile",
-					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Union",
-					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/Required",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Telecom",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Mobile",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Union",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/Required",
 				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/DailyDiary/DailyDiary_PrefixHeader.pch";
 				INFOPLIST_FILE = DailyDiary/Info.plist;
@@ -1619,6 +1613,11 @@
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Mobile",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Union",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/Required",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Telecom",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Mobile",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Union",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/Required",
 				);
 				INFOPLIST_FILE = DailyDiaryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1653,6 +1652,11 @@
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Mobile",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Union",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/Required",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Telecom",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Mobile",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Union",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/Required",
 				);
 				INFOPLIST_FILE = DailyDiaryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1686,6 +1690,11 @@
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Mobile",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Union",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/Required",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Telecom",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Mobile",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Union",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/Required",
 				);
 				INFOPLIST_FILE = DailyDiaryUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1719,6 +1728,11 @@
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Mobile",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/SecVerify/PlatformSDK/Union",
 					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVerifySDK/Required",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Telecom",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Mobile",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/SecVerify/PlatformSDK/Union",
+					"$(PROJECT_DIR)/DailyDiary/Vendor/SecVeridySDK/Required",
 				);
 				INFOPLIST_FILE = DailyDiaryUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

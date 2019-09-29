@@ -30,8 +30,6 @@
         make.left.equalTo(self.left).offset(15);
         make.width.equalTo(200);
     }];
-    
-    
 }
 
 
@@ -219,6 +217,24 @@
 
 @end
 
+@implementation ShareSettingTableViewCell
+
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    if (self == [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        [self setupViewInfo];
+    }
+    return self;
+}
+
+-(void)setupViewInfo
+{
+    [super setupViewInfo];
+    self.leftLabel.text = @"把天天日记分享给好友";
+}
+
+@end
+
 @implementation SettingHeaderView
 
 -(id)initWithFrame:(CGRect)frame
@@ -232,22 +248,24 @@
 -(void)setupViewInfo
 {
     __weak typeof(self) weakSelf = self;
-    _headerBtn = [UIButton buttonWithImage:@"头像"];
-    _headerBtn.layer.cornerRadius = 45 * kScale_Width;
-    [self addSubview:_headerBtn];
-    [_headerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    _headerImageView = [UIImageView imageViewWithImageName:@""];
+    _headerImageView.layer.cornerRadius = 45 * kScale_Width;
+    _headerImageView.layer.masksToBounds = YES;
+    [self addSubview:_headerImageView];
+    [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.top).offset(15 * kScale_Height);
         make.centerX.equalTo(self.centerX).offset(0);
         make.width.equalTo(90 * kScale_Width);
         make.height.equalTo(90 * kScale_Height);
     }];
     
-    _nameLabel = [UILabel labelWithFont:25.0 WithText:@"HI,大仙儿" WithColor:0x151718];
+    _nameLabel = [UILabel labelWithFont:25.0 WithText:@"" WithColor:0x151718];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_nameLabel];
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self->_headerBtn.bottom).offset(10);
-        make.centerX.equalTo(self->_headerBtn.centerX).offset(0);
+        make.top.equalTo(self->_headerImageView.bottom).offset(10);
+        make.centerX.equalTo(self->_headerImageView.centerX).offset(0);
         make.width.equalTo(kScreen_Width);
         make.height.equalTo(36 * kScale_Height);
     }];
@@ -296,4 +314,12 @@
     }
 
 }
+-(void)setPersonalInfoModel:(id)object
+{
+    PersonalInfoModel *personalInfoModel = (PersonalInfoModel *)object;
+    [_headerImageView sd_setImageWithURL:[NSURL URLWithString:personalInfoModel.photo]];
+    _nameLabel.text = personalInfoModel.name;
+}
+
+
 @end

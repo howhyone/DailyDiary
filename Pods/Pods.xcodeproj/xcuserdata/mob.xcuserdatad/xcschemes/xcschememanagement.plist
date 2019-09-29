@@ -44,12 +44,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>mob_linksdk_pro.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>mob_pushsdk.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>mob_sharesdk-ShareSDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>mob_sharesdk-ShareSDK_JS_QQ.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

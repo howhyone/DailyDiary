@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PersonalInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol ClickButtonDelegate <NSObject>
@@ -20,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)UIImageView *headerImageView;
 @property(nonatomic, strong)UILabel *nameLabel;
 @property(nonatomic, strong)UITextFieldInherit *nameTextField;
+@property(nonatomic, strong)PersonalInfoModel *personalInfoModel;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -313,6 +313,7 @@
     __weak typeof(self) weakSelf= self;
     NSInteger Count =  9;//剩余可选图片数量
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:Count delegate:self];
+    imagePickerVc.modalPresentationStyle = UIModalPresentationFullScreen;
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photo, NSArray * assets, BOOL isSelectOriginalPhoto) {
         for (NSInteger i = 0; i<photo.count; i++) {
             UIImage *img = photo[i];//压缩图片
