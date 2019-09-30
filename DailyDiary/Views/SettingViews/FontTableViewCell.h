@@ -19,8 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FontTableViewCell : UITableViewCell
 @property(nonatomic, strong)UIButton *downloadBtn;
 @property(nonatomic, weak)id<DownloadFontDelegate> delegate;
-@end
+@property(nonatomic, strong)NSString *fontNameStr;
+@property(nonatomic, strong)UILabel *fontName;
 
+@end
 
 @interface FontTableViewHeaderView : UIView
 

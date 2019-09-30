@@ -24,15 +24,16 @@ int tagNum = 0;
 
 -(void)setupViewInfo
 {
-    UILabel *fontName = [UILabel labelWithFont:14.0 WithText:@"平方字体" WithColor:0x151718];
+    UILabel *fontName = [UILabel labelWithFont:14.0 WithText:@"" WithColor:0x151718];
     [self addSubview:fontName];
+    self.fontName = fontName;
     [fontName mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.top).offset(12 * kScale_Height);
         make.left.equalTo(self.left).offset(15 * kScale_Width);
         make.width.equalTo(60 * kScale_Width);
         make.centerY.equalTo(self.centerY).offset(0);
     }];
-    _downloadBtn = [UIButton buttonWithImage:@"下载"];
+    _downloadBtn = [UIButton buttonWithImage:@""];
     [_downloadBtn setImage:[UIImage imageNamed:@"选择"] forState:UIControlStateSelected];
     [_downloadBtn addTarget:self action:@selector(clickDonwnload:) forControlEvents:UIControlEventTouchUpInside];
     if (tagNum >= 3) {
@@ -77,6 +78,13 @@ int tagNum = 0;
 
 }
 
+
+
+- (void)setFontNameStr:(NSString *)fontNameStr
+{
+    self.fontName.text = fontNameStr;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -108,7 +116,7 @@ int tagNum = 0;
     [headerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.top).offset(8 * kScale_Height);
         make.left.equalTo(self.left).offset(5 * kScale_Width);
-        make.centerX.equalTo(self.centerX).offset(0);
+        make.centerY.equalTo(self.centerY).offset(0);
         make.width.equalTo(200 * kScale_Width);
     }];
     

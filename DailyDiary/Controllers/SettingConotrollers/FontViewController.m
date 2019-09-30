@@ -25,12 +25,11 @@
         _fontTableView.dataSource = self;
         [_fontTableView registerClass:[FontTableViewCell class] forCellReuseIdentifier:@"FontTableViewCell"];
         [_fontTableView setTableFooterView:[[UIView alloc] init]];
+        _fontTableView.allowsSelection = NO;
         _fontTableView.scrollEnabled = NO;
     }
     return _fontTableView;
 }
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,20 +56,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FontTableViewCell *cell = nil;
-    if (!cell) {
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell = [tableView dequeueReusableCellWithIdentifier:@"FontTableViewCell" forIndexPath:indexPath];
-        cell.delegate = self;
-    }
+    FontTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FontTableViewCell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSArray *fontNameArr = @[@"苹方字体",@"圆体",@"楷体"];
+    cell.fontNameStr = fontNameArr[indexPath.row];
+    cell.delegate = self;
     return cell;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}
-
 
 -(BOOL)isFontDownloaded:(NSString *)fontName
 {
@@ -86,15 +78,13 @@
 
 -(void)downloadFont:(NSString *)fontStr
 {
-    
-    
-    if ([self isFontDownloaded:fontStr]) {
-        [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:@"fontnamekey"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"fontnamekey" object:self];
+    NSLog(@"000000000");
 
+    if ([self isFontDownloaded:fontStr]) {
+        [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:kFontNameKey];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];
         return;
     }
-    NSLog(@"000000000");
     NSMutableDictionary *attrs = [NSMutableDictionary dictionaryWithObjectsAndKeys:fontStr,kCTFontNameAttribute, nil];
     
     CTFontDescriptorRef desc = CTFontDescriptorCreateWithAttributes((__bridge CFDictionaryRef)attrs);
@@ -103,15 +93,16 @@
     CFRelease(desc);
     
     __block BOOL errorDuringDownload = NO;
-    CTFontDescriptorMatchFontDescriptorsWithProgressHandler( (__bridge CFArrayRef)descs, NULL,  ^(CTFontDescriptorMatchingState state, CFDictionaryRef progressParameter) {
+    
+    CTFontDescriptorMatchFontDescriptorsWithProgressHandler( (__bridge CFArrayRef)descs, NULL,  ^bool(CTFontDescriptorMatchingState state, CFDictionaryRef _Nonnull progressParameter) {
         
         double progressValue = [[(__bridge NSDictionary *)progressParameter objectForKey:(id)kCTFontDescriptorMatchingPercentage] doubleValue];
         
         if (state == kCTFontDescriptorMatchingDidBegin) {
-            NSLog(@" 字体已经匹配 ");
+            NSLog(@"字体已经匹配 ");
         } else if (state == kCTFontDescriptorMatchingDidFinish) {
             if (!errorDuringDownload) {
-                NSLog(@" 字体 %@ 下载完成 ", fontStr);
+                NSLog(@"字体匹配完成%@", fontStr);
             }
         } else if (state == kCTFontDescriptorMatchingWillBeginDownloading) {
             NSLog(@" 字体开始下载 ");
@@ -120,9 +111,7 @@
             dispatch_async( dispatch_get_main_queue(), ^ {
                 // 可以在这里修改 UI 控件的字体
                 [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:kFontNameKey];
-
-                [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];
-                
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];                
             });
         } else if (state == kCTFontDescriptorMatchingDownloading) {
             NSLog(@" 下载进度 %.0f%% ", progressValue);
