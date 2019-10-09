@@ -125,6 +125,35 @@
     return comps;
 }
 
+
++(int)compareOneDay:(NSString *)oneDayStr withAnotherDay:(NSString *)anotherDayStr
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+ 
+    [dateFormatter setDateFormat:@"yyyyMM"];
+ 
+//    NSString *oneDayStr = [dateFormatter stringFromDate:oneDay];
+//
+//    NSString *anotherDayStr = [dateFormatter stringFromDate:anotherDay];
+ 
+    NSDate *dateA = [dateFormatter dateFromString:oneDayStr];
+ 
+    NSDate *dateB = [dateFormatter dateFromString:anotherDayStr];
+ 
+    NSComparisonResult result = [dateA compare:dateB];
+ 
+    if (result == NSOrderedDescending) {
+        //NSLog(@"oneDay比 anotherDay时间晚");
+        return 1;
+    }
+    else if (result == NSOrderedAscending){
+        //NSLog(@"oneDay比 anotherDay时间早");
+        return -1;
+    }
+    //NSLog(@"两者时间是同一个时间");
+    return 0;
+}
+
 // 图片压缩
 + (NSData *)imageData:(UIImage *)myimage
 {
@@ -175,7 +204,6 @@
     NSString *randomNameStr = [NSString stringWithFormat:@"%@%@",surnameArr[surnameInteger],nameArr[nameInteger]];
     
     
-    
 //    NSStringEncoding ranEncoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
 //    NSInteger randomH = 0xA1 + arc4random()%(0xFE - 0xA1 + 1);
 //    NSInteger randomL = 0xB0+arc4random()%(0xF7 - 0xB0+1);
@@ -192,6 +220,15 @@
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:actionTitleStr style:UIAlertActionStyleDefault handler:nil];
     [shareAlertC addAction:okAction];
     return shareAlertC;
+}
+
+
++(UIActivityIndicatorView *)setActivityIndicator
+{
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.frame = CGRectMake(100, 100, 100, 100);
+    activityIndicator.hidesWhenStopped = YES;
+    return activityIndicator;
 }
 
 @end

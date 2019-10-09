@@ -13,7 +13,7 @@
 #import "DiaryDetailModel.h"
 #import "PicturesListModel.h"
 #import "PersonalInfoModel.h"
-
+#import "AFNetworkActivityIndicatorManager.h"
 @implementation HYOCoding_NetAPIManager
 
 
@@ -23,6 +23,7 @@
     static dispatch_once_t shared_Token;
     dispatch_once(&shared_Token, ^{
         shared_manager = [[self alloc] init];
+        [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     });
     return shared_manager;
 }
@@ -32,7 +33,7 @@
 {
     HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 
     [manager request_Login_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
@@ -48,13 +49,12 @@
     }];
 }
 
-
 -(void)request_SMSLogin_WithPath:(NSString *)path Params:(id)params andBlock:(void (^)(id _Nonnull, NSError * _Nonnull))block
 {
     
     HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     [manager request_Login_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
@@ -128,6 +128,8 @@
 -(void)request_ListDiary_WithPath:(NSString *)path Params:(id)params andBlock:(void(^)(id data, NSError *error))block
 {
     HYOCoding_NetAPIClient *manager = [HYOCoding_NetAPIClient sharedManager];
+    AFHTTPRequestSerializer *httpRequest = [AFHTTPRequestSerializer serializer];
+    manager.requestSerializer = httpRequest;
     AFJSONResponseSerializer *response = [AFJSONResponseSerializer serializer];
     response.removesKeysWithNullValues = YES;
     manager.responseSerializer = response;

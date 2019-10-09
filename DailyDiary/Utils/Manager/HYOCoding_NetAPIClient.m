@@ -8,7 +8,7 @@
 
 #import "HYOCoding_NetAPIClient.h"
 
-static NSString *const kBaseURLStr = @"http://9nv7fm.natappfree.cc";
+static NSString *const kBaseURLStr = @"http://vrfwpb.natappfree.cc";
 
 @implementation HYOCoding_NetAPIClient
 
@@ -256,6 +256,7 @@ static  HYOCoding_NetAPIClient *clienOnce = nil;
 
 -(void)request_ListDiary_WithPath:(NSString *)path Params:(id)params methord:(NetWorkMethord )methord andBlock:(void(^)(id data, NSError *error))block
 {
+    NSLog(@"path ====%@,params ==========%@",path,params);
     if (!path || !params) {
         return;
     }

@@ -45,6 +45,8 @@
     [self setupKeyboard];
     [self registerShareSDK];
     [self setupMobPush];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontSize object:nil];
+
     return YES;
 }
 

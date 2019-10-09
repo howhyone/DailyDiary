@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
  日期字符串转单独的年、月、日、时、
  **/
 +(NSDateComponents *)getDateComponentsDate:(NSString *)dateStr;
+/**比较两个日期*/
++(int)compareOneDay:(NSString *)oneDayStr withAnotherDay:(NSString *)anotherDayStr;
 
 + (NSData *)imageData:(UIImage *)myimage;
 
@@ -41,7 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)randomChineseName:(NSInteger )integer;
 /**提示框*/
 +(UIAlertController *)setAlerControlelrWithControllerTitle:(nullable NSString *)controllerTitleStr controllerMessage:(nullable NSString *)controllerMessageStrStr actionTitle:(nullable NSString *)actionTitleStr;
-
+/**菊花*/
++(UIActivityIndicatorView *)setActivityIndicator;
 @end
 
 NS_ASSUME_NONNULL_END

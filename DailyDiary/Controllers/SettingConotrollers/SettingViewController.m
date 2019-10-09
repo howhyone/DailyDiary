@@ -212,7 +212,8 @@ static NSString *const pathStr = @"/demo/a";
         }];
 }
 
-         -(void)viewWillAppear:(BOOL)animated
+
+-(void)viewWillAppear:(BOOL)animated
 {
     [self httpRequestInquiry];
 }

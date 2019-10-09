@@ -25,6 +25,8 @@
 @property(nonatomic, assign)NSUInteger requestImageCount;
 @property(nonatomic, strong)NSArray *requestImageArr;
 @property(nonatomic, strong)NSMutableArray *totalImageMutableArr;
+@property (nonatomic, strong) UIActivityIndicatorView * activityIndicator;
+
 @end
 
 @implementation MakeDiaryViewController
@@ -56,10 +58,13 @@
     [netMutableDic setObject:dateStr forKey:@"time"];
     [netMutableDic setObject:phoneStr forKey:@"phone"];
     NSString *pathStr = @"/mob_diary/diary/detail";
+    [_activityIndicator startAnimating];
+
     [[HYOCoding_NetAPIManager sharedManager] request_DetailDiary_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
             NSLog(@"data ============ %@",data);
-            
+            [weakSelf.activityIndicator stopAnimating];
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 weakSelf.makeDiaryView.diaryDetailM = data;
                 NSString *photoTotal = weakSelf.makeDiaryView.diaryDetailM.photo;
@@ -85,13 +90,19 @@
     [paramsMutableDic setObject:phoneStr forKey:@"userId"];
     [paramsMutableDic setObject:fileArr forKey:@"file"];
     NSString *pathStr = @"/mob_diary/diary/edit";
+    
+    
+    [_activityIndicator startAnimating];
     [[HYOCoding_NetAPIManager sharedManager] request_EditDiray_WithPath:pathStr Params:paramsMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSLog(@"data ========%@",data);
-                weakSelf.diaryDetailM = [[DiaryDetailModel alloc] init];
-                weakSelf.diaryDetailM = data;
-                weakSelf.makeDiaryView.diaryDetailM = data;
+//                weakSelf.diaryDetailM = [[DiaryDetailModel alloc] init];
+//                weakSelf.diaryDetailM = data;
+//                weakSelf.makeDiaryView.diaryDetailM = data;
+                [weakSelf.activityIndicator stopAnimating];
+                [weakSelf.navigationController popViewControllerAnimated:NO];
+                
             });
         }
     }];
@@ -123,6 +134,9 @@
         make.right.equalTo(self.view.right).offset(15 * kScale_Width);
         make.bottom.equalTo(weakSelf.diaryCollectionView.top).offset(10 * kScale_Height);
     }];
+    
+    _activityIndicator = [NSObject setActivityIndicator];
+    [self.view addSubview:_activityIndicator];
 }
 
 -(void)setupDiaryCollectionView
@@ -329,13 +343,18 @@
 -(void)clickKeyboardToolBarDoneItem
 {
     NSString *titleStr = _makeDiaryView.titleTextField.text;
+    if (titleStr.length < 1) {
+        UIAlertController *alerController =  [NSObject setAlerControlelrWithControllerTitle:nil controllerMessage:@"标题不能为空" actionTitle:@"取消"];
+        [self presentViewController:alerController animated:NO completion:nil];
+        return;
+    }
+    
     NSString *contextStr = _makeDiaryView.diaryTextView.text;
     NSMutableArray *fileMutableArr = [NSMutableArray arrayWithArray:_httpRequestImageArr];
     
     
     [fileMutableArr addObjectsFromArray:self.selectionPhotoArray];
     [self httpRequestEditDiaryWithTitle:titleStr WithDate:_dateStr WithContext:contextStr  WithFile:fileMutableArr];
-    [self.navigationController popViewControllerAnimated:NO];
 }
 
 @end

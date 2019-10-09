@@ -14,12 +14,13 @@
 #import "SearchDiaryViewController.h"
 #import "DiaryListModel.h"
 
+static NSString *dataStr = nil;
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *homeTableView;
 @property(nonatomic, strong)NSArray *diaryModelArr;
 @property(nonatomic, strong)DiaryListModel *diaryListM;
-@property(nonatomic, copy) NSString *dateStr;
+//@property(nonatomic, copy) NSString *dateStr;
 @end
 
 @implementation HomeViewController
@@ -37,7 +38,7 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
         [_homeTableView registerClass:[ImageTextTableViewCell class] forCellReuseIdentifier:@"ImageTextTableViewCell"];
         _homeTableView.showsVerticalScrollIndicator = NO;
         _homeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        UILabel *footLabel = [UILabel labelWithFont:13.0 WithText:@"~明日再续~" WithColor:0x151718];
+        UILabel *footLabel = [UILabel labelWithFont:13.0 WithText:@"~到底啦~" WithColor:0x151718];
         footLabel.frame = CGRectMake(0, 0, kScreen_Width, 26);
         footLabel.textAlignment = NSTextAlignmentCenter;
         _homeTableView.tableFooterView =footLabel;
@@ -48,8 +49,7 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupViewInfo];
-    _dateStr = [NSObject getCurrentDateYearMonth];
-    [self httpRequest:_dateStr withRefreshTag:@""];
+
 }
 
 -(void)httpRequest:(NSString *)httpDateStr withRefreshTag:(NSString *)refreshTag
@@ -60,7 +60,6 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     [netMutableDic setObject:httpDateStr forKey:@"time"];
     [netMutableDic setObject:phoneStr forKey:@"phone"];
     NSString *pathStr = @"/mob_diary/diary/list";
-
     [[HYOCoding_NetAPIManager sharedManager] request_ListDiary_WithPath:pathStr Params:netMutableDic andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -198,8 +197,8 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     //这里加入的是网络请求，带上相关参数，利用网络工具进行请求。我这里没有网络就模拟一下数据吧。
     //网络不管请求成功还是失败都要结束更新。
     NSLog(@"我在下拉刷新");
-    NSString *yearStr = [_dateStr substringToIndex:4];
-    NSString *monthStr = [_dateStr substringFromIndex:4];
+    NSString *yearStr = [dataStr substringToIndex:4];
+    NSString *monthStr = [dataStr substringFromIndex:4];
     uint yearInt = [yearStr intValue];
     uint monthInt = [monthStr intValue];
     if (monthInt <= 12 && monthInt > 0) {
@@ -210,17 +209,26 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     }
     if (monthInt < 10) {
         monthStr = [NSString stringWithFormat:@"0%d",monthInt];
+    }else{
+        monthStr = [NSString stringWithFormat:@"%d",monthInt];
+
     }
     self.homeTableView.tableFooterView.hidden = YES;
     self.homeTableView.scrollsToTop = YES;
-    _dateStr = [NSString stringWithFormat:@"%d%@",yearInt,monthStr];
-    [self httpRequest:_dateStr withRefreshTag:@"downFresh"];
+    dataStr = [NSString stringWithFormat:@"%d%@",yearInt,monthStr];
+    [self httpRequest:dataStr withRefreshTag:@"downFresh"];
 }
 //上拉加载更多
 - (void)upFreshLoadMoreData
 {
-    NSString *yearStr = [_dateStr substringToIndex:4];
-    NSString *monthStr = [_dateStr substringFromIndex:4];
+    NSString *currentDataStr = [NSObject getCurrentDateYearMonth];
+    int dateInt = [NSObject compareOneDay:dataStr withAnotherDay:currentDataStr];
+    if (dateInt == 0) {
+        self.homeTableView.tableFooterView.hidden = NO;
+        return;
+    }
+    NSString *yearStr = [dataStr substringToIndex:4];
+    NSString *monthStr = [dataStr substringFromIndex:4];
     uint yearInt = [yearStr intValue];
     uint monthInt = [monthStr intValue];
     if (monthInt < 12) {
@@ -231,13 +239,21 @@ static NSString * const kJJMainVCReuseIdentify = @"kJJMainVCReuseIdentify";
     }
     if (monthInt < 10) {
         monthStr = [NSString stringWithFormat:@"0%d",monthInt];
+    }else{
+        monthStr = [NSString stringWithFormat:@"%d",monthInt];
     }
-    NSString *currentDataStr = [NSObject getCurrentDateYearMonth];
-    _dateStr = [NSString stringWithFormat:@"%d%@",yearInt,monthStr];
-//    [self.homeTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
-    if ([_dateStr isEqualToString:currentDataStr]) {
-        self.homeTableView.tableFooterView.hidden = NO;
-    }
-    [self httpRequest:_dateStr withRefreshTag:@"upFresh"];
+    dataStr = [NSString stringWithFormat:@"%d%@",yearInt,monthStr];
+
+    [self httpRequest:dataStr withRefreshTag:@"upFresh"];
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (!dataStr) {
+        dataStr = [NSObject getCurrentDateYearMonth];
+    }
+    [self httpRequest:dataStr withRefreshTag:@""];
+}
+
 @end

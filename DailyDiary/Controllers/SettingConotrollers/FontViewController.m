@@ -9,6 +9,9 @@
 #import "FontViewController.h"
 #import "FontTableViewCell.h"
 #import <CoreText/CoreText.h>
+
+static NSInteger cellInteger;
+
 @interface FontViewController ()<UITableViewDelegate,UITableViewDataSource,DownloadFontDelegate>
 @property(nonatomic, strong)UITableView *fontTableView;
 @property(nonatomic, strong)NSString *errorMessage;
@@ -61,6 +64,8 @@
     NSArray *fontNameArr = @[@"苹方字体",@"圆体",@"楷体"];
     cell.fontNameStr = fontNameArr[indexPath.row];
     cell.delegate = self;
+    
+    
     return cell;
 }
 

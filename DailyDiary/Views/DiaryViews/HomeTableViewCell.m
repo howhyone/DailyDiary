@@ -39,16 +39,17 @@
     }];
     
     _dayLabel = [UILabel labelWithFont:24.0 WithText:@"14" WithColor:0x151718];
-    _dayLabel.font = [UIFont fontWithName:@"DINAlternate-Bold" size:24.0];
+    _dayLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_dayLabel];
     [_dayLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(headerView.bottom).offset(10 * kScale_Height);
         make.left.equalTo(headerView.left).offset(23 * kScale_Width);
-        make.width.equalTo(24 * kScale_Width);
+        make.width.equalTo(50 * kScale_Width);
         make.height.equalTo(28 * kScale_Height);
     }];
     
     _weekLabel = [UILabel labelWithFont:13.0 WithText:@"周三" WithColor:0x151718];
+    _weekLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_weekLabel];
     [_weekLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.dayLabel.bottom).offset(10 * kScale_Height);

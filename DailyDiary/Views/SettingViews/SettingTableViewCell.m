@@ -152,11 +152,11 @@
             break;
         case 10001:
             NSLog(@"tag ===== 10000");
-            [[NSUserDefaults standardUserDefaults] setObject:@"16" forKey:kFontSizeKey];
+            [[NSUserDefaults standardUserDefaults] setObject:@"14" forKey:kFontSizeKey];
             break;
         case 10002:
             NSLog(@"tag ===== 10000");
-            [[NSUserDefaults standardUserDefaults] setObject:@"20" forKey:kFontSizeKey];
+            [[NSUserDefaults standardUserDefaults] setObject:@"16" forKey:kFontSizeKey];
             break;
         default:
             break;
