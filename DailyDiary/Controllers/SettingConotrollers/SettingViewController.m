@@ -71,7 +71,7 @@ static NSString *const pathStr = @"/demo/a";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [NSObject printAllFonts];
     [self setupViewInfo];
 }
 

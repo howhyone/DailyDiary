@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, weak)id<DownloadFontDelegate> delegate;
 @property(nonatomic, strong)NSString *fontNameStr;
 @property(nonatomic, strong)UILabel *fontName;
+@property(nonatomic, strong)UIImageView *selectedImageView;
 
 @end
 

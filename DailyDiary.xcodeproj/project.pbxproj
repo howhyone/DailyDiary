@@ -37,6 +37,15 @@
 		C9379DFC231686880045D7C5 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DFB231686880045D7C5 /* HomePageTableViewCell.m */; };
 		C9379DFD231686880045D7C5 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DFB231686880045D7C5 /* HomePageTableViewCell.m */; };
 		C9379DFE231686880045D7C5 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9379DFB231686880045D7C5 /* HomePageTableViewCell.m */; };
+		C9517317234EC0B30081D164 /* 华文行楷.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9517316234EC0B30081D164 /* 华文行楷.ttf */; };
+		C9517318234EC0B30081D164 /* 华文行楷.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9517316234EC0B30081D164 /* 华文行楷.ttf */; };
+		C9517319234EC0B30081D164 /* 华文行楷.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9517316234EC0B30081D164 /* 华文行楷.ttf */; };
+		C951731B234EC6DE0081D164 /* 华文圆体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C951731A234EC6DE0081D164 /* 华文圆体.ttf */; };
+		C951731C234EC6DE0081D164 /* 华文圆体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C951731A234EC6DE0081D164 /* 华文圆体.ttf */; };
+		C951731D234EC6DE0081D164 /* 华文圆体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C951731A234EC6DE0081D164 /* 华文圆体.ttf */; };
+		C951731F234ECD510081D164 /* 方正兰亭圆简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C951731E234ECD500081D164 /* 方正兰亭圆简体.ttf */; };
+		C9517320234ECD510081D164 /* 方正兰亭圆简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C951731E234ECD500081D164 /* 方正兰亭圆简体.ttf */; };
+		C9517321234ECD510081D164 /* 方正兰亭圆简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C951731E234ECD500081D164 /* 方正兰亭圆简体.ttf */; };
 		C95E5587230D31490076E914 /* UITextField+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C95E5586230D31490076E914 /* UITextField+Common.m */; };
 		C95E5588230D31490076E914 /* UITextField+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C95E5586230D31490076E914 /* UITextField+Common.m */; };
 		C95E5589230D31490076E914 /* UITextField+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C95E5586230D31490076E914 /* UITextField+Common.m */; };
@@ -267,6 +276,9 @@
 		C9379DF6231660F20045D7C5 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		C9379DFA231686880045D7C5 /* HomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		C9379DFB231686880045D7C5 /* HomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		C9517316234EC0B30081D164 /* 华文行楷.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文行楷.ttf"; sourceTree = "<group>"; };
+		C951731A234EC6DE0081D164 /* 华文圆体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文圆体.ttf"; sourceTree = "<group>"; };
+		C951731E234ECD500081D164 /* 方正兰亭圆简体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正兰亭圆简体.ttf"; sourceTree = "<group>"; };
 		C95E5585230D31490076E914 /* UITextField+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Common.h"; sourceTree = "<group>"; };
 		C95E5586230D31490076E914 /* UITextField+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Common.m"; sourceTree = "<group>"; };
 		C95E558B230D48660076E914 /* UITextFieldInherit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITextFieldInherit.h; sourceTree = "<group>"; };
@@ -542,6 +554,16 @@
 			path = DiaryViews;
 			sourceTree = "<group>";
 		};
+		C9517315234E1F810081D164 /* FontResource */ = {
+			isa = PBXGroup;
+			children = (
+				C9517316234EC0B30081D164 /* 华文行楷.ttf */,
+				C951731A234EC6DE0081D164 /* 华文圆体.ttf */,
+				C951731E234ECD500081D164 /* 方正兰亭圆简体.ttf */,
+			);
+			path = FontResource;
+			sourceTree = "<group>";
+		};
 		C95E558A230D481C0076E914 /* Inherit */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,6 +713,7 @@
 		C981F4092307DD1200CA91A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C9517315234E1F810081D164 /* FontResource */,
 				C981F40A2307DD3600CA91A5 /* Images */,
 			);
 			path = Resources;
@@ -1114,8 +1137,11 @@
 				C9FBAC5C2320F6E400ABA649 /* LXCalendarHearder.xib in Resources */,
 				C981F3DB2307BCA800CA91A5 /* LaunchScreen.storyboard in Resources */,
 				C916EE5F2327D227005BDF4C /* pic.jpg in Resources */,
+				C951731B234EC6DE0081D164 /* 华文圆体.ttf in Resources */,
 				C981F4352307E07100CA91A5 /* BUAdSDK.bundle in Resources */,
+				C9517317234EC0B30081D164 /* 华文行楷.ttf in Resources */,
 				C916EE612327D241005BDF4C /* jjy2.jpg in Resources */,
+				C951731F234ECD510081D164 /* 方正兰亭圆简体.ttf in Resources */,
 				C9FBAC622320F6E400ABA649 /* LXCalenderCell.xib in Resources */,
 				C981F3D82307BCA800CA91A5 /* Assets.xcassets in Resources */,
 			);
@@ -1125,12 +1151,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9517320234ECD510081D164 /* 方正兰亭圆简体.ttf in Resources */,
 				C9E59AD3234092A100C60072 /* EAccountOpenPageResource.bundle in Resources */,
 				C9E59AD6234092A100C60072 /* TYRZResource.bundle in Resources */,
+				C951731C234EC6DE0081D164 /* 华文圆体.ttf in Resources */,
 				C9FBAC5D2320F6E400ABA649 /* LXCalendarHearder.xib in Resources */,
 				C981F4362307E07100CA91A5 /* BUAdSDK.bundle in Resources */,
 				C9E59ADF234092A100C60072 /* SecVerify.bundle in Resources */,
 				C9FBAC632320F6E400ABA649 /* LXCalenderCell.xib in Resources */,
+				C9517318234EC0B30081D164 /* 华文行楷.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1138,12 +1167,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9517321234ECD510081D164 /* 方正兰亭圆简体.ttf in Resources */,
 				C9E59AD4234092A100C60072 /* EAccountOpenPageResource.bundle in Resources */,
 				C9E59AD7234092A100C60072 /* TYRZResource.bundle in Resources */,
+				C951731D234EC6DE0081D164 /* 华文圆体.ttf in Resources */,
 				C9FBAC5E2320F6E400ABA649 /* LXCalendarHearder.xib in Resources */,
 				C981F4372307E07100CA91A5 /* BUAdSDK.bundle in Resources */,
 				C9E59AE0234092A100C60072 /* SecVerify.bundle in Resources */,
 				C9FBAC642320F6E400ABA649 /* LXCalenderCell.xib in Resources */,
+				C9517319234EC0B30081D164 /* 华文行楷.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

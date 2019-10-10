@@ -62,7 +62,7 @@
     NSInteger dayInt = pictureDateComponents.day;
     NSInteger monthInt = pictureDateComponents.month;
     NSInteger yearInt = pictureDateComponents.year;
-    NSString *dateText = [NSString stringWithFormat:@"%ld月%ld日 %ld",monthInt,dayInt,yearInt];
+    NSString *dateText = [NSString stringWithFormat:@"%ld月%ld日 %ld",(long)monthInt,dayInt,yearInt];
     _dateLabel.text = dateText;
 }
 

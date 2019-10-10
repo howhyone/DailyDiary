@@ -13,7 +13,9 @@
 +(UIImageView *)imageViewWithImageName:(NSString *)imageNameStr
 {
     UIImageView *imageViewCommon = [UIImageView new];
-    imageViewCommon.image = [UIImage imageNamed:imageNameStr];
+    if (imageNameStr) {
+        imageViewCommon.image = [UIImage imageNamed:imageNameStr];
+    }
     return imageViewCommon;
 }
 

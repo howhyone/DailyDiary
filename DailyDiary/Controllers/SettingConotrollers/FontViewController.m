@@ -10,12 +10,13 @@
 #import "FontTableViewCell.h"
 #import <CoreText/CoreText.h>
 
-static NSInteger cellInteger;
+static NSInteger tagNum = -1;
+static NSInteger selectedNum = 1;
 
 @interface FontViewController ()<UITableViewDelegate,UITableViewDataSource,DownloadFontDelegate>
 @property(nonatomic, strong)UITableView *fontTableView;
 @property(nonatomic, strong)NSString *errorMessage;
-
+@property(nonatomic, strong)UIImageView *currentImageView;
 @end
 
 @implementation FontViewController
@@ -28,7 +29,6 @@ static NSInteger cellInteger;
         _fontTableView.dataSource = self;
         [_fontTableView registerClass:[FontTableViewCell class] forCellReuseIdentifier:@"FontTableViewCell"];
         [_fontTableView setTableFooterView:[[UIView alloc] init]];
-        _fontTableView.allowsSelection = NO;
         _fontTableView.scrollEnabled = NO;
     }
     return _fontTableView;
@@ -37,7 +37,7 @@ static NSInteger cellInteger;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.fontTableView.tableHeaderView = [[FontTableViewHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 30 * kScale_Height)];
+//    self.fontTableView.tableHeaderView = [[FontTableViewHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 30 * kScale_Height)];
     [self.view addSubview:self.fontTableView];
     
 }
@@ -61,12 +61,46 @@ static NSInteger cellInteger;
 {
     FontTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FontTableViewCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    NSArray *fontNameArr = @[@"苹方字体",@"圆体",@"楷体"];
+    NSArray *fontNameArr = @[@"苹方字体",@"圆体",@"行楷"];
     cell.fontNameStr = fontNameArr[indexPath.row];
+    selectedNum = [[NSUserDefaults standardUserDefaults] integerForKey:kSelectedCellKey];
+   if (tagNum >= 3) {
+       tagNum = 1;
+   }else{
+       tagNum += 1;
+   }
+   if (tagNum != selectedNum) {
+       cell.selectedImageView.hidden = YES;
+   }else{
+       _currentImageView = cell.selectedImageView;
+   }
     cell.delegate = self;
-    
-    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger rowInt = indexPath.row;
+    FontTableViewCell *fontCell = [tableView cellForRowAtIndexPath:indexPath];
+    _currentImageView.hidden = YES;
+    fontCell.selectedImageView.hidden = NO;
+    _currentImageView = fontCell.selectedImageView;
+    switch (indexPath.row) {
+        case 0:
+            [self downloadFont:@"PingFangSC-Regular"];
+            
+        break;
+        case 1:
+            [self downloadFont:@"STYuanti-SC-Regular"];
+            
+        break;
+        case 2:
+            [self downloadFont:@"STXingkai-SC-Light"];
+        break;
+        default:
+            break;
+    }
+    [[NSUserDefaults standardUserDefaults] setInteger:rowInt forKey:kSelectedCellKey];
 }
 
 -(BOOL)isFontDownloaded:(NSString *)fontName
@@ -83,8 +117,20 @@ static NSInteger cellInteger;
 
 -(void)downloadFont:(NSString *)fontStr
 {
-    NSLog(@"000000000");
-
+    NSString *xkFontName = [NSObject currentFontName:@"华文行楷" withFileType:@"ttf"];
+    if ([fontStr isEqualToString:@"STXingkai-SC-Light"]) {
+        fontStr = xkFontName;
+        [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:kFontNameKey];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];
+        return;
+    }
+    NSString *ytFontName = [NSObject currentFontName:@"方正兰亭圆简体" withFileType:@"ttf"];
+   if ([fontStr isEqualToString:@"STYuanti-SC-Regular"]) {
+       fontStr = ytFontName;
+       [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:kFontNameKey];
+       [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];
+       return;
+   }
     if ([self isFontDownloaded:fontStr]) {
         [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:kFontNameKey];
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];
@@ -108,6 +154,11 @@ static NSInteger cellInteger;
         } else if (state == kCTFontDescriptorMatchingDidFinish) {
             if (!errorDuringDownload) {
                 NSLog(@"字体匹配完成%@", fontStr);
+                dispatch_async( dispatch_get_main_queue(), ^ {
+                     // 可以在这里修改 UI 控件的字体
+                     [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:kFontNameKey];
+                     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];
+                         });
             }
         } else if (state == kCTFontDescriptorMatchingWillBeginDownloading) {
             NSLog(@" 字体开始下载 ");

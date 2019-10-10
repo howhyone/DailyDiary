@@ -32,9 +32,10 @@
 #define kFontSizeKey @"fontSizeKey"
 #define kFontNameKey @"fontNameKey"
 #define kRequestDiaryDetailBoolKRey @"requestDiaryDetailBoolKRey"
-
 #define kNotificationFontSize @"notificationFontSize"
 #define kNotificationFontName @"notificationFontName"
+#define kSelectedCellKey @"selectedCellKey"
+#define kSelectedfontSizeKey @"selectedfontSizeKey"
 
 #import <Masonry/Masonry.h>
 #import "UIColor+Comomn.h"

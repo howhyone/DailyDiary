@@ -11,8 +11,10 @@
 #import <CoreTelephony/CTCarrier.h>
 #import <CommonCrypto/CommonRandom.h>
 #import <CommonCrypto/CommonCrypto.h>
+#import <CoreText/CoreText.h>
 
 #define kBaseURLStr @"https://coding.net/"
+
 
 @implementation NSObject (Common)
 
@@ -229,6 +231,98 @@
     activityIndicator.frame = CGRectMake(100, 100, 100, 100);
     activityIndicator.hidesWhenStopped = YES;
     return activityIndicator;
+}
+
+-(BOOL)isFontDownloaded:(NSString *)fontName
+{
+    UIFont *afont = [UIFont fontWithName:fontName size:12.0];
+    if (afont && ([afont.fontName compare:fontName] == NSOrderedSame || [afont.familyName compare:fontName] == NSOrderedSame)) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+#pragma mark ------------- 按钮的点击代理
+
+-(void)downloadFont:(NSString *)fontStr
+{
+    if ([self isFontDownloaded:fontStr]) {
+        [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:kFontNameKey];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];
+        return;
+    }
+    NSMutableDictionary *attrs = [NSMutableDictionary dictionaryWithObjectsAndKeys:fontStr,kCTFontNameAttribute, nil];
+    
+    CTFontDescriptorRef desc = CTFontDescriptorCreateWithAttributes((__bridge CFDictionaryRef)attrs);
+    NSMutableArray *descs = [NSMutableArray arrayWithCapacity:0];
+    [descs addObject:(__bridge id)desc];
+    CFRelease(desc);
+    
+    __block BOOL errorDuringDownload = NO;
+    
+    CTFontDescriptorMatchFontDescriptorsWithProgressHandler( (__bridge CFArrayRef)descs, NULL,  ^bool(CTFontDescriptorMatchingState state, CFDictionaryRef _Nonnull progressParameter) {
+        
+        double progressValue = [[(__bridge NSDictionary *)progressParameter objectForKey:(id)kCTFontDescriptorMatchingPercentage] doubleValue];
+        
+        if (state == kCTFontDescriptorMatchingDidBegin) {
+            NSLog(@"字体已经匹配 ");
+        } else if (state == kCTFontDescriptorMatchingDidFinish) {
+            if (!errorDuringDownload) {
+                NSLog(@"字体匹配完成%@", fontStr);
+                dispatch_async( dispatch_get_main_queue(), ^ {
+                     // 可以在这里修改 UI 控件的字体
+                     [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:kFontNameKey];
+                     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];
+                         });
+            }
+        } else if (state == kCTFontDescriptorMatchingWillBeginDownloading) {
+            NSLog(@" 字体开始下载 ");
+        } else if (state == kCTFontDescriptorMatchingDidFinishDownloading) {
+            NSLog(@" 字体下载完成 ");
+            dispatch_async( dispatch_get_main_queue(), ^ {
+                // 可以在这里修改 UI 控件的字体
+                [[NSUserDefaults standardUserDefaults] setObject:fontStr forKey:kFontNameKey];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFontName object:self];
+            });
+        } else if (state == kCTFontDescriptorMatchingDownloading) {
+            NSLog(@" 下载进度 %.0f%% ", progressValue);
+        } else if (state == kCTFontDescriptorMatchingDidFailWithError) {
+            NSError *error = [(__bridge NSDictionary *)progressParameter objectForKey:(id)kCTFontDescriptorMatchingError];
+            if (error != nil) {
+                
+            } else {
+            }
+            // 设置标志
+            errorDuringDownload = YES;
+            
+        }
+        
+        return (BOOL)YES;
+    });
+}
+
++ (void)printAllFonts
+{
+    NSArray *fontFamilies = [UIFont familyNames];
+ 
+    for (NSString *fontFamily in fontFamilies)
+    {
+        NSArray *fontNames = [UIFont fontNamesForFamilyName:fontFamily];
+        NSLog (@"fontFamily=====%@:fontNames====== %@", fontFamily, fontNames);
+    }
+}
+
++(NSString *)currentFontName:(NSString *)fileName withFileType:(NSString *)fileType
+{
+    NSString *fontFilePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];
+    NSURL *fontFileUrl = [NSURL fileURLWithPath:fontFilePath];
+    CGDataProviderRef fontDataProvider = CGDataProviderCreateWithURL((__bridge CFURLRef)fontFileUrl);
+    CGFontRef fontRef = CGFontCreateWithDataProvider(fontDataProvider);
+    CGDataProviderRelease(fontDataProvider);
+    NSString *fontName = (__bridge NSString *)CGFontCopyFullName(fontRef);
+    CGFontRelease(fontRef);
+    return fontName;
 }
 
 @end

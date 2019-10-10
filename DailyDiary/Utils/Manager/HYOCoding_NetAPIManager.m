@@ -37,7 +37,6 @@
 
     [manager request_Login_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
-            NSLog(@"dataDic =========== $%@",data);
             LoginModel *loginM  = [HYOJson objectWithModelClass:@"LoginModel" withJsonString:data];
             block(loginM,nil);
             
@@ -74,7 +73,6 @@
     [manager request_UserInquiry_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
             PersonalInfoModel *personalInfoM  = [HYOJson objectWithModelClass:@"PersonalInfoModel" withJsonString:data];
-            NSLog(@"data is ======+%@",data);
             block(personalInfoM,error);
         }else{
             NSLog(@"error is==========+%@",error);
@@ -99,7 +97,6 @@
     
     [manager request_UserEdit_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
-            NSLog(@"data is ======+%@",data);
             block(data,error);
         }else{
             NSLog(@"error is==========+%@",error);
@@ -136,7 +133,6 @@
     [manager request_ListDiary_WithPath:path Params:params methord:POST andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
             NSArray *diaryListArr = [HYOJson objectWithModelClass:@"DiaryListModel" withJsonString:data];
-            NSLog(@"ListDiary data ===========%@",data);
             block(diaryListArr,error);
         }else{
             NSData *data = error.userInfo[@"com.alamofire.serialization.response.error.data"] ;
@@ -154,7 +150,6 @@
     [manager request_DetailDiary_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
             DiaryDetailModel *diaryDetailM  = [HYOJson objectWithModelClass:@"DiaryDetailModel" withJsonString:data];
-            NSLog(@"DetailDiarydata ===========%@",data);
             block(diaryDetailM,error);
         }else{
             NSLog(@"DetailDiarydata error==========+%@",error);
@@ -170,7 +165,6 @@
     [manager request_SearchDiary_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
             NSArray *diaryListArr = [HYOJson objectWithModelClass:@"DiaryListModel" withJsonString:data];
-            NSLog(@"ListDiary data ===========%@",data);
             block(diaryListArr,error);
         }else{
             NSLog(@"error is==========+%@",error);
@@ -185,7 +179,6 @@
     [manager request_PicturesList_WithPath:path Params:params methord:GET andBlock:^(id  _Nonnull data, NSError * _Nonnull error) {
         if (data && !error) {
             PicturesListModel *picturesListM  = [HYOJson objectWithModelClass:@"PicturesListModel" withJsonString:data];
-            NSLog(@"data ===========%@",data);
             block(picturesListM,error);
         }else{
             NSLog(@"error is==========+%@",error);

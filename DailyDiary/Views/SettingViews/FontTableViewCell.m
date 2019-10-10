@@ -12,7 +12,6 @@
 
 @implementation FontTableViewCell
 
-int tagNum = 0;
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -30,55 +29,20 @@ int tagNum = 0;
     [fontName mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.top).offset(12 * kScale_Height);
         make.left.equalTo(self.left).offset(15 * kScale_Width);
-        make.width.equalTo(60 * kScale_Width);
+        make.width.equalTo(160 * kScale_Width);
         make.centerY.equalTo(self.centerY).offset(0);
     }];
-    _downloadBtn = [UIButton buttonWithImage:@""];
-    [_downloadBtn setImage:[UIImage imageNamed:@"选择"] forState:UIControlStateSelected];
-    [_downloadBtn addTarget:self action:@selector(clickDonwnload:) forControlEvents:UIControlEventTouchUpInside];
-    if (tagNum >= 3) {
-        tagNum = 0;
-    }else{
-        tagNum += 1;
-    }
-    _downloadBtn.tag = 10000 + tagNum;
-    [self addSubview:_downloadBtn];
-    [_downloadBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    _selectedImageView = [UIImageView imageViewWithImageName:@"选择"];
+   
+    [self addSubview:_selectedImageView];
+    [_selectedImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(fontName.top).offset(0);
         make.right.equalTo(self.right).offset(-15 * kScale_Width);
         make.width.equalTo(20 * kScale_Width);
         make.height.equalTo(20 * kScale_Width);
     }];
 }
-
-
-#pragma mark -----------按钮点击事件
--(void)clickDonwnload:(id)object
-{
-    _downloadBtn = (UIButton *)object;
-    switch (_downloadBtn.tag) {
-        case 10001:
-            if ([self.delegate respondsToSelector:@selector(downloadFont:)]) {
-                [self.delegate downloadFont:@"PingFangSC-Regular"];
-            }
-        break;
-        case 10002:
-            if ([self.delegate respondsToSelector:@selector(downloadFont:)]) {
-                [self.delegate downloadFont:@"STYuanti-SC-Regular"];
-            }
-        break;
-        case 10003:
-            if ([self.delegate respondsToSelector:@selector(downloadFont:)]) {
-                [self.delegate downloadFont:@"KaiTi"];
-            }
-        break;
-        default:
-            break;
-    }
-
-}
-
-
 
 - (void)setFontNameStr:(NSString *)fontNameStr
 {

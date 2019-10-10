@@ -9,6 +9,9 @@
 #import "SettingTableViewCell.h"
 #import <MobPush/MobPush.h>
 
+@interface SettingTableViewCell ()
+@property(nonatomic, assign) CGFloat *fontSize;
+@end
 
 @implementation SettingTableViewCell
 
@@ -43,6 +46,11 @@
 
     // Configure the view for the selected state
 }
+
+@end
+
+
+@interface FontSettingTableViewCell ()
 
 @end
 
@@ -93,19 +101,15 @@
 -(void)setupPhotoWallViewInfo
 {
     self.leftLabel.text = @"照片墙";
-    _photoNumLabel = [UILabel labelWithFont:14.0 WithText:@"81张照片" WithColor:0x151718];
-    _photoNumLabel.textAlignment = NSTextAlignmentRight;
-    [self addSubview:_photoNumLabel];
-    [_photoNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.top).offset(12 * kScale_Height);
-        make.bottom.equalTo(self.bottom).offset(-12 * kScale_Height);
-        make.right.equalTo(self.right).offset(-36 * kScale_Width);
-        make.width.equalTo(100);
-    }];
 }
 
 @end
 
+static NSInteger selectedNum = 0;
+
+@interface FontSizeSettingTableViewCell()
+
+@end
 //字体设置
 @implementation FontSizeSettingTableViewCell
 
@@ -121,7 +125,7 @@
 {
     self.leftLabel.text = @"字体大小";
     NSArray *sizeFontArr = @[@"小",@"中",@"大"];
-    for (int i = 0; i < 3; i++) {
+    for (int i = 2; i >= 0; i--) {
         UIButton *fontSizeBtn = [UIButton buttonWithTitle:sizeFontArr[i] withTitleColor:0xb4b5b6];
         fontSizeBtn.tag = 10000 + i;
         [fontSizeBtn addTarget:self action:@selector(switchFontSize:) forControlEvents:UIControlEventTouchUpInside];
@@ -129,6 +133,11 @@
         fontSizeBtn.layer.masksToBounds = YES;
         [fontSizeBtn setTitleColor:[UIColor colorWithRGBHex:0xfefefe] forState:UIControlStateSelected];
         [fontSizeBtn setBackgroundImage:[NSObject imageWithColor:[UIColor colorWithRGBHex:0x26ad95]] forState:UIControlStateSelected];
+        selectedNum = [[NSUserDefaults standardUserDefaults] integerForKey:kSelectedfontSizeKey];
+        if (i == selectedNum) {
+            fontSizeBtn.selected = YES;
+            self.currentSelectedBtn = fontSizeBtn;
+        }
         [self addSubview:fontSizeBtn];
         [fontSizeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.right).offset(-(15 + i * 40) * kScale_Width);
@@ -142,6 +151,8 @@
 
 -(void)switchFontSize:(UIButton *)button
 {
+    selectedNum = button.tag - 10000;
+    [[NSUserDefaults standardUserDefaults] setInteger:selectedNum forKey:kSelectedfontSizeKey];
     self.currentSelectedBtn.selected = NO;
     button.selected = YES;
     self.currentSelectedBtn = button;
@@ -182,6 +193,13 @@
 -(void)setupWarnViewInfo
 {
     self.leftLabel.text = @"提醒我写日记 (每天9:00PM)";
+    [self.leftLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.top).offset(12);
+        make.bottom.equalTo(self.bottom).offset(-12);
+        make.left.equalTo(self.left).offset(15);
+        make.width.equalTo(300 * kScale_Width);
+    }];
+    
     UISwitch *switchWarnBtn = [[UISwitch alloc] init];
     switchWarnBtn.onTintColor =  [UIColor colorWithRGBHex:0x26ad95];
     switchWarnBtn.tintColor = [UIColor colorWithRGBHex:0xf4f5f8];

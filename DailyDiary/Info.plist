@@ -104,6 +104,12 @@ mqqopensdkminiapp</string>
 	<string>是否允许App访问相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>写日记添加图片</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>方正兰亭圆简体.ttf</string>
+		<string>华文圆体.ttf</string>
+		<string>华文行楷.ttf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
