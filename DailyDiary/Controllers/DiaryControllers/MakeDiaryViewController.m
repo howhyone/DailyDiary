@@ -71,7 +71,9 @@
                 if (photoTotal.length) {
                     weakSelf.httpRequestImageArr = [photoTotal componentsSeparatedByString:@";"];
                     weakSelf.requestImageCount = weakSelf.httpRequestImageArr.count;
-                    [weakSelf.totalImageMutableArr addObjectsFromArray:weakSelf.httpRequestImageArr];
+                    if (weakSelf.totalImageMutableArr.count == 0) {
+                        [weakSelf.totalImageMutableArr addObjectsFromArray:weakSelf.httpRequestImageArr];
+                    }
                 }
                 [weakSelf.diaryCollectionView reloadData];
             });
@@ -166,12 +168,7 @@
 
 #pragma mark -------- UICollectionView代理事件
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (_selectionPhotoArray.count || _requestImageCount) {
-        _imageCount = _selectionPhotoArray.count + _requestImageCount;
-        return _imageCount;
-    }else{
-        return 0;
-    }
+    return _totalImageMutableArr.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -180,11 +177,20 @@
     UIImageView *diaryImageView = [[UIImageView alloc] init];
     diaryImageView.frame = CGRectMake(0, 0, 105 * kScale_Width, 77 * kScale_Height);
     NSLog(@"row is %ld ---- _httpRequestImageArr.count is %ld------- _selectionPhotoArray.count is %ld",indexPath.row,_httpRequestImageArr.count,_selectionPhotoArray.count);
-    if (indexPath.row < _httpRequestImageArr.count && _httpRequestImageArr) {
-        [diaryImageView sd_setImageWithURL:[NSURL URLWithString:_httpRequestImageArr[indexPath.row]]];
-    }else if(_selectionPhotoArray){
-        diaryImageView.image = _selectionPhotoArray[indexPath.row - _httpRequestImageArr.count];
+    
+    id currentImageItem = [_totalImageMutableArr objectAtIndex:indexPath.row];
+    if ([currentImageItem isKindOfClass:[NSString class]]) {
+        [diaryImageView sd_setImageWithURL:[NSURL URLWithString:currentImageItem]];
+    }else if ([currentImageItem isKindOfClass:[UIImage class]]){
+        diaryImageView.image = currentImageItem;
+
     }
+        
+//    if (indexPath.row < _httpRequestImageArr.count && _httpRequestImageArr) {
+//        [diaryImageView sd_setImageWithURL:[NSURL URLWithString:_httpRequestImageArr[indexPath.row]]];
+//    }else if(_selectionPhotoArray){
+//        diaryImageView.image = _selectionPhotoArray[indexPath.row - _httpRequestImageArr.count];
+//    }
     
     diaryImageView.contentMode = UIViewContentModeScaleAspectFill;
     [cell addSubview:diaryImageView];
@@ -201,6 +207,7 @@
     }];
     
     photoInfoVC.photoInteger = indexPath.row;
+//    [photoInfoVC.photoImageAr]
     photoInfoVC.photoImageArr = _totalImageMutableArr;
     [self.navigationController pushViewController:photoInfoVC animated:NO];
 }
@@ -350,11 +357,8 @@
     }
     
     NSString *contextStr = _makeDiaryView.diaryTextView.text;
-    NSMutableArray *fileMutableArr = [NSMutableArray arrayWithArray:_httpRequestImageArr];
-    
-    
-    [fileMutableArr addObjectsFromArray:self.selectionPhotoArray];
-    [self httpRequestEditDiaryWithTitle:titleStr WithDate:_dateStr WithContext:contextStr  WithFile:fileMutableArr];
+
+    [self httpRequestEditDiaryWithTitle:titleStr WithDate:_dateStr WithContext:contextStr  WithFile:_totalImageMutableArr];
 }
 
 @end

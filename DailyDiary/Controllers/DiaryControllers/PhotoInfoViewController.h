@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, copy)void(^deletedPhotoBlock)(NSMutableArray *currentPhotoArr);
 @property(nonatomic, assign)NSInteger photoInteger;
-@property(nonatomic, strong)NSArray *photoImageArr;
+@property(nonatomic, strong)NSMutableArray *photoImageArr;
 @end
 
 NS_ASSUME_NONNULL_END

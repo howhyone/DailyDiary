@@ -38,12 +38,7 @@
     bottomLabel.textAlignment = NSTextAlignmentCenter;
     bottomLabel.font = [UIFont fontWithName:@"PingFang TC" size:15.0];
     [bottomView addSubview:bottomLabel];
-    [[MGADConnector defaultConnector] showSplashAdInWindow:UIApplication.sharedApplication.keyWindow backgroundColor:UIColor.whiteColor backgroundImage:nil fetchDelay:10 bottomView:bottomView skipView:nil skipViewCenter:CGPointZero adLifeTime:^(NSUInteger time) {
-        
-    } stateChanged:^(MGADState state, NSError *error) {
-        
-        [self _processGDTState:state error:error];
-    }];
+    
     
 }
 -(void)_processGDTState:(MGADState)state  error:(NSError *)error

@@ -216,6 +216,20 @@
     return randomNameStr;
 }
 
++(UIAlertController *)setAlerControlelrWithControllerTitle:(nullable NSString *)controllerTitleStr controllerMessage:(nullable NSString *)controllerMessageStrStr cancelActionTitle:(nullable NSString *)cancelActionTitleStr okActionTitle:(nullable NSString *)okActionTitleStr handler:(void (^ __nullable)(UIAlertAction *action))handler
+{
+    UIAlertController *delectedActionC = [UIAlertController alertControllerWithTitle:controllerTitleStr message:controllerMessageStrStr preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelActionTitleStr style:UIAlertActionStyleCancel handler:nil];
+
+     UIAlertAction *okAction = [UIAlertAction actionWithTitle:okActionTitleStr style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+         handler(action);
+     }];
+    [delectedActionC addAction:cancelAction];
+     [delectedActionC addAction:okAction];
+     return delectedActionC;
+}
+
+
 +(UIAlertController *)setAlerControlelrWithControllerTitle:(nullable NSString *)controllerTitleStr controllerMessage:(nullable NSString *)controllerMessageStrStr actionTitle:(nullable NSString *)actionTitleStr
 {
     UIAlertController *shareAlertC = [UIAlertController alertControllerWithTitle:controllerTitleStr message:controllerMessageStrStr preferredStyle:UIAlertControllerStyleAlert];

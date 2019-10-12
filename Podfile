@@ -10,7 +10,8 @@ target 'DailyDiary' do
       pod 'TZImagePickerController' #选择相册图片
       pod 'AFNetworking', '3.0'
       pod 'SDWebImage','4.4.7'
-#      pod 'SDWebImage/GIF','~>4.4.7'
+#     pod 'SDWebImage/GIF','~>4.4.7'
+      pod 'FLAnimatedImage', '~> 1.0'
 
       
       pod 'mob_sharesdk'
@@ -24,7 +25,7 @@ target 'DailyDiary' do
       pod 'mob_smssdk'
       pod 'mob_pushsdk'
       pod 'mob_linksdk_pro'
-
+      
 #  target 'DailyDiaryTests' do
 ##    inherit! :search_paths
 #  end

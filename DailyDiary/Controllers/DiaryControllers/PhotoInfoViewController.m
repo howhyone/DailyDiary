@@ -7,6 +7,7 @@
 //
 
 #import "PhotoInfoViewController.h"
+#import "PhotoInfoCollectionViewCell.h"
 
 @interface PhotoInfoViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic, strong)UICollectionView *photoCollectionView;
@@ -23,10 +24,9 @@ int totalNum = 0;
         UICollectionViewFlowLayout *photoFlowLayout = [[UICollectionViewFlowLayout alloc] init];
         photoFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         photoFlowLayout.itemSize = CGSizeMake(kScreen_Width, kScreen_Width);
-//        photoFlowLayout.minimumInteritemSpacing = 0.000000001;
         photoFlowLayout.minimumLineSpacing = 0.00000000001;
         _photoCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kStateNavigationHeight, kScreen_Width, kScreen_Width) collectionViewLayout:photoFlowLayout];
-        [_photoCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"PhotoCollectionViewCell"];
+        [_photoCollectionView registerClass:[PhotoInfoCollectionViewCell class] forCellWithReuseIdentifier:@"PhotoInfoCollectionViewCell"];
         _photoCollectionView.pagingEnabled = YES;
         _photoCollectionView.bounces = NO;
         _photoCollectionView.delegate = self;
@@ -61,33 +61,33 @@ int totalNum = 0;
     return _photoImageArr.count;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSInteger pageInt = scrollView.contentOffset.x / kScreen_Width + 1;
+    self.titleLabel.text = [NSString stringWithFormat:@"%ld/%lu",(long)pageInt,(unsigned long)_photoImageArr.count];
+}
+
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
-    NSInteger pageInt = scrollView.contentOffset.x / kScreen_Width;
-     self.titleLabel.text = [NSString stringWithFormat:@"%ld/%lu",(long)pageInt,(unsigned long)_photoImageArr.count];
+    NSInteger pageInt = scrollView.contentOffset.x / kScreen_Width + 1;
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    NSInteger pageInt = scrollView.contentOffset.x / kScreen_Width;
-    self.titleLabel.text = [NSString stringWithFormat:@"%ld/%lu",(long)pageInt,(unsigned long)_photoImageArr.count];
+    NSInteger pageInt = scrollView.contentOffset.x / kScreen_Width + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCollectionViewCell" forIndexPath:indexPath];
-    UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Width)];
-    photoImageView.contentMode = UIViewContentModeScaleAspectFill;
-
+    PhotoInfoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoInfoCollectionViewCell" forIndexPath:indexPath];
     _currentRow = indexPath.row;
     id photoImage = _photoImageArr[indexPath.row];
     
     if ([photoImage isKindOfClass:[NSString class]]) {
-        [photoImageView sd_setImageWithURL:[NSURL URLWithString:photoImage]];
+        [cell.photoImageView sd_setImageWithURL:[NSURL URLWithString:photoImage]];
     }else if ([photoImage isKindOfClass:[UIImage class]]){
-        [photoImageView setImage:photoImage];
+        [cell.photoImageView setImage:photoImage];
     }
-    [cell addSubview:photoImageView];
     return cell;
 }
 
@@ -99,14 +99,17 @@ int totalNum = 0;
 
 -(void)clickDeletedBtn
 {
+    WeakSelf(weakSelf);
+    UIAlertController *delectedAlertC = [NSObject setAlerControlelrWithControllerTitle:nil controllerMessage:@"确定删除该图标吗" cancelActionTitle:@"取消" okActionTitle:@"确定" handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf.photoImageArr removeObjectAtIndex:weakSelf.currentRow];
+        weakSelf.titleLabel.text = [NSString stringWithFormat:@"%ld/%lu",(long)weakSelf.currentRow,(unsigned long)weakSelf.photoImageArr.count];
+        [weakSelf.photoCollectionView reloadData];
+        if (weakSelf.deletedPhotoBlock) {
+            weakSelf.deletedPhotoBlock(weakSelf.photoImageArr );
+        }
+    }];
     
-    NSMutableArray *photoMutableArr = [NSMutableArray arrayWithArray:_photoImageArr];
-    [photoMutableArr removeObjectAtIndex:_currentRow];
-    
-    __weak typeof(self) weakSelf = self;
-    if (weakSelf.deletedPhotoBlock) {
-        weakSelf.deletedPhotoBlock(photoMutableArr);
-    }
+    [self presentViewController:delectedAlertC animated:NO completion:nil];
 }
 
 @end

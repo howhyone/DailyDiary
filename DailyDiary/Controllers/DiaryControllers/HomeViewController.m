@@ -14,6 +14,9 @@
 #import "SearchDiaryViewController.h"
 #import "DiaryListModel.h"
 
+#import <MobAD/MobAD.h>
+#import "FLAnimatedImage.h"
+
 static NSString *dataStr = nil;
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>

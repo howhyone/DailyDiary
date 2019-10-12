@@ -8,7 +8,7 @@
 
 #import "HYOCoding_NetAPIClient.h"
 
-static NSString *const kBaseURLStr = @"http://vrfwpb.natappfree.cc";
+static NSString *const kBaseURLStr = @"http://698396.natappfree.cc";
 
 @implementation HYOCoding_NetAPIClient
 
