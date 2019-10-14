@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PersonalInfoModel : NSObject
 @property(nonatomic, strong)NSString *name;
-@property(nonatomic, strong)NSString *photo;
+@property(nonatomic, strong)NSString *img;
 @property(nonatomic, copy)NSString *phone;
 @end
 

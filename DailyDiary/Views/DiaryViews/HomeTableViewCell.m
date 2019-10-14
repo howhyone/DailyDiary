@@ -126,6 +126,6 @@
 {
     [super setDiaryListM:object];
     DiaryListModel *diaryListM = (DiaryListModel *)object;
-    [_diaryImageView sd_setImageWithURL:[NSURL URLWithString:diaryListM.photo]];
+    [_diaryImageView sd_setImageWithURL:[NSURL URLWithString:diaryListM.img]];
 }
 @end

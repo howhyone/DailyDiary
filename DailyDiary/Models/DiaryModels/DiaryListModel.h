@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)NSString *context;
 @property(nonatomic, strong)NSString *date;
 @property(nonatomic, strong)NSString *DiaryId;
-@property(nonatomic, strong)NSString *photo;
+@property(nonatomic, strong)NSString *img;
 @property(nonatomic, strong)NSString *title;
 @property(nonatomic, strong)NSString *userId;
 

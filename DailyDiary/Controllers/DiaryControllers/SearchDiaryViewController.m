@@ -99,7 +99,7 @@
 {
     UITableViewCell *cell = nil;
     _diaryListM = _diaryModelArr[indexPath.row];
-    if (!_diaryListM.photo) { //
+    if (!_diaryListM.img) { //
         HomeTableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCell"];
         homeCell.selectionStyle = UITableViewCellSelectionStyleNone;
         homeCell.diaryListM = _diaryListM;

@@ -275,7 +275,7 @@ static NSInteger selectedNum = 0;
         make.top.equalTo(self.top).offset(15 * kScale_Height);
         make.centerX.equalTo(self.centerX).offset(0);
         make.width.equalTo(90 * kScale_Width);
-        make.height.equalTo(90 * kScale_Height);
+        make.height.equalTo(90 * kScale_Width);
     }];
     
     _nameLabel = [UILabel labelWithFont:25.0 WithText:@"" WithColor:0x151718];
@@ -335,7 +335,7 @@ static NSInteger selectedNum = 0;
 -(void)setPersonalInfoModel:(id)object
 {
     PersonalInfoModel *personalInfoModel = (PersonalInfoModel *)object;
-    [_headerImageView sd_setImageWithURL:[NSURL URLWithString:personalInfoModel.photo]];
+    [_headerImageView sd_setImageWithURL:[NSURL URLWithString:personalInfoModel.img]];
     _nameLabel.text = personalInfoModel.name;
 }
 

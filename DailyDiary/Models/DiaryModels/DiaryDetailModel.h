@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DiaryDetailModel : NSObject
 
-@property (nonatomic , copy) NSString  * photo;
+@property (nonatomic , copy) NSString  * img;
 @property (nonatomic , copy) NSString  * DiaryId;
 @property (nonatomic , copy) NSString  * title;
 @property (nonatomic , copy) NSString  * userId;

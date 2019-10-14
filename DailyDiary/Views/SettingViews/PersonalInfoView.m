@@ -25,7 +25,7 @@
 {
     UIImageView *headerImageView =({
     UIImageView *headerImageView =[[UIImageView alloc] init];
-    headerImageView.layer.cornerRadius = 45;
+    headerImageView.layer.cornerRadius = 90 * kScale_Width/2;
     headerImageView.layer.masksToBounds = YES;
     self.headerImageView = headerImageView;
     [self addSubview:self.headerImageView];
@@ -151,7 +151,7 @@
 -(void)setPersonalInfoModel:(id)object
 {
     PersonalInfoModel *model = (PersonalInfoModel *)object;
-    [_headerImageView sd_setImageWithURL:[NSURL URLWithString:model.photo]];
+    [_headerImageView sd_setImageWithURL:[NSURL URLWithString:model.img]];
     _nameTextField.text = model.name;
 }
 

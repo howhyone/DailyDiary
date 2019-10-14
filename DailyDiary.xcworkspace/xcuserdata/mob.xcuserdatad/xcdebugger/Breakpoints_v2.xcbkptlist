@@ -262,23 +262,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4A207F6D-949A-4A50-8E08-A10A0180F649"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/DiaryControllers/MakeDiaryViewController.m"
-            timestampString = "591196182.686466"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "-httpRequestDetailWithDate:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E6FA5CE7-0C13-417F-9424-3A0707ED92EC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -321,22 +304,6 @@
             startingLineNumber = "131"
             endingLineNumber = "131"
             landmarkName = "-secVerify"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0E2C8E38-98E7-4A48-B50C-DE40D9E53DAE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Utils/Manager/HYOCoding_NetAPIClient.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "-request_Login_WithPath:Params:methord:andBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -455,47 +422,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "55854BCF-6BEF-44D7-BC07-FBCECD09A74D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Views/SettingViews/SettingTableViewCell.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "-setupFontSizeViewInfo"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B6FADB8B-6E6B-4F66-A36D-11F2D9E8059E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/DiaryControllers/MakeDiaryViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-httpRequestDetailWithDate:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E801DD39-AEDB-4239-94A7-A45D4AF34E15"
+            uuid = "A59D5576-2167-4F0E-B347-D174E14D1379"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Controllers/DiaryControllers/PhotoInfoViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "-clickDeletedBtn"
             landmarkType = "7">
          </BreakpointContent>
@@ -503,64 +438,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "48B04EE8-5133-4620-B1F7-1DD6729DF53E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/DiaryControllers/MakeDiaryViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-httpRequestEditDiaryWithTitle:WithDate:WithContext:WithFile:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "064CCBC1-4B1E-44F0-9008-28CC22F00127"
+            uuid = "0728BE23-97A3-44BA-A9B1-7CA107ED3354"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DailyDiary/Controllers/DiaryControllers/PhotoInfoViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "-scrollViewDidEndScrollingAnimation:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FC823169-F7F1-4B41-BCF0-3FE5F238614F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/DiaryControllers/PhotoInfoViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "-scrollViewDidEndDragging:willDecelerate:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4C2540F8-081C-4C55-A5AB-B6E0C0703CCC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DailyDiary/Controllers/DiaryControllers/PhotoInfoViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-scrollViewDidScroll:"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-clickDeletedBtn"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

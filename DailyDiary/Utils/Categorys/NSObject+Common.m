@@ -242,7 +242,7 @@
 +(UIActivityIndicatorView *)setActivityIndicator
 {
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    activityIndicator.frame = CGRectMake(100, 100, 100, 100);
+    activityIndicator.frame = CGRectMake(kScreen_Width/2, kScreen_Height/2, 100, 100);
     activityIndicator.hidesWhenStopped = YES;
     return activityIndicator;
 }

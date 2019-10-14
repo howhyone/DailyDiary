@@ -47,6 +47,8 @@ int totalNum = 0;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(clickBackBtn)];
     NSString *titleStr = [NSString stringWithFormat:@"%ld/%lu",(long)_photoInteger + 1,(unsigned long)_photoImageArr.count];
     UILabel *titleLabel = [UILabel labelWithFont:15.0 WithText:titleStr WithColor:0xffffff];
+    titleLabel.frame = CGRectMake(0, 0, 100, 30);
+    titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel = titleLabel;
     self.navigationItem.titleView = self.titleLabel;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"删除" style:UIBarButtonItemStylePlain target:self action:@selector(clickDeletedBtn)];
@@ -63,6 +65,7 @@ int totalNum = 0;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+
     NSInteger pageInt = scrollView.contentOffset.x / kScreen_Width + 1;
     self.titleLabel.text = [NSString stringWithFormat:@"%ld/%lu",(long)pageInt,(unsigned long)_photoImageArr.count];
 }
@@ -94,15 +97,31 @@ int totalNum = 0;
 #pragma mark ------------- 按钮点击事件
 -(void)clickBackBtn
 {
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kRequestDiaryDetailBoolKRey];
     [self.navigationController popViewControllerAnimated:NO];
 }
 
 -(void)clickDeletedBtn
 {
     WeakSelf(weakSelf);
+
+    if (_photoImageArr.count == 0) {
+
+        
+        UIAlertController *delectedNullAlertC = [NSObject setAlerControlelrWithControllerTitle:nil controllerMessage:@"没有图片了" actionTitle:@"确定"];
+        [self presentViewController:delectedNullAlertC animated:NO completion:nil];
+
+        return;
+    }
     UIAlertController *delectedAlertC = [NSObject setAlerControlelrWithControllerTitle:nil controllerMessage:@"确定删除该图标吗" cancelActionTitle:@"取消" okActionTitle:@"确定" handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf.photoImageArr removeObjectAtIndex:weakSelf.currentRow];
-        weakSelf.titleLabel.text = [NSString stringWithFormat:@"%ld/%lu",(long)weakSelf.currentRow,(unsigned long)weakSelf.photoImageArr.count];
+        if (weakSelf.photoImageArr.count > 0) {
+                    weakSelf.titleLabel.text = [NSString stringWithFormat:@"%ld/%lu",(long)weakSelf.currentRow,(unsigned long)weakSelf.photoImageArr.count];
+        }else{
+            weakSelf.titleLabel.text = [NSString stringWithFormat:@""];
+            UIAlertController *delectedNullAlertC = [NSObject setAlerControlelrWithControllerTitle:nil controllerMessage:@"没有图片了" actionTitle:@"确定"];
+                [self presentViewController:delectedNullAlertC animated:NO completion:nil];
+        }
         [weakSelf.photoCollectionView reloadData];
         if (weakSelf.deletedPhotoBlock) {
             weakSelf.deletedPhotoBlock(weakSelf.photoImageArr );

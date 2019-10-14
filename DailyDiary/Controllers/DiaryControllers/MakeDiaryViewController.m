@@ -67,7 +67,7 @@
 
             dispatch_async(dispatch_get_main_queue(), ^{
                 weakSelf.makeDiaryView.diaryDetailM = data;
-                NSString *photoTotal = weakSelf.makeDiaryView.diaryDetailM.photo;
+                NSString *photoTotal = weakSelf.makeDiaryView.diaryDetailM.img;
                 if (photoTotal.length) {
                     weakSelf.httpRequestImageArr = [photoTotal componentsSeparatedByString:@";"];
                     weakSelf.requestImageCount = weakSelf.httpRequestImageArr.count;
@@ -298,7 +298,7 @@
     BOOL requestDetailB = [[NSUserDefaults standardUserDefaults] boolForKey:kRequestDiaryDetailBoolKRey];
     if (requestDetailB) {
         [self httpRequestDetailWithDate:_dateStr];
-        [weakSelf.diaryCollectionView reloadData];
+//        [weakSelf.diaryCollectionView reloadData];
 
     }
     
