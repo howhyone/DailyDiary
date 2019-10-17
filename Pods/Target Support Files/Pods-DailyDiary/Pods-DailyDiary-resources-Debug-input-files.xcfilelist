@@ -2,6 +2,8 @@ ${PODS_ROOT}/Target Support Files/Pods-DailyDiary/Pods-DailyDiary-resources.sh
 ${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle
 ${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
 ${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle
+${PODS_ROOT}/mob_secverify/SecVerify/SecVerify.bundle
+${PODS_ROOT}/mob_secverify/SecVerify/PlatformSDK/Mobile/TYRZResource.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/mob_sharesdk/ShareSDK.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/mob_sharesdk/ShareSDK_JS_QQ.bundle
 ${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle

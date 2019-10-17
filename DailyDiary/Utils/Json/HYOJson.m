@@ -81,8 +81,6 @@
             listArr = listTempArr;
         }
     }
-
-    
     
     u_int propertyCount;
     id modelObject = [[NSClassFromString(modelClass) alloc] init];
@@ -100,6 +98,7 @@
                 [modelObject performSelectorOnMainThread:setterSel withObject:propertyValue waitUntilDone:[NSThread isMainThread]];
             }
         }
+        free(propertyList);
         return modelObject;
     }
     if (listArr) {
@@ -123,6 +122,7 @@
             }
             [modelMutableArr addObject:modelObject];
         }
+        free(propertyList);
         return modelMutableArr;
     }
     
@@ -139,8 +139,10 @@
             [modelObject setValue:propertyValue forKey:propertyName];
         
         }
+        free(propertyList);
         return modelObject;
     }
+    free(propertyList);
     return nil;
 }
 
