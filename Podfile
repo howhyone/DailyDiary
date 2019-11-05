@@ -25,7 +25,6 @@ target 'DailyDiary' do
       pod 'mob_smssdk'
       pod 'mob_pushsdk'
       pod 'mob_linksdk_pro'
-      pod "mob_secverify"
       
 #  target 'DailyDiaryTests' do
 ##    inherit! :search_paths

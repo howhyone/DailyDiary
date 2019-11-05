@@ -25,8 +25,6 @@ PODS:
     - MOBFoundation
   - mob_pushsdk/MobPush (2.2.0.1):
     - MOBFoundation
-  - mob_secverify (2.0.5):
-    - MOBFoundation
   - mob_sharesdk (4.2.9.1):
     - mob_sharesdk/ShareSDK (= 4.2.9.1)
     - MOBFoundation
@@ -63,7 +61,6 @@ DEPENDENCIES:
   - MJRefresh
   - mob_linksdk_pro
   - mob_pushsdk
-  - mob_secverify
   - mob_sharesdk
   - mob_sharesdk/ShareSDKExtension
   - mob_sharesdk/ShareSDKPlatforms/QQ
@@ -83,7 +80,6 @@ SPEC REPOS:
     - MJRefresh
     - mob_linksdk_pro
     - mob_pushsdk
-    - mob_secverify
     - mob_sharesdk
     - mob_smssdk
     - MOBFoundation
@@ -98,13 +94,12 @@ SPEC CHECKSUMS:
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   mob_linksdk_pro: 160aa6a27449948ac8fc0d291dc9628429579af1
   mob_pushsdk: 1776b0ad51cdfc85067e875420a85557f88a836d
-  mob_secverify: ab0dfb8c4f85e8fe6c1a542cc02f155ea3f9298c
   mob_sharesdk: ea154cd0f2322600bc59a7d1b30450a56a234044
   mob_smssdk: cdb6a31d4fd4667ed928e2eca03f21ad89ebc05c
   MOBFoundation: dd8f319dde9331590d515a1676d27baccc0070e5
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   TZImagePickerController: f321e8db6cd18dc6ac8e23694961c158a9345a87
 
-PODFILE CHECKSUM: 31799d1e54a9baa54a17f282cbcb452d2ec50820
+PODFILE CHECKSUM: 373e47d0e8a3a397761ce957e8b794bb83942cd4
 
 COCOAPODS: 1.7.5

@@ -97,7 +97,7 @@ NSString *const FONT_NAME_KEY = @"fontnamekey";
 
     }
     self.font = [UIFont fontWithName:currentFontName size:currentFontSizeStr];
-    
+
 }
 
 +(UILabel *)labelWithFont:(CGFloat)fontSize WithText:(NSString *)textStr WithColor:(UInt32)colorValue
