@@ -195,7 +195,7 @@ static NSString *const pathStr = @"/demo/a";
             NSMutableDictionary *shareParams = [NSMutableDictionary dictionaryWithCapacity:1];
             weakSelf.shareParams = shareParams;
             weakSelf.urlStr = [domain stringByAppendingString:mobId];
-            [shareParams SSDKSetupShareParamsByText:@"text" images:@"http://ww4.sinaimg.cn/bmiddle/005Q8xv4gw1evlkov50xuj30go0a6mz3.jpg" url:[NSURL URLWithString:weakSelf.urlStr] title:@"游戏中国" type:SSDKContentTypeWebPage];
+            [shareParams SSDKSetupShareParamsByText:@"text" images:@"http://ww4.sinaimg.cn/bmiddle/005Q8xv4gw1evlkov50xuj30go0a6mz3.jpg" url:[NSURL URLWithString:@"http://172.25.57.106:8080/Test/TestPage.html"] title:@"游戏中国" type:SSDKContentTypeWebPage];
             
             [ShareSDK showShareActionSheet:nil customItems:nil shareParams:shareParams sheetConfiguration:nil onStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
                 UIAlertController *shareAlertC = nil;

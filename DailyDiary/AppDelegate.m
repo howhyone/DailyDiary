@@ -25,6 +25,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    NSLog(@"ahhahahahaa");
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     BOOL loginBool = [[NSUserDefaults standardUserDefaults] boolForKey:kLoginKey];
     if (loginBool) {
